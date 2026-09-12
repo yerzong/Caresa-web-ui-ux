@@ -70,6 +70,20 @@ Marca CARESA = **lima `#AEF803`** + **verde `#006C00`**.
 | Metric item / Number and chart / Credit card | ~55 c/u | Untitled-style |
 | Badge | ~36 | mixto |
 
+## 3b. Componentes homologados 2026 · Forms (con estados)
+Sección `HOMOLOGADO 2026 · Forms` (`40000034:4891`) en la página `COMPONENTES`. Cero hex sueltos;
+todo ligado a tokens `Color` + estilos de texto. Propiedad de variante `State`.
+
+| Component set | ID | Variantes (State) |
+|---|---|---|
+| `Input/Text` | `40000034:4890` | Default · Focus (anillo `semantic/info`) · Error (`semantic/danger` + helper) · Disabled |
+| `Button/Primary` | `40000035:4886` | Default (lima) · Hover (`brand/green`) · Loading (spinner + "Cargando…") · Disabled |
+| `Select` | `40000036:4894` | Default · Focus · Error · Disabled (con chevron) |
+
+> Estos son los componentes canónicos para formularios. Al homologar/rehacer pantallas, **instanciar
+> estos** en lugar de dibujar inputs/botones sueltos. Pendiente: sustituir los controles inline del
+> Login del sandbox por instancias de estos componentes.
+
 ## 4. Brechas de homologación pendientes
 - Migrar restos **SDS** (`--sds-*`) a los tokens `Color`/tipografía de arriba.
 - **Ligar** los componentes de `COMPONENTES` a estos tokens (hoy usan hex sueltos) — tarea de homologación.

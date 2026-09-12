@@ -13,6 +13,17 @@ Formato:
 
 ---
 
+## [2026-09-12] — Componentes de formulario homologados (con estados)
+- **Creado** (`design-system-librarian`) en `COMPONENTES` → sección `HOMOLOGADO 2026 · Forms` (`40000034:4891`):
+  - `Input/Text` (`40000034:4890`): Default / Focus / Error / Disabled
+  - `Button/Primary` (`40000035:4886`): Default / Hover / Loading / Disabled
+  - `Select` (`40000036:4894`): Default / Focus / Error / Disabled
+- Todo ligado a tokens `Color` + estilos de texto (cero hex sueltos). Foco = `semantic/info`, error = `semantic/danger`.
+- **Cubre** los pendientes de estado del review del Login (focus/error/loading ahora existen como componentes).
+- **Pendiente:** sustituir los controles inline del Login del sandbox por instancias de estos componentes; ligar los componentes viejos de `COMPONENTES` a tokens.
+
+---
+
 ## [2026-09-11] — Login responsive (piloto end-to-end) en sandbox
 - **Generado** (`responsive-architect`) en `04_Claude_Sandbox`: 4 frames con tokens `Color` + estilos de
   texto + variables `Breakpoints` (modo explícito por frame):

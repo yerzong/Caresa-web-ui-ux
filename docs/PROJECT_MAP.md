@@ -19,7 +19,8 @@ Objetivo por pantalla: existir en **Desktop (fuente) → Tablet (834) → Mobile
 | Tokens de **color** (marca lima/verde + neutrales + semánticos) | [x] 23 tokens, colección `Color` (2026-09-11) |
 | Estilos de **tipografía** (Inter, Display→Label) | [x] 9 estilos de texto (2026-09-11) |
 | Inventario de **componentes maestros** (`COMPONENTES`) | [~] frecuencias documentadas; falta detalle por variante |
-| **Ligar** componentes de `COMPONENTES` a los tokens | [ ] |
+| **Componentes de formulario con estados** (Input/Button/Select) | [x] `HOMOLOGADO 2026 · Forms` (2026-09-12) |
+| **Ligar** componentes existentes de `COMPONENTES` a los tokens | [ ] |
 | Homologar restos **SDS** → base única | [ ] |
 | Consolidar/deprecar colección legacy `Colección de variables` | [ ] |
 
