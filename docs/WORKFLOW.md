@@ -69,6 +69,13 @@ Cablear el flujo con `@docs/PROTOTYPING.md`.
 4. **Commit atómico** (ver abajo).
 5. Humano ejecuta **`/clear`** antes de la siguiente pantalla.
 
+## Organización del sandbox (evitar encimados)
+- Colocar cada frame nuevo en su **zona/sección** con márgenes (no en (0,0) por defecto).
+- ⚠️ **Dentro de una `SECTION`, `node.x/.y` son RELATIVAS a la sección**, no a la página. Al meter frames a una
+  sección, fijar sus coords relativas (dejar ~96px arriba para la etiqueta) y luego `resizeWithoutConstraints`
+  al bounding box de los hijos + padding. Verificar con screenshot que ningún frame se salga del borde.
+- Zonas actuales: `FIEL — reproducción fiel` (trabajo bueno) y `BORRADORES desviados — a REEMPLAZAR`.
+
 ## Reglas de oro
 - Nunca "haz todo responsive". Siempre una pantalla/flujo a la vez.
 - Nunca tocar las páginas fuente Desktop (`1.0 Login` … `10 Recompra`), `COMPONENTES` ni `PROPUESTAS`.
