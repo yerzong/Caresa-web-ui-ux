@@ -13,6 +13,17 @@ Formato:
 
 ---
 
+## [2026-09-11] — Fase 0: tokenización de color + tipografía
+- **Extracción real:** scan de `COMPONENTES` → paleta (marca lima `#AEF803` + verde `#006C00`, neutrales
+  tipo Untitled UI, semánticos azul/naranja/ámbar/rojo) y tipografía Inter (36/26/22/20/16/14/10).
+- **Figma:** creada colección **`Color`** (`40000009:4577`) con **23 tokens** (brand/text/bg/border/semantic/base)
+  con scopes correctos; creados **9 estilos de texto** Inter (Display/H1/H2/H3, Body×3, Label×2).
+- **Docs:** `DESIGN_SYSTEM.md` con tablas reales; `PROJECT_MAP.md` Fase 0 actualizada.
+- **Pendiente:** ligar los componentes de `COMPONENTES` a estos tokens (homologación), migrar restos SDS,
+  deprecar colección legacy. Luego: responsivar módulo **Login**.
+
+---
+
 ## [2026-09-11] — Orquestación del cerebro + estructura responsive (gran pasada)
 - **Corrección de análisis:** el archivo NO era "solo PROPUESTAS". Vía Plugin API se confirmó la
   **app Desktop real** en páginas por módulo (`1.0 Login` … `10 Recompra`) + `COMPONENTES`. Ver **ADR 0003**.

@@ -16,10 +16,12 @@ Objetivo por pantalla: existir en **Desktop (fuente) → Tablet (834) → Mobile
 | Tarea | Estado |
 |---|---|
 | Colección `Breakpoints` (Desktop/Tablet/Mobile) | [x] creada 2026-09-11 |
-| Tokens de **color** (marca verde/lima + neutrales + semánticos) | [ ] |
-| Estilos/variables de **tipografía** (Inter, escala display→small) | [ ] |
-| Inventario de **componentes maestros** (`COMPONENTES`) | [ ] |
+| Tokens de **color** (marca lima/verde + neutrales + semánticos) | [x] 23 tokens, colección `Color` (2026-09-11) |
+| Estilos de **tipografía** (Inter, Display→Label) | [x] 9 estilos de texto (2026-09-11) |
+| Inventario de **componentes maestros** (`COMPONENTES`) | [~] frecuencias documentadas; falta detalle por variante |
+| **Ligar** componentes de `COMPONENTES` a los tokens | [ ] |
 | Homologar restos **SDS** → base única | [ ] |
+| Consolidar/deprecar colección legacy `Colección de variables` | [ ] |
 
 ---
 
