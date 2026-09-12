@@ -10,10 +10,10 @@ de responsivar. Objetivo por pantalla elegida: existir en **Desktop → Tablet (
 
 ---
 
-## PASO 0 — Decisiones de dirección (bloquean todo lo demás)
-- [ ] **Layout de dashboard:** ¿`PROPUESTA SIDEBAR` o `PROPUESTA BANNER / NAVBAR`?
-- [ ] **Variante de Login:** ¿`Propuesta A (branded)` o `Login Flow (SDS)`?
-- [ ] **Design system único:** ¿SDS (`--sds-*`) o componentes tipo Untitled UI? (hoy está mezclado)
+## PASO 0 — Decisiones de dirección ✅ CERRADO (ver ADR 0002)
+- [x] **Layout de dashboard:** **Sidebar** (ERP con muchos módulos; drawer en móvil).
+- [x] **Variante de Login:** **Layout Propuesta A** reconstruido con el DS único.
+- [x] **Design system único:** **Componentes tipo Untitled UI** + tokens (Inter, marca verde/lima).
 
 ---
 
