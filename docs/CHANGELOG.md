@@ -20,8 +20,10 @@ Formato:
 - **Login Mobile fiel** (`40000064:4663`): clon del Desktop real `664:13013` reacomodado — conserva gradiente+textura,
   logo, headline, stepper con íconos 3D, inputs con ícono (mail/lock)+sombra, botón lima con glow, link subrayado.
   Base fiel Desktop en sandbox: `40000062:4582`.
-- **Pendiente:** afinar wrap de subtítulo y ancho del stepper; decidir tratamiento de la ilustración 3D en móvil;
-  Tablet fiel; usar componentes EXISTENTES como átomos; **reemplazar** los borradores desviados (Login/Inicio previos).
+- **Login Tablet fiel** (`40000071:4734`): mismo método (clon + reacomodo), banner de marca 834×460 + form real centrado.
+- **Sandbox ordenado** en 2 secciones: `FIEL — reproducción fiel` (`40000069:4734`) y `BORRADORES desviados — a REEMPLAZAR` (`40000069:4735`). Sin encimados.
+- **Pendiente:** Paso 2 (Estación) fiel; pulir clip menor del subtítulo del banner móvil; **reemplazar/eliminar** los borradores
+  desviados que están en `03_Mobile`/`02_Tablet` (Login inventado) por los fieles; luego seguir módulos con fidelidad.
 
 ---
 
