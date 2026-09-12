@@ -13,6 +13,18 @@ Formato:
 
 ---
 
+## [2026-09-12] — Inicio (MAIN): Home "Autopartes" responsive + Login movido a final
+- **Login:** movido de sandbox a `03_Mobile` / `02_Tablet` (aprobado).
+- **Inicio Home** (`responsive-architect`, fuente `539:44895`): generados en sandbox
+  `Mobile - Inicio_01_Home` `40000047:4577`, `Tablet - Inicio_01_Home` `40000051:4594`, `Drawer/Nav` `40000047:4686`.
+  - Navbar oscuro → Mobile hamburguesa + drawer; Tablet nav parcial + hamburguesa.
+  - Grid de productos 5→3 (tablet)/2 (mobile), tarjeta `Card_Product` con tokens; buscador = instancia `Input/Text`;
+    chips de filtro con wrap; paginación simplificada; contenido de producto real.
+  - **Prototipo:** hamburguesa → drawer (OVERLAY, DISSOLVE) + ✕ CLOSE. `overlayPositionType`/scrim read-only por API → ajuste manual.
+- **Pendiente:** UX review de Inicio; conectar nav→módulos; resto de pantallas del módulo.
+
+---
+
 ## [2026-09-12] — Componentes de formulario homologados (con estados)
 - **Creado** (`design-system-librarian`) en `COMPONENTES` → sección `HOMOLOGADO 2026 · Forms` (`40000034:4891`):
   - `Input/Text` (`40000034:4890`): Default / Focus / Error / Disabled

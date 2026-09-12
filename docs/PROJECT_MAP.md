@@ -31,7 +31,7 @@ Objetivo por pantalla: existir en **Desktop (fuente) → Tablet (834) → Mobile
 | # | Módulo | Página (ID) | Homolog. | Tablet | Mobile | UX ✔ | Prototipo |
 |---|---|---|---|---|---|---|---|
 | 1 | Login | `1.0 Login` (`0:1`) | [~] | [x] | [x] | [~] | [x] |
-| 2 | Inicio (MAIN) | `2.0 Inicio (MAIN)` (`4:2`) | [ ] | [ ] | [ ] | [ ] | [ ] |
+| 2 | Inicio (MAIN) | `2.0 Inicio (MAIN)` (`4:2`) | [~] | [~] | [~] | [ ] | [~] |
 | 3 | Carrito | `3 Carrito` (`13:96`) | [ ] | [ ] | [ ] | [ ] | [ ] |
 | 4 | Catálogos | `4 Catálogos` (`13:100`) | [ ] | [ ] | [ ] | [ ] | [ ] |
 | 5 | Consultas | `5 Consultas` (`13:104`) | [ ] | [ ] | [ ] | [ ] | [ ] |
@@ -51,6 +51,13 @@ UX aplicado: placeholders/labels/stepper `tertiary`→`secondary` (pasa 4.5:1), 
 Borde de input accesible aplicado (token `border/input` #8C8F96, 3.24:1).
 **Pendiente (variantes de componente — `design-system-librarian`):** estados `focus`/`error`/`loading`,
 área táctil del icono ojo/chevron, indicador de paso completado.
+
+### Inicio (MAIN) — Home catálogo "Autopartes" (en `04_Claude_Sandbox`)
+Fuente Desktop: `539:44895`. Generados: `Mobile - Inicio_01_Home` `40000047:4577` · `Tablet - Inicio_01_Home`
+`40000051:4594` · `Drawer/Nav` `40000047:4686`. Transforms: navbar→hamburguesa+drawer, grid 5→3(tablet)/2(mobile),
+buscador Input, chips wrap, paginación simplificada. Prototipo: hamburguesa→drawer (overlay) + ✕ cierra
+(posición/animación del overlay se ajustan a mano — API read-only).
+**Pendiente:** UX review; conectar nav items del drawer a módulos; resto de pantallas del módulo Inicio.
 
 ## Orden sugerido
 1. **Fase 0 — fundaciones** (tokens color + tipografía) antes de responsivar en serie.
