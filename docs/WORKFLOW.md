@@ -39,7 +39,16 @@ Corregir valores sueltos en la fuente para que use tokens/variables/componentes 
 > "Revisa `[Módulo] - [Nombre]`. Reemplaza colores/tipografías/espaciados manuales por la variable
 > o componente homologado según `@docs/DESIGN_SYSTEM.md`." (usa `figma-auditor` para detectar primero).
 
-### Fase 3 — Generación responsive en Sandbox
+### Fase 3 — Generación responsive en Sandbox (MÉTODO DE FIDELIDAD)
+**Regla:** NO redibujar/reinventar. Se **clona la pantalla Desktop real** y se **reacomoda** por breakpoint,
+conservando texturas, ilustraciones, íconos y componentes exactos. Pasos:
+1. `node.clone()` de la pantalla real → `04_Claude_Sandbox` (base fiel).
+2. Reacomodar: root a `VERTICAL` (móvil), `rescale()` de paneles decorativos (marca) para caber en el ancho,
+   `layoutSizingHorizontal='FILL'` en el formulario, `clipsContent=true` en el panel de marca, y
+   constreñir los frames de texto a `FILL` + `textAutoResize='HEIGHT'` para que envuelvan (no se recorten).
+3. Verificar con `get_screenshot` **contra el original** — si se ve distinto, está mal.
+Los átomos salen de los componentes **existentes** (`_Input field base`, `Button`, `_Nav item base`), no de nuevos.
+
 Crear las variantes Tablet/Mobile en `04_Claude_Sandbox`.
 > "Basado en `[Módulo] - [Nombre]` homologada, crea Tablet (834) y Mobile (393) en `04_Claude_Sandbox`
 > aplicando `@docs/RESPONSIVE_TOKENS.md`: variables de `Breakpoints`, Auto Layout `Fill`, transforms

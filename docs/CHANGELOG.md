@@ -13,6 +13,18 @@ Formato:
 
 ---
 
+## [2026-09-12] — CORRECCIÓN DE RUMBO: fidelidad al diseño existente
+- **Feedback del usuario:** lo generado (Login/Inicio responsive) se desvió a un **rediseño/propuesta**;
+  el objetivo es **adaptar el diseño existente idéntico**, no inventar. Los borradores previos quedan como desechables.
+- **Regla de fidelidad** añadida a `CLAUDE.md` (#1) y método clone-and-reflow en `WORKFLOW.md`.
+- **Login Mobile fiel** (`40000064:4663`): clon del Desktop real `664:13013` reacomodado — conserva gradiente+textura,
+  logo, headline, stepper con íconos 3D, inputs con ícono (mail/lock)+sombra, botón lima con glow, link subrayado.
+  Base fiel Desktop en sandbox: `40000062:4582`.
+- **Pendiente:** afinar wrap de subtítulo y ancho del stepper; decidir tratamiento de la ilustración 3D en móvil;
+  Tablet fiel; usar componentes EXISTENTES como átomos; **reemplazar** los borradores desviados (Login/Inicio previos).
+
+---
+
 ## [2026-09-12] — Componentes: NavItem + estados de grid; permisos sin prompt
 - **Config:** `.claude/settings.json` autoriza `use_figma` y `Bash(curl:*)` sin prompt (flujo Figma fluido).
 - **NavItem** (`40000060:4886`): Default / Active (indicador 3px lima) / Hover — para drawer/nav oscuro.

@@ -28,6 +28,16 @@ información ni inventar cosas**.
 
 ## Reglas rígidas (NO negociables)
 
+### Fidelidad al diseño existente (LA REGLA #1)
+- **NO rediseñar. NO proponer. NO inventar.** El trabajo es **adaptar el diseño Desktop que YA existe**
+  a Tablet/Mobile manteniéndolo **visualmente idéntico**: mismos colores, imágenes/ilustraciones, estilo,
+  tipografía, iconografía, espaciados y **componentes**. Solo cambia el **layout** (reflow/reacomodo) por breakpoint.
+- Antes de responsivar una pantalla: extraer su diseño real con `get_design_context` + `get_screenshot`
+  y **reproducirlo 1:1**. Si algo se ve distinto al original, está mal.
+- Los **componentes atómicos** se derivan de los **existentes** (`COMPONENTES` y pantallas reales),
+  deben ser **genéricos, reutilizables y totalmente responsivos** — no versiones "limpias" alternativas.
+- Mantener los `.md` actualizados en cada paso para no perder el rastro ni la fidelidad.
+
 ### Alcance y seguridad del diseño
 - **NUNCA** modifiques las páginas Desktop fuente de verdad: `1.0 Login`, `2.0 Inicio (MAIN)`,
   `3 Carrito`, `4 Catálogos`, `5 Consultas`, `6 Corte de caja`, `7 Pedidos`, `8 Chat`, `9 Abonos`,
