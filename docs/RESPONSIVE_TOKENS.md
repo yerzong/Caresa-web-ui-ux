@@ -1,61 +1,66 @@
 # Matriz de Homologación Responsive
 
 Reglas para traducir la versión **Web/Desktop** (fuente de verdad) a **Tablet** y **Mobile**.
-Los valores concretos de tipografía, grid y componentes se **rellenan tras el análisis** del
-design system real (`@docs/DESIGN_SYSTEM.md`). Lo de abajo es la estructura + valores base
-recomendados; se ajustan a lo que exista en Figma.
+Valores base verificados contra Untitled UI, WCAG 2.2 y prácticas de grid 8pt (2025-2026).
+Ajustar a lo que exista en Figma cuando se afinen los tokens de marca.
+
+## Método correcto (una sola pantalla que responde, sin duplicar)
+1. Auto Layout en todo: contenedores raíz `Fill` en ancho, `Hug` en alto.
+2. **Variables por modo** (colección `Breakpoints`) ligadas a padding/gap/min-max/tamaño de fuente.
+3. Cambiar el **modo** del frame (Desktop/Tablet/Mobile) reflowa todo el subárbol.
+4. Los cambios de **dirección** (fila→columna) y **hug/fill** NO se pueden ligar a variable →
+   requieren variante o **script `use_figma`** (lo hace `responsive-architect`).
 
 ## Breakpoints / Frames
-| Dispositivo | Ancho frame | Referencia | Uso |
+| Dispositivo | Ancho frame | Referencia | Modo variable |
 |---|---|---|---|
-| Desktop | 1440 px | MacBook / Web | Fuente de verdad (existente) |
-| Tablet | 834 px | iPad Pro 11" | Adaptación intermedia |
-| Mobile | 393 px | iPhone 15 | Adaptación principal |
+| Desktop | 1440 px | MacBook / Web | `Desktop` (fuente de verdad) |
+| Tablet | 834 px | iPad Pro 11" | `Tablet` |
+| Mobile | 393 px | iPhone 15 | `Mobile` |
 
-## 1. Tipografía (Desktop → Mobile)
-> ⏳ Rellenar con la escala real del archivo. Base sugerida:
+## Variables `Breakpoints` (ya creadas en Figma)
+Colección `VariableCollectionId:40000007:4577`. Valores por modo `[Desktop, Tablet, Mobile]`:
 
-| Rol | Desktop | Tablet | Mobile |
-|---|---|---|---|
-| Display | 48 | 40 | 32 |
-| H1 | 32 | 28 | 24 |
-| H2 | 24 | 22 | 20 |
-| H3 | 20 | 18 | 18 |
-| Body | 16 | 16 | 16 |
-| Small | 14 | 14 | 14 |
+| Variable | Scope | Desktop | Tablet | Mobile |
+|---|---|---|---|---|
+| `container/max-width` | width/height | 1216 | 768 | 361 |
+| `page/margin` | width/gap | 112 | 32 | 16 |
+| `section/padding` | gap/width | 32 | 24 | 16 |
+| `grid/gutter` | gap | 32 | 24 | 16 |
+| `touch/min-target` | width/height | 40 | 40 | 44 |
+| `type/display` | font-size | 60 | 44 | 36 |
+| `type/h1` | font-size | 36 | 32 | 28 |
+| `type/h2` | font-size | 30 | 26 | 24 |
+| `type/h3` | font-size | 24 | 22 | 20 |
+| `type/body` | font-size | 16 | 16 | 16 |
+| `type/small` | font-size | 12 | 12 | 12 |
 
-## 2. Grid y contenedores
-| Propiedad | Desktop | Tablet | Mobile |
-|---|---|---|---|
-| Columnas | 12 | 8 | 4 |
-| Max-width | 1440 | 834 | 393 |
-| Margen lateral | 80 | 32 | 16 |
-| Gutter | 24 | 16 | 16 |
-| Padding contenedor | 64 | 32 | 16 |
+> Line-height objetivo ≈ 1.5 en body (16/24), ~1.25 en headings. Grid columnas 12/8/4 (documental,
+> no bindable: se aplica con el número de columnas del Layout Grid por breakpoint).
 
-## 3. Comportamiento de componentes reutilizables
-> ⏳ Rellenar con los componentes reales. Reglas base:
-
+## Comportamiento de componentes (Desktop → Mobile)
 | Componente | Desktop | Mobile |
 |---|---|---|
-| Navbar | Links horizontales visibles | Hamburguesa → drawer |
-| Sidebar | Fija a la izquierda | Colapsa a drawer / oculta |
-| Card horizontal | Auto Layout → (horizontal) | Auto Layout ↓ (vertical), imagen `Fill` |
-| Button primario | `Hug contents` | `Fill container` (ancho completo) |
-| Grid de N columnas | N columnas | 1 columna vertical |
-| Tabla de datos | Tabla completa | Cards apiladas o scroll horizontal |
+| Navbar superior | Links horizontales visibles | Hamburguesa → **drawer** (overlay) |
+| Sidebar | Fija a la izquierda | Off-canvas **drawer** / tab bar inferior |
+| Tabla de datos | Tabla completa | **Cards apiladas** (label:valor) |
+| Grid N columnas (3–4) | N columnas | 1 columna (Tablet suele 2) |
+| Card horizontal | Auto Layout → (fila) | Auto Layout ↓ (columna), imagen `Fill` |
+| Botón primario | `Hug contents` | `Fill container` (ancho completo) |
+| Fila de filtros | Horizontal | Stack vertical o sheet colapsable |
+| Modal centrado | Centrado | Full-screen sheet |
 
-## 4. Reglas de Auto Layout responsive
-- Contenedores raíz: `Fill container` en ancho.
-- Elementos internos: `Fill` o `Fixed` según breakpoint (documentar por componente).
-- Espaciados y paddings vía **variable**, nunca hardcoded.
-- Horizontal que no cabe → vertical.
+## Reglas de Auto Layout responsive
+- Contenedores raíz: `Fill container` en ancho; padding/gap vía **variable** `Breakpoints`.
+- Horizontal que no cabe → vertical (aplicar por script si depende del modo).
+- Posición absoluta solo para badges/overlays.
+- Móvil: respetar `touch/min-target` (44) en toda acción táctil.
 
-## 5. Variables de Figma (recomendado)
-Cuando el archivo lo permita, usar **modos/variables** para anchos y espaciados en lugar de
-valores fijos, para que un mismo componente responda por breakpoint sin duplicar lógica.
+## Accesibilidad al responsivar (mínimos, ver `UX_PRINCIPLES.md`)
+- Sin scroll horizontal a 393/320 px (WCAG 1.4.10 Reflow).
+- Texto body ≥ 16 px en móvil; contraste ≥ 4.5:1 (texto) / 3:1 (UI).
 
 ---
 
-> Mantener esta matriz sincronizada con `DESIGN_SYSTEM.md`. Si un valor cambia aquí,
-> registrarlo en `CHANGELOG.md`.
+> Mantener sincronizada con `DESIGN_SYSTEM.md`. Si un valor cambia aquí, registrarlo en `CHANGELOG.md`
+> y, si aplica, actualizar la variable en la colección `Breakpoints`.

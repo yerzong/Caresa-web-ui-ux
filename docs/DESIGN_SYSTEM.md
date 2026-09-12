@@ -1,11 +1,18 @@
 # Design System — CARESA WEB UI 2026
 
-Tokens, estilos y componentes detectados en el archivo Figma.
+Tokens, estilos y componentes del archivo Figma. Componentes en la página `COMPONENTES`.
 
-> ⚠️ **El archivo mezcla dos sistemas.** Decisión pendiente (ver `PROJECT_MAP.md` PASO 0):
-> consolidar a UNO solo antes de responsivar.
-> - **SDS — Simple Design System** (tokens `--sds-*`) → usado en los login "SDS".
-> - **Componentes tipo Untitled UI** → usados en los dashboards.
+> ⚠️ **Estado de tokenización: casi nulo.** El archivo tiene **0 estilos de color, 0 estilos de texto**
+> y solo 2 variables de color previas (`primary-Caressa`, `False-Default`) + la nueva colección
+> **`Breakpoints`**. Homologar = **tokenizar de cero** (color + tipografía) sobre los componentes existentes.
+> Tarea del `design-system-librarian`.
+>
+> Además hay restos de **SDS** (`--sds-*`) en algunas pantallas que se migran a la base única
+> (componentes tipo **Untitled UI** + tokens de marca). Tipografía base: **Inter**.
+
+## 0. Colección `Breakpoints` (creada 2026-09-11) ✅
+`VariableCollectionId:40000007:4577` · modos `Desktop`/`Tablet`/`Mobile`. 11 variables numéricas de
+layout y tipografía. Tabla de valores en `RESPONSIVE_TOKENS.md`.
 
 ## 1. Tokens SDS detectados (de `get_variable_defs`)
 
@@ -64,4 +71,4 @@ Tokens, estilos y componentes detectados en el archivo Figma.
 
 ---
 
-> Fuente: página `PROPUESTAS` del archivo `OL0CHY8eN9zjNeGmHg0el3`. Sincronizar con `RESPONSIVE_TOKENS.md`.
+> Fuente: página `PROPUESTAS` del archivo de trabajo `DRcQy7uKgoL5AlMPK0fJU7` (copia editable). Sincronizar con `RESPONSIVE_TOKENS.md`.

@@ -1,68 +1,70 @@
 # Análisis del Archivo Figma
 
-Análisis de la estructura del archivo **CARESA WEB UI 2026** (`fileKey: OL0CHY8eN9zjNeGmHg0el3`).
+Análisis de la estructura del archivo de trabajo **CW-Responsive-prueba** (`fileKey: DRcQy7uKgoL5AlMPK0fJU7`),
+copia del original **CARESA WEB UI 2026** (`fileKey: OL0CHY8eN9zjNeGmHg0el3`, ahora solo lectura/deprecado).
 
 ## Estado
-🟢 **Lectura habilitada** · 🔴 **Escritura BLOQUEADA** (archivo en modo solo lectura para la cuenta Gerson).
+🟢 **Lectura habilitada** · 🟢 **Escritura HABILITADA** (verificada 2026-09-11 en la copia).
 
-Cuenta conectada: **Gerson Garcia** (gersongarcia@zurco.com.mx).
-Prueba de escritura (2026-09-11): `createPage` → `Can't call "createPage" in read-only mode`.
+Cuenta conectada: **Gerson Garcia** (gersongarcia@zurco.com.mx), asiento **Full** en *Zurco Designio*.
 
-### Para habilitar escritura (elegir una)
-- **A (recomendada):** mover el archivo al team **Zurco Designio** (Gerson tiene asiento Full).
-- **B:** el dueño comparte a `gersongarcia@zurco.com.mx` como **"can edit"**.
-- **C (evitar):** usar cuenta de Dilan (afecta también la otra terminal de Zurco).
+## Hallazgo principal ✅ (corrige análisis previo)
+El archivo **NO** es "una sola página de propuestas". Al inspeccionar con el Plugin API se ve la
+**estructura real**: la **app Desktop completa ya existe**, organizada en **páginas por módulo**,
+más una página `COMPONENTES` (design system) y una página `PROPUESTAS` (solo exploraciones).
 
-## Hallazgo principal ⚠️
-El archivo tiene **una sola página: `PROPUESTAS`** y contiene **propuestas de diseño
-(variantes en exploración)**, NO una aplicación web terminada con un set fijo de pantallas.
-Todo está en **Desktop**; **no existe todavía ninguna versión Tablet/Mobile**.
+> El análisis anterior solo veía `PROPUESTAS` porque `get_metadata` sin `nodeId` no listaba todas
+> las páginas. Esto restaura la **misión original**: responsivar la app Desktop existente (no "elegir
+> una propuesta"). Ver ADR 0003.
 
-Esto cambia la estrategia: **antes de responsivar hay que ELEGIR la propuesta ganadora**
-(layout con sidebar vs. navbar, y variante de login), consolidar el design system, y
-recién entonces adaptar a Tablet/Mobile. No se responsivizan propuestas que competirán entre sí.
+## Páginas reales (15 en total)
 
-## Estructura real (página `PROPUESTAS`, id `184:3079`)
+### Fuente de verdad Desktop — módulos (SOLO LECTURA)
+Cada página es un **board de flujos** (con connectors) que contiene **varias pantallas Desktop** por módulo.
 
-Canvas ~21908×21262 px. Secciones de nivel superior:
+| Página | ID | Contenido (secciones top-level) |
+|---|---|---|
+| `1.0 Login` | `0:1` | `LOGIN` (5944×1343) + assets |
+| `2.0 Inicio (MAIN)` | `4:2` | FILTRO MANUAL, BARRA DE VENTA, AUTOPARTES, PROMOCIONES, FILTRO INTELIGENTE, CATEGORÍAS, filtros por categoría, INICIO, INICIO - PERFIL |
+| `3 Carrito` | `13:96` | MIGRACIÓN MÓDULO CARRITO (x2), CARRITO - MÁS OPCIONES, CARRITO DE VENTA RÁPIDA |
+| `4 Catálogos` | `13:100` | CATÁLOGOS - CREAR/ABRIR BURBUJAS, Modal |
+| `5 Consultas` | `13:104` | VENTAS, CRÉDITOS, GARANTÍAS |
+| `6 Corte de caja` | `595:70899` | FILTRO MANUAL (10187×8443) |
+| `7 Pedidos` | `681:51807` | PEDIDOS, Pantalla por defecto, SEGUIMIENTO ENVÍO (ADMIN), PEDIDOS - INTERFAZ/ACCIONES, VER PEDIDO (estados) |
+| `8 Chat` | `681:53445` | MÓDULO CHAT WEB (12896×7451) |
+| `9 Abonos` | `681:61345` | ABONOS (14388×2577) |
+| `10 Recompra` | `681:61346` | MÓDULO DE COMPRAS (21506×3137) |
 
-### 1. `PROPUESTA SIDEBAR` (id `184:4559`) — Dashboards con sidebar izquierdo
-Layout de panel administrativo con navegación lateral. Contiene 3 sub-propuestas:
-- `PROPUESTA 1` (id `189:5961`) — 1 pantalla Desktop (1856×1131)
-- `PROPUESTA 2` (id `189:5962`) — varias pantallas Desktop (1856×1077)
-- `PROPIESTA 3` (id `189:5963`) *(nombre con typo en el archivo)* — varias pantallas Desktop
+### Design system (SOLO LECTURA salvo tarea de librarian)
+| Página | ID | Contenido |
+|---|---|---|
+| `COMPONENTES` | `747:28881` | `COMPONENTES - NO BORRAR` (3280×7409) + `Autopartes - Section` |
 
-### 2. `PROPUESTA BANNER / NAVBAR` v1 (id `184:8903`) — Dashboards con navbar superior
-Alternativa al sidebar: navegación en barra superior. (6358×1520)
+### Exploraciones (referencia, NO es la app)
+| Página | ID | Contenido |
+|---|---|---|
+| `PROPUESTAS` | `184:3079` | PROPUESTA SIDEBAR, PROPUESTA BANNER/NAVBAR (x2), PROPUESTA LOGIN, INICIO |
 
-### 3. `PROPUESTA BANNER / NAVBAR` v2 (id `211:6276`) — Más variantes de navbar
-Conjunto ampliado de dashboards con navbar superior. (10103×4153, varias pantallas Desktop)
+### Páginas de trabajo responsive (creadas 2026-09-11 — ESCRITURA)
+| Página | ID | Rol |
+|---|---|---|
+| `02_Tablet` | `40000003:4579` | Pantallas Tablet (834) aprobadas |
+| `03_Mobile` | `40000003:4580` | Pantallas Mobile (393) aprobadas |
+| `04_Claude_Sandbox` | `40000003:4581` | Zona de generación/pruebas |
 
-### 4. `PROPUESTA LOGIN` (id `184:14677`) — Flujos de acceso
-- `Propuesta A — CARESA WEB UI 2026` (id `184:14301`): branded (Brand Panel verde + Form Panel).
-  - `Login 2026 — Propuesta A` (1440×900) — usuario/email + contraseña.
-  - `Login 2026 — Propuesta A (Paso 2)` (1440×900) — paso 2 (selección de caja/sucursal).
-- `CARESA WEB UI 2026 — Login Flow (SDS)` (id `184:14369`): usa Simple Design System.
-  - `CARESA — Login Paso 1 (SDS)` (1440×900)
-  - `CARESA — Login Paso 2 · Sucursal (SDS)` (1440×900)
-  - + variantes adicionales de Login Paso 1 (ids `193:5451`, `193:5462`)
+## Estado de tokenización (⚠️ casi nulo)
+- **Variables:** 1 colección previa (`Colección de variables`) con solo 2 colores (`False-Default`, `primary-Caressa`).
+- **+ NUEVO:** colección **`Breakpoints`** (`VariableCollectionId:40000007:4577`) con modos **Desktop/Tablet/Mobile**
+  y 11 variables numéricas (container, márgenes, gutter, padding, escala tipográfica, touch target). Ver `RESPONSIVE_TOKENS.md`.
+- **Estilos de color:** 0 · **Estilos de texto:** 0.
+- **Implicación:** homologar = **tokenizar de cero** color + tipografía sobre los componentes existentes.
+  Tarea del `design-system-librarian`.
 
-## Sistemas de diseño detectados (⚠️ mezcla)
-- **Simple Design System (SDS):** los login "SDS" usan tokens `--sds-*` (ver `DESIGN_SYSTEM.md`).
-- **Componentes tipo Untitled UI:** los dashboards usan `_Nav item base`, `Featured icon`,
-  `Metric item`, `_Button group base`, `_Pagination button group base`, `Table cell`, etc.
-- Tipografía base: **Inter**.
-- **Implicación:** homologar a UN solo sistema antes de responsivar.
+## Sistemas de diseño observados
+- Componentes tipo **Untitled UI** en dashboards (tablas, métricas, nav items, paginación).
+- Login/algunas pantallas con restos **SDS** (`--sds-*`) → migrar a la base única.
+- Tipografía base: **Inter**. Marca: verde/lima (var `primary-Caressa`).
 
-## Volumen (densidad del archivo)
-~1005 "Table cell", 704 "Text", 266 "Avatar", 257 "Button", 133 "_Nav item base",
-55 "Metric item"/"Credit card"/"Heading". Archivo denso → trabajar por sección/pantalla.
-
-## Inventario de pantallas Desktop
-15 frames "Desktop" en total (dashboards) + 4-6 frames de Login (1440×900). Detalle y
-naming en `PROJECT_MAP.md`.
-
-## Pendiente de análisis
-- [ ] Capturas individuales por propuesta para nombrar cada dashboard por su función.
-- [ ] Confirmar cuál propuesta (sidebar vs navbar) es la dirección elegida.
-- [ ] Extraer set completo de variables/estilos del design system.
+## Método de trabajo (recordatorio)
+Archivo **enorme** y denso → trabajar **una pantalla/módulo a la vez**, en `04_Claude_Sandbox`,
+usando `get_metadata` para ubicar nodos y `get_design_context`/`get_screenshot` solo sobre el nodo objetivo.

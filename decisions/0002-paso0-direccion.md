@@ -1,7 +1,9 @@
 # ADR 0002 — PASO 0: Dirección elegida
 
 - **Fecha:** 2026-09-11
-- **Estado:** Aceptado
+- **Estado:** ⚠️ **SUPERADO por ADR 0003** — su premisa ("el archivo es solo PROPUESTAS, hay que elegir
+  una propuesta") era incorrecta: la app Desktop real ya existe por módulos. Se conserva por historial.
+  Sigue válido: base de componentes Untitled-style + migrar restos SDS.
 
 ## Contexto
 El archivo `PROPUESTAS` tenía variantes en competencia (3 sidebar, 2 navbar, 2 login) mezclando
