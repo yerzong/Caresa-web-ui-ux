@@ -3,9 +3,15 @@
 Análisis de la estructura del archivo **CARESA WEB UI 2026** (`fileKey: OL0CHY8eN9zjNeGmHg0el3`).
 
 ## Estado
-🟢 **Lectura habilitada** (2026-09-11). Escritura por confirmar cuando se llegue a la fase de generación.
+🟢 **Lectura habilitada** · 🔴 **Escritura BLOQUEADA** (archivo en modo solo lectura para la cuenta Gerson).
 
 Cuenta conectada: **Gerson Garcia** (gersongarcia@zurco.com.mx).
+Prueba de escritura (2026-09-11): `createPage` → `Can't call "createPage" in read-only mode`.
+
+### Para habilitar escritura (elegir una)
+- **A (recomendada):** mover el archivo al team **Zurco Designio** (Gerson tiene asiento Full).
+- **B:** el dueño comparte a `gersongarcia@zurco.com.mx` como **"can edit"**.
+- **C (evitar):** usar cuenta de Dilan (afecta también la otra terminal de Zurco).
 
 ## Hallazgo principal ⚠️
 El archivo tiene **una sola página: `PROPUESTAS`** y contiene **propuestas de diseño
