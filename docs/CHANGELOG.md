@@ -13,6 +13,21 @@ Formato:
 
 ---
 
+## [2026-09-11] — Login responsive (piloto end-to-end) en sandbox
+- **Generado** (`responsive-architect`) en `04_Claude_Sandbox`: 4 frames con tokens `Color` + estilos de
+  texto + variables `Breakpoints` (modo explícito por frame):
+  - `Mobile - Login_01_Acceso` `40000017:4592` · `Mobile - Login_02_Estacion` `40000019:4592`
+  - `Tablet - Login_01_Acceso` `40000020:4592` · `Tablet - Login_02_Estacion` `40000021:4592`
+  - Mobile = 1 columna; Tablet = card centrada sobre fondo lima.
+- **Fix:** cards de Tablet colapsaban (alto FIJO 10px) → `primaryAxisSizingMode: AUTO`; label Paso 2 corregido.
+- **UX review** (`ui-ux-reviewer`, WCAG 2.2 AA): recalculé contraste (el reviewer sobreestimó fallos).
+  Aplicados: `tertiary`→`secondary` en placeholders/labels/stepper (5.25:1), labels de sección 10→14px.
+  Pendiente (variantes de componente): foco, error/loading, borde input ≥3:1, área táctil icono ojo.
+- **Prototipo** (`figma-prototyper`): "Continuar" Paso 1 → Paso 2 (Smart Animate) en mobile y tablet.
+- **Pendiente:** aprobar en sandbox y mover a `02_Tablet`/`03_Mobile`; luego siguiente módulo.
+
+---
+
 ## [2026-09-11] — Fase 0: tokenización de color + tipografía
 - **Extracción real:** scan de `COMPONENTES` → paleta (marca lima `#AEF803` + verde `#006C00`, neutrales
   tipo Untitled UI, semánticos azul/naranja/ámbar/rojo) y tipografía Inter (36/26/22/20/16/14/10).

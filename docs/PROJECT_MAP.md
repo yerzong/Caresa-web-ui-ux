@@ -29,7 +29,7 @@ Objetivo por pantalla: existir en **Desktop (fuente) → Tablet (834) → Mobile
 
 | # | Módulo | Página (ID) | Homolog. | Tablet | Mobile | UX ✔ | Prototipo |
 |---|---|---|---|---|---|---|---|
-| 1 | Login | `1.0 Login` (`0:1`) | [ ] | [ ] | [ ] | [ ] | [ ] |
+| 1 | Login | `1.0 Login` (`0:1`) | [ ] | [~] | [~] | [~] | [~] |
 | 2 | Inicio (MAIN) | `2.0 Inicio (MAIN)` (`4:2`) | [ ] | [ ] | [ ] | [ ] | [ ] |
 | 3 | Carrito | `3 Carrito` (`13:96`) | [ ] | [ ] | [ ] | [ ] | [ ] |
 | 4 | Catálogos | `4 Catálogos` (`13:100`) | [ ] | [ ] | [ ] | [ ] | [ ] |
@@ -41,6 +41,14 @@ Objetivo por pantalla: existir en **Desktop (fuente) → Tablet (834) → Mobile
 | 10 | Recompra / Compras | `10 Recompra` (`681:61346`) | [ ] | [ ] | [ ] | [ ] | [ ] |
 
 ---
+
+### Login — detalle (en `04_Claude_Sandbox`, pendiente aprobar y mover)
+Frames: `Mobile - Login_01_Acceso` `40000017:4592` · `Mobile - Login_02_Estacion` `40000019:4592`
+· `Tablet - Login_01_Acceso` `40000020:4592` · `Tablet - Login_02_Estacion` `40000021:4592`.
+Prototipo: Continuar (Paso 1) → Paso 2 (Smart Animate), mobile y tablet.
+UX aplicado: placeholders/labels/stepper `tertiary`→`secondary` (pasa 4.5:1), labels de sección 10→14px.
+**Pendiente (variantes de componente — `design-system-librarian`):** estados `focus`/`error`/`loading`,
+contraste de borde de input ≥3:1, área táctil del icono ojo/chevron, indicador de paso completado.
 
 ## Orden sugerido
 1. **Fase 0 — fundaciones** (tokens color + tipografía) antes de responsivar en serie.
