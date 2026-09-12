@@ -58,6 +58,16 @@ Marca CARESA = **lima `#AEF803`** + **verde `#006C00`**.
 
 > Para responsive, ligar `fontSize` a las variables `type/*` de `Breakpoints` (o intercambiar estilo por modo).
 
+## 2b. Espaciado y radios (átomos)
+Colección `Spacing` (`40000074:4577`), scopes GAP+WIDTH/HEIGHT:
+`space/2xs`=4 · `xs`=8 · `sm`=12 · `md`=16 · `lg`=24 · `xl`=32 · `2xl`=48 · `3xl`=64.
+
+Colección `Radius` (`40000074:4586`), scope CORNER_RADIUS:
+`radius/sm`=4 · `md`=8 · `lg`=12 · `xl`=16 · `full`=999.
+
+> Capa de átomos completa: **Color**, **Tipografía**, **Spacing**, **Radius**, **Breakpoints**.
+> Regla: ningún nodo con valores hardcodeados — todo vía estas variables/estilos.
+
 ## 3. Componentes (inventario por frecuencia — página `COMPONENTES`)
 | Componente | Aprox. instancias | Sistema |
 |---|---|---|
