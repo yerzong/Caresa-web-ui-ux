@@ -1,27 +1,62 @@
 # Análisis del Archivo Figma
 
-Análisis crudo de la estructura del archivo **CARESA WEB UI 2026**
-(`fileKey: OL0CHY8eN9zjNeGmHg0el3`).
+Análisis de la estructura del archivo **CARESA WEB UI 2026** (`fileKey: OL0CHY8eN9zjNeGmHg0el3`).
 
 ## Estado
-🔴 **Bloqueado** — el MCP de Figma responde *"you don't have edit access to this file"*.
+🟢 **Lectura habilitada** (2026-09-11). Escritura por confirmar cuando se llegue a la fase de generación.
 
-Cuenta conectada: **Gerson Garcia** (gersongarcia@zurco.com.mx)
-Planes: `gersongarcia's team` (View, starter) · `Zurco Designio` (Full, pro)
+Cuenta conectada: **Gerson Garcia** (gersongarcia@zurco.com.mx).
 
-### Para desbloquear
-1. Abrir el archivo en la **app de escritorio** de Figma y dejarlo activo/seleccionado.
-2. Confirmar rol **Editor** (no Viewer) sobre el archivo.
-3. Idealmente tener el archivo en el team **Zurco Designio** (asiento Full).
+## Hallazgo principal ⚠️
+El archivo tiene **una sola página: `PROPUESTAS`** y contiene **propuestas de diseño
+(variantes en exploración)**, NO una aplicación web terminada con un set fijo de pantallas.
+Todo está en **Desktop**; **no existe todavía ninguna versión Tablet/Mobile**.
 
-## Qué se documentará aquí (una vez con acceso)
-1. **Páginas** del documento (`get_metadata` sin nodeId).
-2. Por cada página relevante: frames de pantalla, tamaños y jerarquía (`get_metadata` con nodeId).
-3. **Variables y estilos** (`get_variable_defs`, `get_libraries`).
-4. Capturas de referencia de las pantallas clave (`get_screenshot`).
-5. Inventario que alimenta `PROJECT_MAP.md` y `DESIGN_SYSTEM.md`.
+Esto cambia la estrategia: **antes de responsivar hay que ELEGIR la propuesta ganadora**
+(layout con sidebar vs. navbar, y variante de login), consolidar el design system, y
+recién entonces adaptar a Tablet/Mobile. No se responsivizan propuestas que competirán entre sí.
 
-## Registro de análisis
-> (se añade aquí conforme se ejecuta el análisis)
+## Estructura real (página `PROPUESTAS`, id `184:3079`)
 
-- _Pendiente._
+Canvas ~21908×21262 px. Secciones de nivel superior:
+
+### 1. `PROPUESTA SIDEBAR` (id `184:4559`) — Dashboards con sidebar izquierdo
+Layout de panel administrativo con navegación lateral. Contiene 3 sub-propuestas:
+- `PROPUESTA 1` (id `189:5961`) — 1 pantalla Desktop (1856×1131)
+- `PROPUESTA 2` (id `189:5962`) — varias pantallas Desktop (1856×1077)
+- `PROPIESTA 3` (id `189:5963`) *(nombre con typo en el archivo)* — varias pantallas Desktop
+
+### 2. `PROPUESTA BANNER / NAVBAR` v1 (id `184:8903`) — Dashboards con navbar superior
+Alternativa al sidebar: navegación en barra superior. (6358×1520)
+
+### 3. `PROPUESTA BANNER / NAVBAR` v2 (id `211:6276`) — Más variantes de navbar
+Conjunto ampliado de dashboards con navbar superior. (10103×4153, varias pantallas Desktop)
+
+### 4. `PROPUESTA LOGIN` (id `184:14677`) — Flujos de acceso
+- `Propuesta A — CARESA WEB UI 2026` (id `184:14301`): branded (Brand Panel verde + Form Panel).
+  - `Login 2026 — Propuesta A` (1440×900) — usuario/email + contraseña.
+  - `Login 2026 — Propuesta A (Paso 2)` (1440×900) — paso 2 (selección de caja/sucursal).
+- `CARESA WEB UI 2026 — Login Flow (SDS)` (id `184:14369`): usa Simple Design System.
+  - `CARESA — Login Paso 1 (SDS)` (1440×900)
+  - `CARESA — Login Paso 2 · Sucursal (SDS)` (1440×900)
+  - + variantes adicionales de Login Paso 1 (ids `193:5451`, `193:5462`)
+
+## Sistemas de diseño detectados (⚠️ mezcla)
+- **Simple Design System (SDS):** los login "SDS" usan tokens `--sds-*` (ver `DESIGN_SYSTEM.md`).
+- **Componentes tipo Untitled UI:** los dashboards usan `_Nav item base`, `Featured icon`,
+  `Metric item`, `_Button group base`, `_Pagination button group base`, `Table cell`, etc.
+- Tipografía base: **Inter**.
+- **Implicación:** homologar a UN solo sistema antes de responsivar.
+
+## Volumen (densidad del archivo)
+~1005 "Table cell", 704 "Text", 266 "Avatar", 257 "Button", 133 "_Nav item base",
+55 "Metric item"/"Credit card"/"Heading". Archivo denso → trabajar por sección/pantalla.
+
+## Inventario de pantallas Desktop
+15 frames "Desktop" en total (dashboards) + 4-6 frames de Login (1440×900). Detalle y
+naming en `PROJECT_MAP.md`.
+
+## Pendiente de análisis
+- [ ] Capturas individuales por propuesta para nombrar cada dashboard por su función.
+- [ ] Confirmar cuál propuesta (sidebar vs navbar) es la dirección elegida.
+- [ ] Extraer set completo de variables/estilos del design system.
