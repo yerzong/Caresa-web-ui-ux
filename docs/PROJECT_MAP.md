@@ -31,7 +31,7 @@ Objetivo por pantalla: existir en **Desktop (fuente) → Tablet (834) → Mobile
 | # | Módulo | Página (ID) | Homolog. | Tablet | Mobile | UX ✔ | Prototipo |
 |---|---|---|---|---|---|---|---|
 | 1 | Login | `1.0 Login` (`0:1`) | [~] | [x] | [x] | [~] | [x] |
-| 2 | Inicio (MAIN) | `2.0 Inicio (MAIN)` (`4:2`) | [~] | [~] | [~] | [ ] | [~] |
+| 2 | Inicio (MAIN) | `2.0 Inicio (MAIN)` (`4:2`) | [~] | [~] | [~] | [~] | [~] |
 | 3 | Carrito | `3 Carrito` (`13:96`) | [ ] | [ ] | [ ] | [ ] | [ ] |
 | 4 | Catálogos | `4 Catálogos` (`13:100`) | [ ] | [ ] | [ ] | [ ] | [ ] |
 | 5 | Consultas | `5 Consultas` (`13:104`) | [ ] | [ ] | [ ] | [ ] | [ ] |
@@ -57,7 +57,10 @@ Fuente Desktop: `539:44895`. Generados: `Mobile - Inicio_01_Home` `40000047:4577
 `40000051:4594` · `Drawer/Nav` `40000047:4686`. Transforms: navbar→hamburguesa+drawer, grid 5→3(tablet)/2(mobile),
 buscador Input, chips wrap, paginación simplificada. Prototipo: hamburguesa→drawer (overlay) + ✕ cierra
 (posición/animación del overlay se ajustan a mano — API read-only).
-**Pendiente:** UX review; conectar nav items del drawer a módulos; resto de pantallas del módulo Inicio.
+UX review aplicado (fixes): nombres 14px, SKU legible (`text/secondary` + `Label/Small` a 12px),
+chips 44/40 (touch), filas/nav-items a Fill. **Pendiente (componente — `design-system-librarian`):**
+íconos nav como botones semánticos, estado activo del NavItem, variantes `ProductGrid` vacío/carga,
+label del buscador. Conectar nav items del drawer a módulos; resto de pantallas del módulo Inicio.
 
 ## Orden sugerido
 1. **Fase 0 — fundaciones** (tokens color + tipografía) antes de responsivar en serie.

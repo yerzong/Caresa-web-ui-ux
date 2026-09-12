@@ -21,7 +21,10 @@ Formato:
   - Grid de productos 5→3 (tablet)/2 (mobile), tarjeta `Card_Product` con tokens; buscador = instancia `Input/Text`;
     chips de filtro con wrap; paginación simplificada; contenido de producto real.
   - **Prototipo:** hamburguesa → drawer (OVERLAY, DISSOLVE) + ✕ CLOSE. `overlayPositionType`/scrim read-only por API → ajuste manual.
-- **Pendiente:** UX review de Inicio; conectar nav→módulos; resto de pantallas del módulo.
+- **UX review** (`ui-ux-reviewer`) + fixes aplicados: `Label/Small` 10→12px, nombres de producto →14px,
+  SKU `text/tertiary`→`text/secondary`, chips a 44/40 (touch target), `ProductRow`/`NavItem` a Fill (reflow).
+- **Pendiente (componente):** íconos nav semánticos, estado activo NavItem, `ProductGrid` vacío/carga, label buscador;
+  conectar nav→módulos; resto de pantallas del módulo.
 
 ---
 
