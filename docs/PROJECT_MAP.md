@@ -30,7 +30,7 @@ Objetivo por pantalla: existir en **Desktop (fuente) → Tablet (834) → Mobile
 
 | # | Módulo | Página (ID) | Homolog. | Tablet | Mobile | UX ✔ | Prototipo |
 |---|---|---|---|---|---|---|---|
-| 1 | Login | `1.0 Login` (`0:1`) | [ ] | [~] | [~] | [~] | [~] |
+| 1 | Login | `1.0 Login` (`0:1`) | [~] | [x] | [x] | [~] | [x] |
 | 2 | Inicio (MAIN) | `2.0 Inicio (MAIN)` (`4:2`) | [ ] | [ ] | [ ] | [ ] | [ ] |
 | 3 | Carrito | `3 Carrito` (`13:96`) | [ ] | [ ] | [ ] | [ ] | [ ] |
 | 4 | Catálogos | `4 Catálogos` (`13:100`) | [ ] | [ ] | [ ] | [ ] | [ ] |
@@ -43,9 +43,9 @@ Objetivo por pantalla: existir en **Desktop (fuente) → Tablet (834) → Mobile
 
 ---
 
-### Login — detalle (en `04_Claude_Sandbox`, pendiente aprobar y mover)
-Frames: `Mobile - Login_01_Acceso` `40000017:4592` · `Mobile - Login_02_Estacion` `40000019:4592`
-· `Tablet - Login_01_Acceso` `40000020:4592` · `Tablet - Login_02_Estacion` `40000021:4592`.
+### Login — detalle (MOVIDO a páginas finales ✅)
+`03_Mobile`: `Mobile - Login_01_Acceso` `40000017:4592` · `Mobile - Login_02_Estacion` `40000019:4592`.
+`02_Tablet`: `Tablet - Login_01_Acceso` `40000020:4592` · `Tablet - Login_02_Estacion` `40000021:4592`.
 Prototipo: Continuar (Paso 1) → Paso 2 (Smart Animate), mobile y tablet.
 UX aplicado: placeholders/labels/stepper `tertiary`→`secondary` (pasa 4.5:1), labels de sección 10→14px.
 Borde de input accesible aplicado (token `border/input` #8C8F96, 3.24:1).
