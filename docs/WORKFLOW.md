@@ -39,15 +39,17 @@ Corregir valores sueltos en la fuente para que use tokens/variables/componentes 
 > "Revisa `[Módulo] - [Nombre]`. Reemplaza colores/tipografías/espaciados manuales por la variable
 > o componente homologado según `@docs/DESIGN_SYSTEM.md`." (usa `figma-auditor` para detectar primero).
 
-### Fase 3 — Generación responsive en Sandbox (MÉTODO DE FIDELIDAD)
-**Regla:** NO redibujar/reinventar. Se **clona la pantalla Desktop real** y se **reacomoda** por breakpoint,
-conservando texturas, ilustraciones, íconos y componentes exactos. Pasos:
-1. `node.clone()` de la pantalla real → `04_Claude_Sandbox` (base fiel).
-2. Reacomodar: root a `VERTICAL` (móvil), `rescale()` de paneles decorativos (marca) para caber en el ancho,
-   `layoutSizingHorizontal='FILL'` en el formulario, `clipsContent=true` en el panel de marca, y
-   constreñir los frames de texto a `FILL` + `textAutoResize='HEIGHT'` para que envuelvan (no se recorten).
-3. Verificar con `get_screenshot` **contra el original** — si se ve distinto, está mal.
-Los átomos salen de los componentes **existentes** (`_Input field base`, `Button`, `_Nav item base`), no de nuevos.
+### Fase 3 — Reconstrucción responsive en Sandbox (ATOMIC + FIDELIDAD)
+**Regla:** el resultado debe **verse igual al original**, pero **reconstruido** con Atomic Design y Auto Layout
+(NO clonar el original con posiciones absolutas — eso se ve mal y no es responsivo). Pasos:
+1. **Estudiar** la pantalla real (`get_screenshot` + `get_design_context` solo para leer valores/assets exactos).
+2. **Átomos:** asegurar tokens (color, espaciado modular, radios) y estilos de texto. Nada hardcodeado.
+3. **Moléculas:** asegurar los Main Components (reusar los existentes de `COMPONENTES`: `_Input field base`,
+   `Button`, `_Nav item base`; formalizarlos con variantes/propiedades si falta).
+4. **Ensamblar** la pantalla con **instancias** en Auto Layout (`HUG`/`FILL`), respetando la nomenclatura.
+   Los assets fijos (ilustración, textura de marca) van como imagen dentro de contenedores Auto Layout.
+5. **Responsivar** por breakpoint reacomodando la estructura Auto Layout (no reescalando un clon).
+6. **Verificar** con `get_screenshot` contra el original — si se ve distinto, está mal.
 
 Crear las variantes Tablet/Mobile en `04_Claude_Sandbox`.
 > "Basado en `[Módulo] - [Nombre]` homologada, crea Tablet (834) y Mobile (393) en `04_Claude_Sandbox`

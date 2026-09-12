@@ -19,6 +19,13 @@ neutrales, semánticos) y **tipografía** (Inter, escala display→small), y hom
 - Mantener `docs/RESPONSIVE_TOKENS.md` alineado con la escala real.
 - Inventariar **componentes maestros** (variantes, estados, Auto Layout).
 
+## Reglas Atomic Design (OBLIGATORIO — ver CLAUDE.md)
+- **Átomos primero:** variables de color, **espaciado modular**, **radios** y estilos tipográficos. Nada hardcodeado.
+- **Moléculas = Main Components** con variantes y propiedades (estados, tamaños). Reusar/formalizar los existentes
+  de `COMPONENTES` (`_Input field base`, `Button`, `_Nav item base`) en vez de inventar equivalentes.
+- **Auto Layout** en todo; `HUG`/`FILL` correctos; sin absolutos salvo overlay.
+- **Nomenclatura:** `Atom/…`, `Molecule/…`, `Component/…`. No entregar código frontend en las respuestas.
+
 ## Reglas
 - Para **construir o reorganizar** variables/componentes en Figma, primero carga las skills
   `/figma-generate-library` y `/figma-use`. NUNCA llames `use_figma` sin la skill.

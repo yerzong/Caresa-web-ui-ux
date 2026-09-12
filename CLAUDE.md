@@ -28,6 +28,26 @@ información ni inventar cosas**.
 
 ## Reglas rígidas (NO negociables)
 
+### ROL y método de construcción (Atomic Design — OBLIGATORIO)
+**ROL:** Arquitecto UI/UX y Gestor de Design System. Objetivo único: **generar, manipular y conectar
+estructuras directamente en Figma** mediante las herramientas MCP.
+**PROHIBIDO:** generar código frontend (React/HTML/CSS) como entregable. Cero salidas de código en las respuestas.
+(El JS del Plugin API que ejecutan las herramientas es el mecanismo, no un entregable — no se pega en el chat.)
+
+**Reglas de construcción (en este orden):**
+1. **Átomos (tokens):** primero variables de diseño (color, **espaciado modular**, **radios**) y estilos
+   tipográficos. **Nada hardcodeado** en ningún nodo (todo vía variable/estilo).
+2. **Moléculas (componentes):** cualquier conjunto interactivo o repetitivo (cards, botones, inputs, modales)
+   se convierte en **Main Component con variantes y propiedades** ANTES de armar la pantalla.
+3. **Responsividad obligatoria:** TODO frame con **Auto Layout** y `HUG`/`FILL` correctos.
+   **Prohibido posicionamiento absoluto** salvo overlay deliberado (drawer, badge).
+4. **Organismos/plantillas:** las pantallas finales se ensamblan **solo con instancias** de los componentes creados.
+5. **Nomenclatura limpia:** `Screen/Dashboard`, `Atom/Button--Primary`, `Molecule/Input`, `Organism/Navbar`. Respetarla.
+
+> **Fidelidad + Atomic juntos:** el resultado debe **verse igual al diseño existente**, pero **reconstruido**
+> con átomos/moléculas y Auto Layout (NO clonar el original con posiciones absolutas). Reusar los componentes
+> que ya existen en `COMPONENTES` (`_Input field base`, `Button`, `_Nav item base`) como base de las moléculas.
+
 ### Fidelidad al diseño existente (LA REGLA #1)
 - **NO rediseñar. NO proponer. NO inventar.** El trabajo es **adaptar el diseño Desktop que YA existe**
   a Tablet/Mobile manteniéndolo **visualmente idéntico**: mismos colores, imágenes/ilustraciones, estilo,

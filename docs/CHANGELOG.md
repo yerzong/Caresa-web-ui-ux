@@ -13,6 +13,18 @@ Formato:
 
 ---
 
+## [2026-09-12] — Gobernanza Atomic Design + push a GitHub
+- **Repo:** los commits estaban solo en local; se configuró upstream y se **subió todo a GitHub** (`origin/main`).
+  De aquí en adelante se pushea tras cada commit.
+- **ROL + REGLAS** del usuario encodadas en `CLAUDE.md`: Arquitecto UI/UX; prohibido entregar código frontend;
+  Atomic Design obligatorio (átomos→moléculas→organismos), Auto Layout con HUG/FILL, sin absolutos salvo overlay,
+  nomenclatura `Atom/…`/`Molecule/…`/`Screen/…`.
+- **Método revisado** en `WORKFLOW.md`: fidelidad se logra **reconstruyendo con componentes+Auto Layout**, NO clonando
+  el original absoluto (el clon se ve mal y no es responsivo). Agentes `responsive-architect`/`design-system-librarian` actualizados.
+- **Implicación:** los borradores FIEL por clonación (Login Mobile/Tablet) se **rehacen** con el método Atomic.
+
+---
+
 ## [2026-09-12] — CORRECCIÓN DE RUMBO: fidelidad al diseño existente
 - **Feedback del usuario:** lo generado (Login/Inicio responsive) se desvió a un **rediseño/propuesta**;
   el objetivo es **adaptar el diseño existente idéntico**, no inventar. Los borradores previos quedan como desechables.
