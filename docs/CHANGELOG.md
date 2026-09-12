@@ -13,6 +13,19 @@ Formato:
 
 ---
 
+## [2026-09-12] — Login COMPLETO atómico y fiel (Mobile + Tablet + Desktop)
+- **Screens atómicos** reusando el mismo set de componentes: `Screen/Login--Mobile` `40000077:89995`,
+  `Screen/Login--Tablet` `40000083:89926`, `Screen/Login--Desktop` `40000083:90012`.
+- Inputs = instancias del **Input real de librería `327:59646`** (leading icon): mail en correo, **lock en contraseña** (swap `639:84934`).
+- Nuevos componentes: `Organism/BrandPanel--Tablet` (`40000083:4777`), `Organism/BrandPanel--Desktop` (`40000083:89996`).
+- **Fixes de fidelidad:** panel de marca a **gradiente lima** (estaba navy), texto de marca **oscuro** (estaba blanco),
+  ilustración del Tablet en flujo (no encimada), wrap de headline/subtítulos, subtítulo del form completo.
+- **Organización:** FIEL = 3 screens del Login; nueva sección `Componentes — Login`; eliminada la base clonada.
+- **Pendiente menor:** el original tiene el headline oscuro sobre lima brillante — verificar contraste puntual.
+  Luego: replicar método a otros módulos (Inicio, etc.) reusando/creando componentes.
+
+---
+
 ## [2026-09-12] — Login Mobile reconstruido con Atomic Design (fiel)
 - **Átomos:** creadas colecciones `Spacing` (`40000074:4577`) y `Radius` (`40000074:4586`). Capa de átomos completa.
 - **Login Mobile atómico** (`Screen/Login--Mobile` `40000077:89995`) reconstruido con Auto Layout + componentes + tokens,

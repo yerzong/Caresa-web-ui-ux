@@ -43,9 +43,12 @@ Objetivo por pantalla: existir en **Desktop (fuente) → Tablet (834) → Mobile
 
 ---
 
-### Login — detalle (MOVIDO a páginas finales ✅)
-`03_Mobile`: `Mobile - Login_01_Acceso` `40000017:4592` · `Mobile - Login_02_Estacion` `40000019:4592`.
-`02_Tablet`: `Tablet - Login_01_Acceso` `40000020:4592` · `Tablet - Login_02_Estacion` `40000021:4592`.
+### Login — detalle (RECONSTRUIDO atómico + fiel, en `04_Claude_Sandbox` › sección FIEL)
+Paso 1 (Acceso) en 3 breakpoints, reusando componentes: `Screen/Login--Mobile` `40000077:89995` ·
+`Screen/Login--Tablet` `40000083:89926` · `Screen/Login--Desktop` `40000083:90012`.
+Componentes en sección `Componentes — Login`: `Molecule/Stepper`, `Organism/LoginForm`, `Organism/BrandPanel--{Mobile,Tablet,Desktop}`.
+Inputs = Input real de librería `327:59646` (mail/lock). Los borradores antiguos en `03_Mobile`/`02_Tablet` quedan obsoletos (a reemplazar).
+**Pendiente:** Paso 2 (Estación) atómico; mover a páginas finales tras aprobar.
 Prototipo: Continuar (Paso 1) → Paso 2 (Smart Animate), mobile y tablet.
 UX aplicado: placeholders/labels/stepper `tertiary`→`secondary` (pasa 4.5:1), labels de sección 10→14px.
 Borde de input accesible aplicado (token `border/input` #8C8F96, 3.24:1).
