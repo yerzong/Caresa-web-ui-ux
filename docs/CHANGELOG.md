@@ -13,6 +13,18 @@ Formato:
 
 ---
 
+## [2026-09-12] — Login Mobile reconstruido con Atomic Design (fiel)
+- **Átomos:** creadas colecciones `Spacing` (`40000074:4577`) y `Radius` (`40000074:4586`). Capa de átomos completa.
+- **Login Mobile atómico** (`Screen/Login--Mobile` `40000077:89995`) reconstruido con Auto Layout + componentes + tokens,
+  **fiel al original** (gradiente+textura, logo, headline, ilustración 3D reusada `774:41683`, stepper con íconos 3D, inputs, botón lima, link).
+  - Componentes nuevos: `Molecule/Stepper` (`40000077:4806`), `Organism/BrandPanel--Mobile` (`40000077:4828`), `Organism/LoginForm` (`40000077:89960`).
+  - Único absoluto: textura de engranes (overlay decorativo deliberado). Sin hex sueltos.
+- **Limpieza:** eliminados los 2 borradores por clonación (Login Mobile/Tablet) que no cumplían el método atómico.
+  Sección `FIEL` = referencia Desktop + `Screen/Login--Mobile`.
+- **Pendiente:** agregar ícono mail/lock DENTRO de los inputs (usar el Input real `327:59646`); Tablet y Desktop atómicos; luego otros módulos.
+
+---
+
 ## [2026-09-12] — Gobernanza Atomic Design + push a GitHub
 - **Repo:** los commits estaban solo en local; se configuró upstream y se **subió todo a GitHub** (`origin/main`).
   De aquí en adelante se pushea tras cada commit.
