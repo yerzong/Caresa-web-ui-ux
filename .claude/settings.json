@@ -8,6 +8,7 @@
       "mcp__plugin_figma_figma__get_libraries",
       "mcp__plugin_figma_figma__get_design_context",
       "mcp__plugin_figma_figma__whoami",
+      "mcp__plugin_figma_figma__use_figma",
       "Read",
       "Edit",
       "Write",
@@ -15,10 +16,8 @@
       "Bash(git add:*)",
       "Bash(git commit:*)",
       "Bash(git diff:*)",
-      "Bash(git log:*)"
-    ],
-    "ask": [
-      "mcp__plugin_figma_figma__use_figma"
+      "Bash(git log:*)",
+      "Bash(curl:*)"
     ]
   }
 }
