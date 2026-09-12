@@ -79,6 +79,9 @@ todo ligado a tokens `Color` + estilos de texto. Propiedad de variante `State`.
 | `Input/Text` | `40000034:4890` | Default · Focus (anillo `semantic/info`) · Error (`semantic/danger` + helper) · Disabled |
 | `Button/Primary` | `40000035:4886` | Default (lima) · Hover (`brand/green`) · Loading (spinner + "Cargando…") · Disabled |
 | `Select` | `40000036:4894` | Default · Focus · Error · Disabled (con chevron) |
+| `NavItem` | `40000060:4886` | Default · Active (indicador 3px `brand/lime`) · Hover — para drawer/nav oscuro |
+
+Estados de grid (referencia, en `04_Claude_Sandbox`): `ProductGrid/Empty` `40000061:4581` · `ProductGrid/Loading` `40000061:4889`.
 
 > Estos son los componentes canónicos para formularios. Al homologar/rehacer pantallas, **instanciar
 > estos** en lugar de dibujar inputs/botones sueltos. Pendiente: sustituir los controles inline del

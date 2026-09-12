@@ -58,9 +58,9 @@ Fuente Desktop: `539:44895`. Generados: `Mobile - Inicio_01_Home` `40000047:4577
 buscador Input, chips wrap, paginación simplificada. Prototipo: hamburguesa→drawer (overlay) + ✕ cierra
 (posición/animación del overlay se ajustan a mano — API read-only).
 UX review aplicado (fixes): nombres 14px, SKU legible (`text/secondary` + `Label/Small` a 12px),
-chips 44/40 (touch), filas/nav-items a Fill. **Pendiente (componente — `design-system-librarian`):**
-íconos nav como botones semánticos, estado activo del NavItem, variantes `ProductGrid` vacío/carga,
-label del buscador. Conectar nav items del drawer a módulos; resto de pantallas del módulo Inicio.
+chips 44/40 (touch), filas/nav-items a Fill. Componentes agregados: `NavItem` (Default/Active/Hover),
+`ProductGrid/Empty`, `ProductGrid/Loading`. **Pendiente:** íconos nav como botones semánticos + label del buscador;
+aplicar `NavItem`/estados en las pantallas; conectar nav items del drawer a módulos; resto de pantallas del módulo Inicio.
 
 ## Orden sugerido
 1. **Fase 0 — fundaciones** (tokens color + tipografía) antes de responsivar en serie.

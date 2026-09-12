@@ -13,6 +13,14 @@ Formato:
 
 ---
 
+## [2026-09-12] — Componentes: NavItem + estados de grid; permisos sin prompt
+- **Config:** `.claude/settings.json` autoriza `use_figma` y `Bash(curl:*)` sin prompt (flujo Figma fluido).
+- **NavItem** (`40000060:4886`): Default / Active (indicador 3px lima) / Hover — para drawer/nav oscuro.
+- **Estados de grid** en sandbox: `ProductGrid/Empty` (`40000061:4581`) y `ProductGrid/Loading` (`40000061:4889`).
+- **Pendiente:** aplicar `NavItem`/estados en las pantallas; íconos nav semánticos; conectar nav→módulos.
+
+---
+
 ## [2026-09-12] — Inicio (MAIN): Home "Autopartes" responsive + Login movido a final
 - **Login:** movido de sandbox a `03_Mobile` / `02_Tablet` (aprobado).
 - **Inicio Home** (`responsive-architect`, fuente `539:44895`): generados en sandbox
