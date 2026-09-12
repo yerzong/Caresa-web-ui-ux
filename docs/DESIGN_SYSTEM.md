@@ -29,8 +29,9 @@ Marca CARESA = **lima `#AEF803`** + **verde `#006C00`**.
 | `bg/subtle` | `#FAFAF7` | fondo sutil |
 | `bg/muted` | `#F0F0EC` | fondo apagado |
 | `bg/inverse` | `#101828` | fondo oscuro |
-| `border/default` | `#E3E3DD` | borde base |
+| `border/default` | `#E3E3DD` | borde base (decorativo, no cumple 3:1) |
 | `border/strong` | `#E6E6E6` | borde fuerte |
+| `border/input` | `#8C8F96` | borde de campos (3.24:1 sobre blanco, WCAG 1.4.11 ✓) |
 | `semantic/info` | `#155DFC` | info / link |
 | `semantic/warning` | `#D08700` | advertencia |
 | `semantic/danger` | `#F54900` | error / destructivo |

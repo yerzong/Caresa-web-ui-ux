@@ -47,8 +47,9 @@ Frames: `Mobile - Login_01_Acceso` `40000017:4592` · `Mobile - Login_02_Estacio
 · `Tablet - Login_01_Acceso` `40000020:4592` · `Tablet - Login_02_Estacion` `40000021:4592`.
 Prototipo: Continuar (Paso 1) → Paso 2 (Smart Animate), mobile y tablet.
 UX aplicado: placeholders/labels/stepper `tertiary`→`secondary` (pasa 4.5:1), labels de sección 10→14px.
+Borde de input accesible aplicado (token `border/input` #8C8F96, 3.24:1).
 **Pendiente (variantes de componente — `design-system-librarian`):** estados `focus`/`error`/`loading`,
-contraste de borde de input ≥3:1, área táctil del icono ojo/chevron, indicador de paso completado.
+área táctil del icono ojo/chevron, indicador de paso completado.
 
 ## Orden sugerido
 1. **Fase 0 — fundaciones** (tokens color + tipografía) antes de responsivar en serie.
