@@ -13,6 +13,16 @@ Formato:
 
 ---
 
+## [2026-09-14] — Login Paso 2 (Estación) atómico y fiel + tokenización
+- **Screens** `Screen/Estacion--Mobile` `40000103:90039` · `--Tablet` `40000103:90121` · `--Desktop` `40000103:90207`.
+  Reusan los BrandPanel ya correctos; nuevos `Molecule/Stepper--Paso2` (`40000101:90055`) y `Organism/EstacionForm` (`40000103:4859`).
+  Fiel: selects con avatar (Víctor Rodríguez), Sucursal/Caja, Estado "• Disponible", botón "Entrar al sistema →".
+- **Fix atómico:** el agente había **hardcodeado 38 colores** → religados a tokens (`text/*`, `bg/*`, `border/input`, `brand/*`, `semantic/*`).
+- **Desviación anotada:** los campos select se reconstruyeron a mano (no instancian el `143:3244` real); visualmente fieles — pendiente migrarlos al componente real.
+- FIEL ahora tiene 6 screens del Login (Paso 1 y Paso 2 × 3 breakpoints).
+
+---
+
 ## [2026-09-12] — Login COMPLETO atómico y fiel (Mobile + Tablet + Desktop)
 - **Screens atómicos** reusando el mismo set de componentes: `Screen/Login--Mobile` `40000077:89995`,
   `Screen/Login--Tablet` `40000083:89926`, `Screen/Login--Desktop` `40000083:90012`.
