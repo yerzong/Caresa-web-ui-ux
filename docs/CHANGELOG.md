@@ -13,6 +13,18 @@ Formato:
 
 ---
 
+## [2026-09-15] — NEW_01 Login listo + moléculas Modal/Table creadas
+- **NEW_01 Login (Fase 3):** movidas las 6 pantallas atómicas (Acceso + Estación × M/T/D) a la página `NEW_01`,
+  organizadas en 2 filas; **prototipo** Continuar→Paso 2 cableado en los 3 breakpoints + 3 flow starting points.
+- **NEW_00 (Fase 2):** creadas las moléculas faltantes, fieles a los reales y 100% tokenizadas (0 hex, auditado):
+  `Molecule/Modal` `40000118:5135` (Desktop 568px fiel a `643:86508` + variante Mobile bottom-sheet con drag handle),
+  `Molecule/TableRow` `40000119:5133` (Header/Data + more-vertical), `Organism/Table` `40000120:5081` (fiel a `497:112774`).
+  `Organism/Table` movido a la sección `03 Organisms`.
+- **Pendiente:** botones internos del Modal → instancias del set Button; dropdown base; avatar label group.
+- **Siguiente:** NEW_02 Inicio (Home hub + 4 modos de búsqueda según FLOWS.md).
+
+---
+
 ## [2026-09-15] — Fase 2 (parte 1): NEW_00 Design System montado
 - **NEW_00** estructurado: `01 Catálogo — componentes reales` (`40000113:4657`, 18 componentes indexados con
   instancias + etiquetas de mainId), `02 Molecules` (`40000111:4577`), `03 Organisms` (`40000111:4578`).

@@ -86,8 +86,10 @@ Sección `01 Catálogo` (`40000113:4657`): **instancias indexadas para REUSAR (n
 Otros ya existentes: `BOTÓN BUSCAR` `393:27283`, `Autopartes - Section` `390:23171`, Input UUI `327:59646`, Select avatar `143:3244`.
 Secciones `02 Molecules` / `03 Organisms` de NEW_00 contienen los componentes del Login (Stepper×2, LoginForm, EstacionForm, BrandPanel×3).
 
-**Brechas (crear como Main Components propios):** `Molecule/Modal` (+header/actions — hoy son frames anónimos),
-`Molecule/TableRow`/`Organism/Table` (hoy frames sueltos con celdas UUI), dropdown base homologado, `Avatar label group` propio.
+**Brechas cerradas 2026-09-15:** `Molecule/Modal` (`40000118:5135`, Size=Desktop|Mobile sheet, fiel al real `643:86508`),
+`Molecule/TableRow` (`40000119:5133`, Type=Header|Data, con `more-vertical`), `Organism/Table` (`40000120:5081`, fiel a `497:112774`).
+0 hex hardcodeados (auditado). **Brechas restantes:** dropdown base homologado, `Avatar label group` propio;
+en Modal, sustituir los botones internos por instancias del set `Button/Primary` (hoy frames fieles).
 
 ## 3. Componentes (inventario por frecuencia — página `COMPONENTES`)
 | Componente | Aprox. instancias | Sistema |
