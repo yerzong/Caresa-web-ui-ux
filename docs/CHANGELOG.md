@@ -13,6 +13,17 @@ Formato:
 
 ---
 
+## [2026-09-16] — NEW_03 Carrito: pantalla principal fiel en 3 breakpoints
+- **Original:** `322:12443` (hub del flujo, tabla 2 productos reales + sidebar totales $7,485.00).
+- **Screens** en `NEW_03 Carrito`: `--Desktop` `40000172:5324` (clon 1:1), `--Tablet` `40000172:95351`
+  (tabla 4 columnas esenciales + sidebar), `--Mobile` `40000172:96503` (**tabla→cards apiladas** con datos reales +
+  resumen + Vender full-width + Imprimir/Más opciones).
+- **Fixes míos post-agente (Tablet):** columnas encimadas → ocultas U/M y P.Unitario (por índice — regex "UM" matcheaba
+  "Column"), celdas Cantidad simplificadas (sin stepper −/+, qty centrada), clip en celdas.
+- **Pendiente del módulo:** modales de acciones (más opciones/eliminar), variantes venta rápida; religar hex del sidebar tablet.
+
+---
+
 ## [2026-09-16] — NEW_02 Inicio: Perfil en 3 breakpoints (fila 4) + cableado
 - **Desktop** `Screen/Inicio_04_Perfil--Desktop` `40000165:29444`: clon 1:1 del original `768:70945` (dropdown de
   avatar abierto: Gerson Yahir / gerson@caresa.com / Administrador / Configuración / Cerrar sesión).
