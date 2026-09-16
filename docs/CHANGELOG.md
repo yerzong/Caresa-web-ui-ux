@@ -13,6 +13,17 @@ Formato:
 
 ---
 
+## [2026-09-16] — NEW_05 Consultas: Ventas fiel en 3 breakpoints
+- **Original:** `741:289084` (MB-67). **Screens** en `NEW_05 Consultas`: `--Desktop` `40000187:6985` (clon 1:1:
+  tabs Ventas/Créditos/Garantías, tabla 8 columnas con datos reales, paginación), `--Tablet` `40000190:5057`
+  (6 columnas esenciales, sin traslapes), `--Mobile` `40000191:5128` (**tabla→cards**: folio + badge estado + ⋮,
+  filas label:valor, "Ver detalle", filtros apilados, paginación móvil).
+- **Tokenización:** 401 colores religados (210 estándar + 191 "casi-token" off-by-one: #E3E3DE→border/default,
+  #6B6E73→text/secondary, #006B00→semantic/success, #E0FFE4→green-subtle).
+- **Pendiente del módulo:** Créditos y Garantías (tabs), modales de más opciones/abonar-pagar; navbar activo "Consultas".
+
+---
+
 ## [2026-09-16] — NEW_03 Carrito: modal "Más opciones" + prototipo del módulo
 - **Overlays** (base real `327:91203`): `Overlay/CarritoOpciones--Desktop` `40000180:5017` (diálogo centrado con scrim,
   6 acciones reales: Guardar/Cargar cotización, Limpiar carrito, Enviar correo, Imprimir, Descargar PDF) y
