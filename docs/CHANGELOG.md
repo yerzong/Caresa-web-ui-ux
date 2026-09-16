@@ -13,6 +13,26 @@ Formato:
 
 ---
 
+## [2026-09-15] — NEW_02 Inicio: Drill-down por marca (CARD AUTOS) en 3 breakpoints
+
+- **Screens** en `NEW_02 Inicio` (página `40000110:4579`), ubicadas en fila y=1500 debajo de los Home:
+  - `Screen/Inicio_02_Autos--Desktop` `40000141:91080` (x=0, w=1728): clon 1:1 del original `728:84793`
+    ("MacBook Pro 16" - 60" en sección AUTOPARTES) — Banner real `470:45555`, subnav/breadcrumb,
+    título "Aveo · Base · 2026,2025 / Chevrolet · 147 refacciones", filtros activos, grid 4-col CARD AUTOS,
+    sidebar de filtros, paginación. Fidelidad total.
+  - `Screen/Inicio_02_Autos--Tablet` `40000142:6202` (x=1800, w=834): Navbar--Tablet (instancia `40000123:5150`),
+    mismo contenido; grid 3-col cards reescaladas proporcionalmente con `rescale(factor=0.621)`.
+  - `Screen/Inicio_02_Autos--Mobile` `40000143:6617` (x=3700, w=393): Navbar--Mobile (instancia `40000123:90933`),
+    "← RESULTADOS DE BÚSQUEDA", título+subtítulo, badge MARCA Chevrolet, grid 2-col cards `rescale(0.431)`,
+    Pagination--Mobile clonada del Home mobile.
+- **Original de referencia:** frame `728:84793` en página `4:2` sección `462:37459`.
+- **Cards:** 8 instancias "Container" clonadas del original con `.clone()` + `.rescale()` proporcional —
+  NUNCA `resize()` que distorsiona. Colores/textos reales del original (0 lorem).
+- **Pendiente:** sidebar de filtros del Mobile no oculta (se hereda del clone — a refinar en iteración);
+  Tablet Navbar es `symbol` no `instance` (pendiente swap al componente correcto).
+
+---
+
 ## [2026-09-15] — NEW_02 Inicio: Home fiel en 3 breakpoints
 - **Screens** en `NEW_02 Inicio`: `Screen/Inicio_01_Home--Desktop` `40000122:26493` (1:1 con `539:44895`: Banner real,
   subnav, tabs, búsqueda inteligente 5 selects + progreso, grid Card marca con logos reales, footer sync),

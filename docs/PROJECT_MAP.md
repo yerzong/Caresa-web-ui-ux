@@ -55,6 +55,13 @@ Borde de input accesible aplicado (token `border/input` #8C8F96, 3.24:1).
 **Pendiente (variantes de componente — `design-system-librarian`):** estados `focus`/`error`/`loading`,
 área táctil del icono ojo/chevron, indicador de paso completado.
 
+### Inicio (MAIN) — Drill-down por Marca / CARD AUTOS (en `NEW_02 Inicio`)
+Sub-pantalla que aparece tras clic en una "Card marca". 3 breakpoints en `NEW_02 Inicio` (`40000110:4579`), fila y=1500:
+- `Screen/Inicio_02_Autos--Desktop` `40000141:91080` — clon 1:1 de `728:84793` (Banner+4-col grid+sidebar)
+- `Screen/Inicio_02_Autos--Tablet` `40000142:6202` — 3-col grid, rescale proporcional
+- `Screen/Inicio_02_Autos--Mobile` `40000143:6617` — 2-col grid, Pagination--Mobile
+**Pendiente:** sidebar filtros Mobile (ocultar en Mobile, mostrar como sheet); Tablet Navbar→instancia correcta.
+
 ### Inicio (MAIN) — Home catálogo "Autopartes" (en `04_Claude_Sandbox`)
 Fuente Desktop: `539:44895`. Generados: `Mobile - Inicio_01_Home` `40000047:4577` · `Tablet - Inicio_01_Home`
 `40000051:4594` · `Drawer/Nav` `40000047:4686`. Transforms: navbar→hamburguesa+drawer, grid 5→3(tablet)/2(mobile),
