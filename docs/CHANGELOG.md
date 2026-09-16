@@ -13,6 +13,16 @@ Formato:
 
 ---
 
+## [2026-09-16] — NEW_02 Inicio: Filtro Manual fiel en 3 breakpoints + cableado
+- **Screens** (fila 3, y=3900): `Screen/Inicio_03_FiltroManual--Desktop` `40000161:30236` (base real MB-27 `435:23969`,
+  estado 5/5 sintetizado con variantes reales: Card filtros `selected`, BUSCAR `active`, progreso `5-5`; valores
+  Chevrolet/Aveo/LT/2019/Suspensión + grid de modelos AVEO), `--Tablet` `40000161:93517` (filtros 3+2, grid abajo),
+  `--Mobile` `40000161:93966` (5 filtros apilados FILL + progreso + BUSCAR full-width + Limpiar/VIN/SKU).
+- **Prototipo:** BUSCAR → `Inicio_02_Autos` del mismo breakpoint (3 reactions).
+- **Pendiente del módulo:** perfil; promociones/categorías (tabs).
+
+---
+
 ## [2026-09-16] — NEW_02 Inicio: prototipo navegable
 - **Cableado** (reactions ON_CLICK): 20 `Card marca` → `Inicio_02_Autos` del mismo breakpoint (10 Desktop, 6 Tablet,
   4 Mobile, Smart Animate); `arrow-left` del Autos Mobile → BACK; hamburguesa del Navbar--Mobile → **Drawer overlay**
