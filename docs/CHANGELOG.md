@@ -18,7 +18,8 @@ Formato:
   · `--Mobile` `40000202:5858` (cards). **Garantías** (original `741:292447`): `--Desktop` `40000195:97202` ·
   `--Tablet` `40000203:5868` · `--Mobile` `40000204:5914` (cards #folio/proveedor/importe/estado + Ver detalle).
 - **Calidad:** 0 hex sueltos (auditado — el agente aplicó tokens exactos a la primera); sin traslapes ni miniaturas.
-- **Pendiente del módulo:** modales de más opciones/abonar-pagar (cadenas de FLOWS); tabs cableadas entre las 3 pantallas.
+- **Prototipo:** 18 reactions de tabs (Ventas↔Créditos↔Garantías × 3 breakpoints) + 3 flow starting points.
+- **Pendiente del módulo:** modales de más opciones/abonar-pagar (cadenas de FLOWS).
 
 ---
 
