@@ -13,6 +13,16 @@ Formato:
 
 ---
 
+## [2026-09-16] — NEW_03 Carrito: modal "Más opciones" + prototipo del módulo
+- **Overlays** (base real `327:91203`): `Overlay/CarritoOpciones--Desktop` `40000180:5017` (diálogo centrado con scrim,
+  6 acciones reales: Guardar/Cargar cotización, Limpiar carrito, Enviar correo, Imprimir, Descargar PDF) y
+  `--Mobile` `40000181:5017` (**bottom-sheet** con drag handle, filas touch 56px, safe area).
+- **Prototipo:** "Más opciones" → overlay (Desktop/Tablet→diálogo, Mobile→sheet, DISSOLVE) · ✕ → CLOSE ·
+  3 flow starting points. Nota: `CLOSE_ON_CLICK_OUTSIDE` se activa a mano (API read-only).
+- **Pendiente del módulo:** modal confirmar eliminar (`643:86508`), venta rápida; íconos reales en filas del modal.
+
+---
+
 ## [2026-09-16] — NEW_03 Carrito: pantalla principal fiel en 3 breakpoints
 - **Original:** `322:12443` (hub del flujo, tabla 2 productos reales + sidebar totales $7,485.00).
 - **Screens** en `NEW_03 Carrito`: `--Desktop` `40000172:5324` (clon 1:1), `--Tablet` `40000172:95351`
