@@ -13,6 +13,15 @@ Formato:
 
 ---
 
+## [2026-09-16] — NEW_02 Inicio: prototipo navegable
+- **Cableado** (reactions ON_CLICK): 20 `Card marca` → `Inicio_02_Autos` del mismo breakpoint (10 Desktop, 6 Tablet,
+  4 Mobile, Smart Animate); `arrow-left` del Autos Mobile → BACK; hamburguesa del Navbar--Mobile → **Drawer overlay**
+  (instancia nueva `Overlay/Drawer--Nav` `40000159:7138`, DISSOLVE); ✕ → CLOSE; NavItem "Inicio" → Home Mobile.
+- **Flow starting points**: Inicio Desktop / Tablet / Mobile.
+- **Pendiente del módulo:** cadena de filtro manual (MB-18→21), perfil, promociones/categorías.
+
+---
+
 ## [2026-09-15] — NEW_02 Inicio: Drill-down por marca (CARD AUTOS) en 3 breakpoints
 
 - **Screens** en `NEW_02 Inicio` (página `40000110:4579`), ubicadas en fila y=1500 debajo de los Home:
