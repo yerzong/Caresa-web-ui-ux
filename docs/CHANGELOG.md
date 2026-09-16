@@ -13,6 +13,15 @@ Formato:
 
 ---
 
+## [2026-09-16] — NEW_05 Consultas COMPLETO: Créditos + Garantías (6 screens)
+- **Créditos** (original `741:328204`): `--Desktop` `40000195:24970` · `--Tablet` `40000198:5812` (6 col, sin traslapes)
+  · `--Mobile` `40000202:5858` (cards). **Garantías** (original `741:292447`): `--Desktop` `40000195:97202` ·
+  `--Tablet` `40000203:5868` · `--Mobile` `40000204:5914` (cards #folio/proveedor/importe/estado + Ver detalle).
+- **Calidad:** 0 hex sueltos (auditado — el agente aplicó tokens exactos a la primera); sin traslapes ni miniaturas.
+- **Pendiente del módulo:** modales de más opciones/abonar-pagar (cadenas de FLOWS); tabs cableadas entre las 3 pantallas.
+
+---
+
 ## [2026-09-16] — NEW_05 Consultas: Ventas fiel en 3 breakpoints
 - **Original:** `741:289084` (MB-67). **Screens** en `NEW_05 Consultas`: `--Desktop` `40000187:6985` (clon 1:1:
   tabs Ventas/Créditos/Garantías, tabla 8 columnas con datos reales, paginación), `--Tablet` `40000190:5057`
