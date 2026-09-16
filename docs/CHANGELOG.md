@@ -13,6 +13,17 @@ Formato:
 
 ---
 
+## [2026-09-16] — NEW_02 Inicio: Perfil en 3 breakpoints (fila 4) + cableado
+- **Desktop** `Screen/Inicio_04_Perfil--Desktop` `40000165:29444`: clon 1:1 del original `768:70945` (dropdown de
+  avatar abierto: Gerson Yahir / gerson@caresa.com / Administrador / Configuración / Cerrar sesión).
+- **Corrección de método:** el agente entregó Tablet/Mobile como **miniaturas reescaladas ilegibles** (violaba
+  responsive) → eliminadas y rehechas: Perfil--Tablet `40000170:8586` y --Mobile `40000170:8650` = **Home del
+  breakpoint + dropdown real a tamaño nativo** como overlay deliberado (mismo patrón de estado que el original).
+- **Prototipo:** avatar (Desktop) e ícono derecho del navbar (Tablet/Mobile) → Perfil; regreso via navegación previa.
+- NEW_02 queda con 4 pantallas × 3 breakpoints + drawer + dropdowns, todo navegable.
+
+---
+
 ## [2026-09-16] — NEW_02 Inicio: Filtro Manual fiel en 3 breakpoints + cableado
 - **Screens** (fila 3, y=3900): `Screen/Inicio_03_FiltroManual--Desktop` `40000161:30236` (base real MB-27 `435:23969`,
   estado 5/5 sintetizado con variantes reales: Card filtros `selected`, BUSCAR `active`, progreso `5-5`; valores
