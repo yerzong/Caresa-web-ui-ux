@@ -18,6 +18,11 @@ información ni inventar cosas**.
 - **Misión:** pasar cada módulo a **responsive** (Tablet 834 + Mobile 393), **homologar** componentes/estilos
   y **tokenizar** el design system (hoy casi no hay variables/estilos), aplicando **UI/UX** y **prototipado**.
 
+## ⚡ MIGRACIÓN NEW_ (misión vigente — ver `@docs/MIGRATION_PLAN.md`)
+Decisión 2026-09-15: se rehace todo **de 0%** en páginas nuevas `NEW_XX` (espejo de las existentes),
+**sin tocar nada de lo ya hecho**. Pantallas solo-instancias de `NEW_00 Design System`, 3 breakpoints,
+fieles al original, flujos re-cableados según `@docs/FLOWS.md`. **Prohibido generar código** — solo UI en Figma.
+
 ## Misión y método (leer antes de tocar Figma)
 
 1. **Analizar y documentar** lo existente → `@docs/FIGMA_ANALYSIS.md`, `@docs/DESIGN_SYSTEM.md`.

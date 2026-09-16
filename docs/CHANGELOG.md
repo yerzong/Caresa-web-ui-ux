@@ -13,6 +13,17 @@ Formato:
 
 ---
 
+## [2026-09-15] — REINICIO 0%: plan de migración NEW_ + mapa de flujos
+- **Decisión del usuario:** rehacer todo de 0% en páginas `NEW_XX`, sin tocar lo existente; la base previa no convence.
+  Plan encodado en `docs/MIGRATION_PLAN.md` + `CLAUDE.md` (5 fases, naming, reglas). Prohibido código — solo UI Figma.
+- **Fase 1 COMPLETA — análisis de flujos:** extraídos **212 connectors** (Inicio 52, Consultas 54, Pedidos 48,
+  Carrito 41, Catálogos 17) → `docs/FLOWS.md` con hubs, cadenas de modales y patrones por módulo.
+- **Creadas 11 páginas** `NEW_00 Design System` … `NEW_10 Recompra` (esqueleto de la migración).
+- **Se conservan** los tokens (Color/Spacing/Radius/Breakpoints/estilos) por venir del diseño real. Sandbox previo queda obsoleto.
+- **Siguiente:** Fase 2 — poblar `NEW_00` con moléculas fieles (Table, Modal, Dropdown, Card marca/filtros, Banner, Alerts…).
+
+---
+
 ## [2026-09-14] — Login Paso 2 (Estación) atómico y fiel + tokenización
 - **Screens** `Screen/Estacion--Mobile` `40000103:90039` · `--Tablet` `40000103:90121` · `--Desktop` `40000103:90207`.
   Reusan los BrandPanel ya correctos; nuevos `Molecule/Stepper--Paso2` (`40000101:90055`) y `Organism/EstacionForm` (`40000103:4859`).
