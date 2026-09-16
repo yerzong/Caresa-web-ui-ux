@@ -68,6 +68,27 @@ Colección `Radius` (`40000074:4586`), scope CORNER_RADIUS:
 > Capa de átomos completa: **Color**, **Tipografía**, **Spacing**, **Radius**, **Breakpoints**.
 > Regla: ningún nodo con valores hardcodeados — todo vía estas variables/estilos.
 
+## 2c. NEW_00 Design System (página `40000110:4577`) — catálogo de componentes REALES
+Sección `01 Catálogo` (`40000113:4657`): **instancias indexadas para REUSAR (no duplicar)**:
+
+| Componente | Main ID | | Componente | Main ID |
+|---|---|---|---|---|
+| Banner (navbar) | `470:45555` | | Input/Text (estados) | `40000034:4890` |
+| Button CARESA (6 var) | `390:21859` | | Button/Primary (estados) | `40000035:4886` |
+| Card marca (4 var) | `390:23706` | | Select (estados) | `40000036:4894` |
+| Card filtros (4 var) | `392:24284` | | NavItem (estados) | `40000060:4886` |
+| Card AUTOS (2 var) | `392:26247` | | Avatar UUI | `130:11113` |
+| Alerts (7 var) | `464:68983` | | _Nav item base UUI | `130:12188` |
+| Badge (2 var) | `430:14181` | | Dropdown menu UUI | `146:9363` |
+| Barra progreso (6 var) | `392:25169` | | Table cell UUI | `130:8064` |
+| Container filtros (7 var) | `433:15676` | | more-vertical UUI | `146:9430` |
+
+Otros ya existentes: `BOTÓN BUSCAR` `393:27283`, `Autopartes - Section` `390:23171`, Input UUI `327:59646`, Select avatar `143:3244`.
+Secciones `02 Molecules` / `03 Organisms` de NEW_00 contienen los componentes del Login (Stepper×2, LoginForm, EstacionForm, BrandPanel×3).
+
+**Brechas (crear como Main Components propios):** `Molecule/Modal` (+header/actions — hoy son frames anónimos),
+`Molecule/TableRow`/`Organism/Table` (hoy frames sueltos con celdas UUI), dropdown base homologado, `Avatar label group` propio.
+
 ## 3. Componentes (inventario por frecuencia — página `COMPONENTES`)
 | Componente | Aprox. instancias | Sistema |
 |---|---|---|

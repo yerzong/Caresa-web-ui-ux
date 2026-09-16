@@ -13,6 +13,16 @@ Formato:
 
 ---
 
+## [2026-09-15] — Fase 2 (parte 1): NEW_00 Design System montado
+- **NEW_00** estructurado: `01 Catálogo — componentes reales` (`40000113:4657`, 18 componentes indexados con
+  instancias + etiquetas de mainId), `02 Molecules` (`40000111:4577`), `03 Organisms` (`40000111:4578`).
+- **Migrados a NEW_00** los componentes atómicos fieles del Login (Stepper×2, LoginForm, EstacionForm, BrandPanel×3).
+- **Brechas detectadas** (a crear): Modal (+header/actions), TableRow/Table, dropdown base propio, Avatar label group.
+- `DESIGN_SYSTEM.md` actualizado con el catálogo y las brechas.
+- **Siguiente:** crear Molecule/Modal + Organism/Table fieles; luego Fase 3 → `NEW_01 Login` (3 breakpoints solo-instancias).
+
+---
+
 ## [2026-09-15] — REINICIO 0%: plan de migración NEW_ + mapa de flujos
 - **Decisión del usuario:** rehacer todo de 0% en páginas `NEW_XX`, sin tocar lo existente; la base previa no convence.
   Plan encodado en `docs/MIGRATION_PLAN.md` + `CLAUDE.md` (5 fases, naming, reglas). Prohibido código — solo UI Figma.
