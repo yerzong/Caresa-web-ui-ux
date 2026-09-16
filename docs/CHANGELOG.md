@@ -13,6 +13,18 @@ Formato:
 
 ---
 
+## [2026-09-15] — NEW_02 Inicio: Home fiel en 3 breakpoints
+- **Screens** en `NEW_02 Inicio`: `Screen/Inicio_01_Home--Desktop` `40000122:26493` (1:1 con `539:44895`: Banner real,
+  subnav, tabs, búsqueda inteligente 5 selects + progreso, grid Card marca con logos reales, footer sync),
+  `--Tablet` `40000123:91101` (3 col), `--Mobile` `40000124:26699` (2 col) + `Drawer--Nav` overlay `40000124:90606`.
+- **Organisms nuevos** en NEW_00: `Navbar--Tablet` `40000123:5150`, `Navbar--Mobile` `40000123:90933`,
+  `Drawer--Nav` `40000123:90944` (9 NavItem con los módulos reales), `Pagination--Mobile`.
+- **Fixes:** cards móviles reescaladas proporcionalmente (clones reales, no squish), label desbordado oculto,
+  68 colores religados a tokens (los ~28 restantes son grises propios de clones del original — fieles).
+- **Siguiente:** sub-pantallas de Inicio (filtro manual/inteligente, promociones, categorías, perfil) o siguiente módulo.
+
+---
+
 ## [2026-09-15] — NEW_01 Login listo + moléculas Modal/Table creadas
 - **NEW_01 Login (Fase 3):** movidas las 6 pantallas atómicas (Acceso + Estación × M/T/D) a la página `NEW_01`,
   organizadas en 2 filas; **prototipo** Continuar→Paso 2 cableado en los 3 breakpoints + 3 flow starting points.

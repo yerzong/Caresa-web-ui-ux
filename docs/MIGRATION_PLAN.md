@@ -14,7 +14,7 @@
 |---|---|---|---|
 | 1 | **Análisis profundo** (solo lectura): secciones, frames y **connectors** (a dónde lleva cada flecha) | `docs/FLOWS.md` | [x] 212 connectors mapeados (2026-09-15) |
 | 2 | **NEW_00 Design System**: átomos (tokens ya existentes se conservan) + moléculas fieles extraídas de la UI real | página `NEW_00` | [x] catálogo 18 + Login set + Modal/TableRow/Table (faltan: dropdown base, avatar label group) |
-| 3 | **Migración por módulo** (una página NEW_XX a la vez): pantallas solo-instancias × 3 breakpoints | páginas `NEW_01..10` | [~] **NEW_01 Login LISTO** (6 screens + prototipo + flows); sigue NEW_02 Inicio |
+| 3 | **Migración por módulo** (una página NEW_XX a la vez): pantallas solo-instancias × 3 breakpoints | páginas `NEW_01..10` | [~] **NEW_01 Login LISTO**; **NEW_02 Inicio: Home ×3 lista** (faltan sub-pantallas del módulo) |
 | 4 | **Flujos/prototipo**: recablear los connectors como interacciones en las pantallas nuevas | prototipo | [ ] |
 | 5 | **QA**: checklist UX/WCAG por pantalla + registro + commit/push | docs + GitHub | [ ] |
 
