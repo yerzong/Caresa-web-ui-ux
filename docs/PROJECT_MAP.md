@@ -131,6 +131,13 @@ Fuente original: modal `741:366090` (dentro de `736:113986` "Confirmar", página
 Contenido verbatim: badge "Enviar pedido" (negro/lima) · título "Estas a punto..." · fila-resumen 6 cols · dropdown repartidor · radio×2 + toggle · botón Enviar pedido lima.
 0 hex sueltos. Touch ≥ 44px Mobile. Pendiente: prototipo (trigger "Enviar" → overlay, ✕ → close).
 
+### NEW_07 Pedidos — Overlays "Selección múltiple": ConfirmarSeleccionados + CancelarSeleccionados — 3 breakpoints c/u
+Fuente original: sección `683:6400` ("Seleccion multiple", página `7 Pedidos`). Frames: `733:47734` (VERDE "Confrimar multiple") y `733:46340` (ROJO "Cancelar multiple"). Todos en `NEW_07 Pedidos`, posición y=9400 (Confirmar) / y=11000 (Cancelar):
+- CONFIRMAR: Desktop `40000329:5103` · Tablet `40000331:5103` · Mobile `40000332:5103` (bottom-sheet 393×958)
+- CANCELAR: Desktop `40000330:5103` · Tablet `40000331:5190` · Mobile `40000332:5215` (bottom-sheet 393×1090)
+Contenido verbatim: badge chip + ícono clonado + subtitle + tabla 4 cols (Cliente|No. de orden/Fecha|Total|Metodo de entrega) + 7 filas reales. Cancelar agrega textarea "Escribe el motivo de de la cancelación". Footer: Cerrar/Si,confirmar (lima) para confirmar; Cancelar/Cancelar pedidos (rojo) para cancelar. Mobile tabla→7 order-cards.
+Pendiente: prototipo (triggers → overlays, ✕ → close).
+
 ### NEW_07 Pedidos — Overlays flujo Surtir: EliminarProducto + EditarCantidad + AnadirProducto — 3 breakpoints c/u
 Todos en `NEW_07 Pedidos`. Posiciones: Desktop x=0 · Tablet x=1900 · Mobile x=2900.
 - EliminarProducto (y=5600): `40000313:5103` (D) · `40000313:5122` (T) · `40000313:5141` (M 393×700)

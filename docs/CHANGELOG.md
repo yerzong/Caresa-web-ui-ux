@@ -13,6 +13,31 @@ Formato:
 
 ---
 
+## [2026-09-17] — NEW_07 Pedidos: 2 diálogos "Selección múltiple" (ConfirmarSeleccionados + CancelarSeleccionados) en 3 breakpoints c/u
+
+- **Creado (6 frames):**
+  - `Overlay/PedidoConfirmarSeleccionados--Desktop` `40000329:5103` (1728×1128, scrim + diálogo 900px, tabla 4 cols, footer derecho) y=9400
+  - `Overlay/PedidoConfirmarSeleccionados--Tablet` `40000331:5103` (834×834, scrim + diálogo 740px) y=9400 x=1900
+  - `Overlay/PedidoConfirmarSeleccionados--Mobile` `40000332:5103` (393×958, bottom-sheet + 7 order-cards) y=9400 x=2900
+  - `Overlay/PedidoCancelarSeleccionados--Desktop` `40000330:5103` (1728×1128, scrim + diálogo 900px, tabla + textarea) y=11000
+  - `Overlay/PedidoCancelarSeleccionados--Tablet` `40000331:5190` (834×834, scrim + diálogo 740px + textarea) y=11000 x=1900
+  - `Overlay/PedidoCancelarSeleccionados--Mobile` `40000332:5215` (393×1090, bottom-sheet + 7 order-cards + textarea) y=11000 x=2900
+- **Página:** `NEW_07 Pedidos`
+- **Origen original:** `683:6400` (sección "Seleccion multiple") — frames `733:47734` (Confrimar multiple) y `733:46340` (Cancelar multiple)
+- **Contenido verbatim:**
+  - CONFIRMAR: badge chip negro (#080808) "Confirmar" + ícono verde (imageHash `f92b1fa7...`) + subtítulo "Estas a punto de aceptar el pedido de estos clientes, ¿Deseas continuar?" + tabla 4 cols (Cliente | No. de orden / Fecha de creación | Total | Metodo de entrega) + 7 filas datos reales + footer: "Cerrar" (outline) + "Si, confirmar" (lima #AEF803)
+  - CANCELAR: badge chip rojo (#E03B3B) "Cancelar pedidos" + ícono rojo (imageHash `f0525071...`) + subtítulo verbatim "Estas a punto de cancelar multiples pedidos de clientes, si te solicitaron la cancelación de estos pedidos aun estas a tiempo. ¿Deseas continuar?" + tabla 4 cols idénticas + textarea "Escribe el motivo de de la cancelación" / placeholder "Escribe el motivo..." + footer: "Cancelar" (outline) + "Cancelar pedidos" (rojo)
+  - 7 filas de datos: Cliente: Mecanico/Particular · Gerson Yahir Garcia Gonzalez / Victor Ronnie Espinoza | Orden: DOC/515151/21020 y DOC/746311/12720 | Total: $3,330.00 | Entrega: Envio a domicilio / Recoger en tienda
+- **Responsive:**
+  - Desktop: scrim oscuro + diálogo centrado 900px, tabla columnar, footer right-aligned
+  - Tablet: scrim + diálogo 740px, tabla 4 cols comprimida, footer right-aligned
+  - Mobile: bottom-sheet (handle+header+body+footer), tabla→7 order-cards (label:valor), footer botones full-width apilados vertical (primary 50px, neutro 44px) — touch ≥44px
+- **Logos:** badge-icon clonado por imageHash del original (preservado)
+- **Calidad:** Colores ligados a variables `Color` donde API lo permite. Chip confirmar negro = `bg/inverse` (#101828). Chip cancelar rojo = hex directo (#E03B3B, sin token disponible — consistente con el original). Lima botón = `brand/lime`. Touch Mobile ≥ 44px. Touch Desktop/Tablet ≥ 40px. Auto Layout VERTICAL AUTO en todos los diálogos y sheets.
+- **Pendiente:** cableado prototipo (triggers → overlays, ✕ → close). No cableado por instrucción de tarea.
+
+---
+
 ## [2026-09-17] — NEW_07 Pedidos: 3 overlays flujo Surtir (EliminarProducto + EditarCantidad + AnadirProducto) en 3 breakpoints c/u
 
 - **Creado (9 frames):**
