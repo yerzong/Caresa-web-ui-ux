@@ -13,6 +13,27 @@ Formato:
 
 ---
 
+## [2026-09-16] — NEW_07 Pedidos: Overlays "Enviar pedido" (confirmación de envío) en 3 breakpoints
+
+- **Creado:** `Overlay/PedidoEnviar--Desktop` `40000298:5103` · `Overlay/PedidoEnviar--Tablet` `40000299:5103` · `Overlay/PedidoEnviar--Mobile` `40000301:5103`
+- **Página:** `NEW_07 Pedidos` (posición x=0/1808/2722, y=4400)
+- **Origen original:** Modal `741:366090` dentro del frame `736:113986` "Confirmar" (página `7 Pedidos`)
+- **Contenido (verbatim):**
+  - Header: badge negro/lima "Enviar pedido" + ✕
+  - Título: "Estas a punto de enviar el pedido del cliente, ¿Deseas continuar?"
+  - Fila-resumen: Cliente (Mecanico · Gerson Yahir Garcia Gonzalez) · No. de orden (DOC/515151/21020) · Total ($ 3,330.00) · Metodo de entrega (Envio a domicilio) · Dirección (Calle Tercera Pte. Sur 366, San Antonio, 29140...) · Método de pago (Crédito cliente)
+  - Dropdown: "Selecciona repartidor" (placeholder + chevron)
+  - Opciones: Radio "Imprimir Ticket" · Radio "Imprimir Carta" · Toggle "Mostrar descuento en impresion"
+  - Footer: Botón lima "Enviar pedido" alineado a la derecha (Desktop/Tablet) / full-width (Mobile)
+- **Responsive:**
+  - Desktop 1728×1128: scrim + diálogo 1254px centrado, tabla 6 cols, opciones en fila horizontal
+  - Tablet 834×834: scrim + diálogo 770px centrado, info en 2 filas×3 cols, opciones en fila
+  - Mobile 393×775: bottom-sheet (handle+header+body), info como lista 7 label:valor, dropdown full-width, opciones apiladas vertical, botón Enviar full-width 50px touch≥44
+- **Calidad:** 0 hex sueltos nuevos. Touch ≥ 44px en Mobile. Auto Layout vertical (primaryAxisSizingMode=AUTO) en sheet.
+- **Pendiente:** cableado prototipo (trigger botón "Enviar" en lista → overlay, ✕ → close). No cableado por instrucción de tarea.
+
+---
+
 ## [2026-09-16] — NEW_07 Pedidos: Overlays "Validar pedidos" (surtir) en 3 breakpoints
 
 - **Creado:** `Overlay/PedidoValidar--Desktop` `40000289:5103` · `Overlay/PedidoValidar--Tablet` `40000289:5261` · `Overlay/PedidoValidar--Mobile` `40000289:5399`

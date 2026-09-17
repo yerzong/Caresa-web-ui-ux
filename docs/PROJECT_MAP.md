@@ -123,6 +123,14 @@ Fuente original: modal `741:360120` (dentro de `683:22188` → sección `683:221
 Logos clonados por imageHash: SYD · BOSCH · MOOG · SACHS. Importe total: $10,194.50. 0 hex nuevos.
 Pendiente: prototipo (trigger ojo → overlay, X → close).
 
+### NEW_07 Pedidos — Overlays "Enviar pedido" (confirmación de envío) — 3 breakpoints
+Fuente original: modal `741:366090` (dentro de `736:113986` "Confirmar", página `7 Pedidos`). Todos en `NEW_07 Pedidos`, fila y=4400:
+- Desktop: `Overlay/PedidoEnviar--Desktop` `40000298:5103` (1728×1128, scrim + diálogo 1254px, tabla 6 cols, opciones en fila)
+- Tablet: `Overlay/PedidoEnviar--Tablet` `40000299:5103` (834×834, scrim + diálogo 770px, info 2 filas×3 cols)
+- Mobile: `Overlay/PedidoEnviar--Mobile` `40000301:5103` (393×775, bottom-sheet HUG, info lista 7 rows, dropdown full-width, opciones apiladas, botón full-width)
+Contenido verbatim: badge "Enviar pedido" (negro/lima) · título "Estas a punto..." · fila-resumen 6 cols · dropdown repartidor · radio×2 + toggle · botón Enviar pedido lima.
+0 hex sueltos. Touch ≥ 44px Mobile. Pendiente: prototipo (trigger "Enviar" → overlay, ✕ → close).
+
 ### NEW_07 Pedidos — Overlays "Validar pedidos" (surtir) — 3 breakpoints
 Fuente original: frame `736:82992` (página `7 Pedidos`). Todos en `NEW_07 Pedidos`, fila y=3200:
 - Desktop: `Overlay/PedidoValidar--Desktop` `40000289:5103` (1728×1128, scrim + diálogo 1155px, 6 cols tabla)
