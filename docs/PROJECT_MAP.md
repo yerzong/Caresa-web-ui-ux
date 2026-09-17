@@ -115,13 +115,17 @@ Transforms: Desktop→tabla 8 cols; Tablet→tabla 5 cols (Cliente|No. orden|Est
 Pulido 2026-09-16: iconos de accion reales (clones de `683:4566`), botones Confirmar/Cancelar outline reales, 7a card Mobile agregada (Enviado, 1744px). Mobile height ajustada a 1744px.
 Pendiente: prototipo, tokens color estado-badge (sin token disponible), reactions.
 
-### NEW_07 Pedidos — Overlays "Ver pedido" (detalle) — 3 breakpoints
+### NEW_07 Pedidos — Overlays "Ver pedido" (detalle) — 3 breakpoints base + 3 variantes de estado
 Fuente original: modal `741:360120` (dentro de `683:22188` → sección `683:22187`). Todos en `NEW_07 Pedidos`, fila y=2000:
 - Desktop: `Overlay/PedidoVerDetalle--Desktop` `40000283:5103` (1728×1128, scrim + diálogo 1155px, 8 cols tabla)
 - Tablet: `Overlay/PedidoVerDetalle--Tablet` `40000284:5103` (834×1194, scrim + diálogo 750px, 5 cols tabla, info 2 filas)
 - Mobile: `Overlay/PedidoVerDetalle--Mobile` `40000285:5103` (393×1599, bottom-sheet HUG, tabla→cards, botones full-width)
 Logos clonados por imageHash: SYD · BOSCH · MOOG · SACHS. Importe total: $10,194.50. 0 hex nuevos.
-Pendiente: prototipo (trigger ojo → overlay, X → close).
+**Variante Listo para Enviar** (y=12500): Desktop `40000341:5103` · Tablet `40000341:5271` · Mobile `40000341:5419` — badge azul, vendedor Gerson Garcia, bloque Hora/Tiempo, btn Enviar este pedido.
+**Variante Cancelado** (y=13800): Desktop `40000342:5103` · Tablet `40000342:5265` · Mobile `40000342:5407` — badge rojo, bloque Motivos cancelacion, footer vacío.
+**Variante Completado** (y=15100): Desktop `40000343:5103` (1728×1501) · Tablet `40000343:27105` (834×1526) · Mobile `40000343:27298` (393×2279) — badge verde, Hora/Tiempo+URL+Repartidor+Opciones impresión+Firmas clonadas, btn Imprimir.
+Imágenes firma/foto: clonadas de `741:377164` (firma vector) y `741:377172`→`741:377179` (foto imageHash `b93f4e9bf67c2f023c3b1cf91a79001cfba2291e`).
+Pendiente: prototipo (trigger ojo → overlay por estado, X → close).
 
 ### NEW_07 Pedidos — Overlays "Enviar pedido" (confirmación de envío) — 3 breakpoints
 Fuente original: modal `741:366090` (dentro de `736:113986` "Confirmar", página `7 Pedidos`). Todos en `NEW_07 Pedidos`, fila y=4400:

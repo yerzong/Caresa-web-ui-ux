@@ -13,6 +13,54 @@ Formato:
 
 ---
 
+## [2026-09-17] — NEW_07 Pedidos: 3 variantes de estado del modal "Ver pedido" (ListoParaEnviar + Cancelado + Completado) en 3 breakpoints c/u
+
+- **Creado (9 frames):**
+  - `Overlay/PedidoVerListoParaEnviar--Desktop` `40000341:5103` (1728×1128, y=12500)
+  - `Overlay/PedidoVerListoParaEnviar--Tablet` `40000341:5271` (834×1194, x=1900 y=12500)
+  - `Overlay/PedidoVerListoParaEnviar--Mobile` `40000341:5419` (393×1599, x=2900 y=12500)
+  - `Overlay/PedidoVerCancelado--Desktop` `40000342:5103` (1728×1128, y=13800)
+  - `Overlay/PedidoVerCancelado--Tablet` `40000342:5265` (834×1194, x=1900 y=13800)
+  - `Overlay/PedidoVerCancelado--Mobile` `40000342:5407` (393×1599, x=2900 y=13800)
+  - `Overlay/PedidoVerCompletado--Desktop` `40000343:5103` (1728×1501, y=15100) — scrim expandido por alto contenido
+  - `Overlay/PedidoVerCompletado--Tablet` `40000343:27105` (834×1526, x=1900 y=15100)
+  - `Overlay/PedidoVerCompletado--Mobile` `40000343:27298` (393×2279, x=2900 y=15100)
+- **Página:** `NEW_07 Pedidos`
+- **Base clonada:** `Overlay/PedidoVerDetalle--{Desktop 40000283:5103, Tablet 40000284:5103, Mobile 40000285:5103}`
+- **Estado 1 — Listo para Enviar (`737:39725` referencia):**
+  - Badge top-right: "Listo para enviar" (fondo azul claro #E0ECFF, texto azul #2256F6)
+  - Vendedor: "Gerson Garcia" (en lugar de "---")
+  - Bloque `Bloque/HoraTiempo` (horizontal Desktop/Tablet, vertical Mobile) antes de Totales:
+    - Sub-bloque "Hora de surtido": "Hora de inicio: 8:36 AM" / "Hora de surtido: 9:00 AM"
+    - Sub-bloque "Tiempo de surtido": "⏱ 11:34 / 10:00"
+  - Footer: UN botón "Enviar este pedido" (lima #C8FB12) — Cancelar pedido + Confirmar pedido eliminados
+- **Estado 2 — Cancelado (`737:38154` referencia):**
+  - Badge top-right: "Cancelado" (fondo rojo claro, texto rojo #E03636)
+  - Bloque `Bloque/MotivosCancelacion` antes de Totales: "Motivos de cancelacion" + "Producto no encontrado en la bodega"
+  - Footer: VACÍO — sin botones de acción (cierre solo con ✕ del header)
+- **Estado 3 — Completado (`737:36404` referencia):**
+  - Badge top-right: "Completado" (fondo verde claro, texto verde #128C33)
+  - Bloques adicionales antes de Totales (en orden):
+    1. `Bloque/HoraTiempo` — igual que Listo para Enviar
+    2. `Bloque/URL` — label "URL" + input con "https://www.figma.com/design/vhC5rpzXuFF4..." + botón "⧉ Copiar" (lima)
+    3. `Bloque/Repartidor` — "Repartidor asignado: Gerson Yahir Garcia Gonzalez" + "Numero del repartidor: 734 123 4567" + btn Copiar
+    4. `Bloque/OpcionesImpresion` — Radio "Imprimir Ticket" (activo) + Radio "Imprimir Carta" + Toggle "Mostrar descuento en impresion" (ON)
+    5. `Bloque/Firmas` — dos bloques lado a lado (Desktop/Tablet) / apilados (Mobile):
+       - `Bloque/Firma` (clon de `741:377164`): header "Firma" + Vector trazo vectorial
+       - `Bloque/FotoEntrega` (clon de `741:377172`): header "Foto entrega" + Rectangle 53 (imageHash `b93f4e9bf67c2f023c3b1cf91a79001cfba2291e`)
+  - Footer: UN botón "Imprimir" (lima)
+- **Imágenes clonadas:**
+  - Logos de productos: SYD/BOSCH/MOOG/SACHS heredados del base (imageHash preservado)
+  - Firma vectorial: clonada de `741:377164` (Vector 1 trayectoria vectorial)
+  - Foto de entrega: clonada de `741:377172` → `741:377179` (Rectangle 53, imageHash `b93f4e9bf67c2f023c3b1cf91a79001cfba2291e`, 490×178)
+- **Responsive:**
+  - Desktop/Tablet: scrim+diálogo centrado; Completado expande scrim (diálogo 1421/1446px > scrim original)
+  - Mobile: bottom-sheet VERTICAL AUTO (tabla→cards, bloques apilados, firmas apiladas, footer full-width lima 50px touch≥44)
+- **Calidad:** 0 hex directos nuevos. Touch Mobile ≥ 44px. Auto Layout VERTICAL AUTO en todos los diálogos/sheets. Bloques con `primaryAxisSizingMode = AUTO` y `counterAxisSizingMode = AUTO`.
+- **Pendiente:** cableado prototipo (triggers → overlays, ✕ → close). No cableado por instrucción de tarea.
+
+---
+
 ## [2026-09-17] — NEW_07 Pedidos: 2 diálogos "Selección múltiple" (ConfirmarSeleccionados + CancelarSeleccionados) en 3 breakpoints c/u
 
 - **Creado (6 frames):**
