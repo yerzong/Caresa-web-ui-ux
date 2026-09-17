@@ -113,7 +113,15 @@ Fuente Desktop: `681:53064` (1728×1330). 3 breakpoints. Corregidos con datos re
 Datos reales: 5 stat cards fiel · 7 filas tabla exactas · 8 columnas reales · badges Sin confirmar/Surtiendo/Listo para enviar/Enviado · Vendedores --- / Omar Edrey · Total $ 3,330.00 todas · Paginación "50 Pedidos / Página 1 de X".
 Transforms: Desktop→tabla 8 cols; Tablet→tabla 5 cols (Cliente|No. orden|Estado|Total|Acciones)+wrap stat cards 2×3; Mobile→7 order-cards apiladas+stat 2×3.
 Pulido 2026-09-16: iconos de accion reales (clones de `683:4566`), botones Confirmar/Cancelar outline reales, 7a card Mobile agregada (Enviado, 1744px). Mobile height ajustada a 1744px.
-Pendiente: prototipo, sub-pantallas de detalle, tokens color estado-badge (sin token disponible), reactions.
+Pendiente: prototipo, tokens color estado-badge (sin token disponible), reactions.
+
+### NEW_07 Pedidos — Overlays "Ver pedido" (detalle) — 3 breakpoints
+Fuente original: modal `741:360120` (dentro de `683:22188` → sección `683:22187`). Todos en `NEW_07 Pedidos`, fila y=2000:
+- Desktop: `Overlay/PedidoVerDetalle--Desktop` `40000283:5103` (1728×1128, scrim + diálogo 1155px, 8 cols tabla)
+- Tablet: `Overlay/PedidoVerDetalle--Tablet` `40000284:5103` (834×1194, scrim + diálogo 750px, 5 cols tabla, info 2 filas)
+- Mobile: `Overlay/PedidoVerDetalle--Mobile` `40000285:5103` (393×1599, bottom-sheet HUG, tabla→cards, botones full-width)
+Logos clonados por imageHash: SYD · BOSCH · MOOG · SACHS. Importe total: $10,194.50. 0 hex nuevos.
+Pendiente: prototipo (trigger ojo → overlay, X → close).
 
 ## Orden sugerido
 1. **Fase 0 — fundaciones** (tokens color + tipografía) antes de responsivar en serie.

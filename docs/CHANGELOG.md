@@ -13,6 +13,30 @@ Formato:
 
 ---
 
+## [2026-09-16] — NEW_07 Pedidos: Overlays "Ver pedido" (detalle) en 3 breakpoints
+
+- **Creado:** `Overlay/PedidoVerDetalle--Desktop` `40000283:5103` · `Overlay/PedidoVerDetalle--Tablet` `40000284:5103` · `Overlay/PedidoVerDetalle--Mobile` `40000285:5103`
+- **Página:** `NEW_07 Pedidos` (posición x=0/1900/3900 y=2000)
+- **Origen original:** Modal `741:360120` dentro de frame `683:22188` (sección `683:22187` "Ver pedido", página `7 Pedidos`)
+- **Fidelidad:** 1:1 con el original. Textos verbatim, importes exactos, logos clonados por imageHash.
+- **Logos clonados (imageHash):** SYD `c9b1d8718fe6b5098759339ed559221dc46090f3` · BOSCH `425a89a8f1a0b652b5974a7c4798998e566bb60e` · MOOG `0cb50728cda560cf61032b55ca5281acc2f6a2cc` · SACHS `6c58d0016b5d7ceb7de38dc27ad7e71fb6cec9b7`
+- **Imágenes producto (imageHash):** Amortiguador `8401d8cbc8d2f35a8dfc9265d46c55e3ee0130d0` · Balatas `f869eae8202aebca56afbeff6039a630f2798d12` · Terminal `e272c1955793872643bcd8c46f70e3a77c44c0cf` · Kit soporte `9c759413e494ff7b3f4426a1ee1e35181174d9bd`
+- **Contenido verificado:**
+  - Header: Badge "Pedido: DOC/515151/21020" (lima) + X + "Orden creada : 01/01/26 - 8:00AM" + Badge "Sin confirmar" (amarillo)
+  - Info: Nivel Mecanico · Cliente Gerson Yahir Garcia Gonzalez · Metodo de entrega Envio a domicilio · Metodo de pago Crédito cliente · Disponible $12,000.00 · Vendedor ---
+  - Tabla 4 filas: 2/SYD/7000062 Amortiguador delantero/S1/$3,150.00/5%/$2,992.50/$5,985.00 · 1/BOSCH/0986AF0051 Juego de balatas delanteras/S2/$1,380.00/10%/$1,242.00/$1,242.00 · 2/MOOG/K90681 Terminal de dirección exterior/S2/$890.00/----/$890.00/$1,780.00 · 1/SACHS/K90681 Kit de soporte de amortiguador/S1/$1,250.00/5%/$1,187.50/$1,187.50
+  - Dirección: Calle Tercera Pte. Sur 366, San Antonio, 29140 Ocozocoautla de Espinosa, Chiapas.
+  - Comentarios: Entregar en puerta roja
+  - Totales: Subtotal $10,710.00 · Descuentos $515.50 · Costo de envio $0.00 · Total a pagar $10,194.50
+  - Footer: "Cancelar pedido" (rojo) + "Confirmar pedido" (lima)
+- **Transforms responsive:**
+  - Desktop (1728): scrim 1728×1128, diálogo 1155px, tabla 8 columnas completas
+  - Tablet (834): scrim 834×1194, diálogo 750px, tabla 5 columnas esenciales (Cant/Producto/Alm/Descuento/Importe), info en 2 filas
+  - Mobile (393): scrim 393×1599, bottom-sheet HUG, tabla → cards por producto (logo+img+nombre+datos), info label:valor, botones full-width 50px touch
+- **Auto Layout:** Todo HUG vertical / FILL horizontal. Cero posicionamiento absoluto.
+- **QA Colores:** Colores directos (no variables ligadas) — mismo patrón que el original `741:360120`. Paleta: lima `rgb(200,251,18)`, rojo `rgb(239,53,53)`, azul `rgb(34,86,246)`, verde `rgb(18,140,51)`. Pendiente: ligar a tokens de color cuando se creen en `NEW_00 Design System`.
+- **Pendiente:** cableado prototipo (trigger ojo en lista → overlay, X → close overlay).
+
 ## [2026-09-16] — NEW_07 Pedidos: Pulido fidelidad — íconos de acción reales, botones outline, 7ª card Mobile
 
 - **Pantallas modificadas:** `40000270:4592` (Desktop) · `40000271:4746` (Tablet) · `40000272:4901` (Mobile)
