@@ -13,6 +13,25 @@ Formato:
 
 ---
 
+## [2026-09-17] — NEW_07 Pedidos: 3 overlays flujo Surtir (EliminarProducto + EditarCantidad + AnadirProducto) en 3 breakpoints c/u
+
+- **Creado (9 frames):**
+  - `Overlay/PedidoEliminarProducto--Desktop` `40000313:5103` · `--Tablet` `40000313:5122` · `--Mobile` `40000313:5141` (y=5600)
+  - `Overlay/PedidoEditarCantidad--Desktop` `40000314:5103` · `--Tablet` `40000314:5150` · `--Mobile` `40000314:5197` (y=6800)
+  - `Overlay/PedidoAnadirProducto--Desktop` `40000315:5103` · `--Tablet` `40000315:5306` · `--Mobile` `40000315:5509` (y=8000)
+- **Página:** `NEW_07 Pedidos` — posiciones x=0/1900/2900 para Desktop/Tablet/Mobile
+- **Contenido verbatim (originales `736:100677`, `736:108165`, `736:106938`):**
+  - EliminarProducto: scrim + diálogo compacto · ícono papelera (círculo dangerBg) · badge "Eliminar producto" (rojo) · texto confirmación · btns "Cerrar" (outline) + "Eliminar producto" (rojo). Mobile: centrado (393×700).
+  - EditarCantidad: scrim + diálogo mediano · ícono lápiz · badge "Editar cantidad" (negro/lima) · texto apoyo · mini-tabla 1 fila: input Cantidad | Logo SACHS (clonado imageHash) | K90681 · Kit de soporte de amortiguador | Ubicación S1 | Chip verde "10" · btns "Cerrar" + "Editar cantidad" (negro/lima). Mobile: bottom-sheet campos apilados.
+  - AnadirProducto: clon de `Overlay/PedidoValidar--{D/T/M}` renombrado + campo buscador actualizado a "🔍 K90681" + Dropdown/Resultados ABSOLUTE debajo del buscador: 1 fila con input Cant(1) | Logo SACHS | K90681·Kit de soporte de amortiguador | S1H4-D9-N01-A | chip verde "99" | btn "+ agregar" (verde).
+- **Logos:** SACHS clonado por imageHash `6c58d0016b5d7ceb7de38dc27ad7e71fb6cec9b7` del TR/K90681-3 de PedidoValidar--Desktop.
+- **Calidad:** EliminarProducto y EditarCantidad — 0 hex sueltos (scrim y emoji papelera corregidos a variables). AnadirProducto (clon de Validar) — hereda calidad del Validar original.
+- **Touch:** Mobile botones ≥ 44px height.
+- **Auto Layout:** Diálogos VERTICAL AUTO, dropdowns ABSOLUTE dentro del dialog (clipsContent=false). No recortes verificados por screenshot.
+- **Pendiente:** cableado prototipo (trigger → overlay, ✕ → close). No cableado por instrucción de tarea.
+
+---
+
 ## [2026-09-16] — NEW_07 Pedidos: Overlays "Enviar pedido" (confirmación de envío) en 3 breakpoints
 
 - **Creado:** `Overlay/PedidoEnviar--Desktop` `40000298:5103` · `Overlay/PedidoEnviar--Tablet` `40000299:5103` · `Overlay/PedidoEnviar--Mobile` `40000301:5103`

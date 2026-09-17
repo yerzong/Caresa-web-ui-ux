@@ -131,6 +131,14 @@ Fuente original: modal `741:366090` (dentro de `736:113986` "Confirmar", página
 Contenido verbatim: badge "Enviar pedido" (negro/lima) · título "Estas a punto..." · fila-resumen 6 cols · dropdown repartidor · radio×2 + toggle · botón Enviar pedido lima.
 0 hex sueltos. Touch ≥ 44px Mobile. Pendiente: prototipo (trigger "Enviar" → overlay, ✕ → close).
 
+### NEW_07 Pedidos — Overlays flujo Surtir: EliminarProducto + EditarCantidad + AnadirProducto — 3 breakpoints c/u
+Todos en `NEW_07 Pedidos`. Posiciones: Desktop x=0 · Tablet x=1900 · Mobile x=2900.
+- EliminarProducto (y=5600): `40000313:5103` (D) · `40000313:5122` (T) · `40000313:5141` (M 393×700)
+- EditarCantidad (y=6800): `40000314:5103` (D) · `40000314:5150` (T) · `40000314:5197` (M bottom-sheet)
+- AnadirProducto (y=8000): `40000315:5103` (D) · `40000315:5306` (T) · `40000315:5509` (M 393×1553)
+Contenido: ver CHANGELOG 2026-09-17. Logo SACHS imageHash preservado. 0 hex nuevos en Eliminar+Editar. AnadirProducto = clon Validar + dropdown ABSOLUTE.
+Pendiente: prototipo (triggers → overlays, ✕ → close).
+
 ### NEW_07 Pedidos — Overlays "Validar pedidos" (surtir) — 3 breakpoints
 Fuente original: frame `736:82992` (página `7 Pedidos`). Todos en `NEW_07 Pedidos`, fila y=3200:
 - Desktop: `Overlay/PedidoValidar--Desktop` `40000289:5103` (1728×1128, scrim + diálogo 1155px, 6 cols tabla)
