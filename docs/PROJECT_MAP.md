@@ -150,6 +150,15 @@ Todos en `NEW_07 Pedidos`. Posiciones: Desktop x=0 · Tablet x=1900 · Mobile x=
 Contenido: ver CHANGELOG 2026-09-17. Logo SACHS imageHash preservado. 0 hex nuevos en Eliminar+Editar. AnadirProducto = clon Validar + dropdown ABSOLUTE.
 Pendiente: prototipo (triggers → overlays, ✕ → close).
 
+### NEW_07 Pedidos — Overlay "Seguimiento de envío (ADMIN)" — 3 breakpoints
+Fuente original: modal `683:69908` (dentro de frame `683:68953` → section `683:63949` "SEGUIMIENTO ENVIO (ADMIN", página `7 Pedidos`). Todos en `NEW_07 Pedidos`, fila y=9600:
+- Desktop: `Overlay/PedidoSeguimientoEnvio--Desktop` `40000349:27000` (1728×1128, x=0) — scrim + diálogo centrado 1600×960, 2 columnas (sidebar 430px | map+info 1170px)
+- Tablet: `Overlay/PedidoSeguimientoEnvio--Tablet` `40000355:5109` (834×1194, x=1900) — scrim + diálogo centrado 780×1100, 2 columnas (sidebar 280px | map+info 500px)
+- Mobile: `Overlay/PedidoSeguimientoEnvio--Mobile` `40000356:5109` (393×950, x=2900) — bottom-sheet 750px, info repartidor compacto, mapa 393×280 full-width, sidebar apilado, Volver full-width 44px touch
+MAP clonado (3 instancias de `683:70603`): Desktop `40000354:7525` · Tablet `40000355:7544` · Mobile `40000356:7504`
+Contenido verbatim: Pedido DOC/515151/21020 · Enviado · Orden creada 01/01/26 · Repartidor David Manuel Espinoza Rodriguez · Sin salir · 00:00/20:00 · Dirección Calle Tercera Pte. Sur 366 · Comentarios puerta roja · Foto/Firma Sin capturar · Cronología 4 ítems · Info 6 cols.
+0 hex nuevos en nodos propios (colores del MAP clonado son del original). Pendiente: prototipo (trigger → overlay, ✕ → close).
+
 ### NEW_07 Pedidos — Overlays "Validar pedidos" (surtir) — 3 breakpoints
 Fuente original: frame `736:82992` (página `7 Pedidos`). Todos en `NEW_07 Pedidos`, fila y=3200:
 - Desktop: `Overlay/PedidoValidar--Desktop` `40000289:5103` (1728×1128, scrim + diálogo 1155px, 6 cols tabla)

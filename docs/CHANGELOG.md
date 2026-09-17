@@ -13,6 +13,32 @@ Formato:
 
 ---
 
+## [2026-09-17] — NEW_07 Pedidos: Overlay "Seguimiento de Envío (ADMIN)" en 3 breakpoints
+
+- **Creado (3 frames en `NEW_07 Pedidos`):**
+  - `Overlay/PedidoSeguimientoEnvio--Desktop` `40000349:27000` (1728×1128, x=0 y=9600)
+  - `Overlay/PedidoSeguimientoEnvio--Tablet` `40000355:5109` (834×1194, x=1900 y=9600)
+  - `Overlay/PedidoSeguimientoEnvio--Mobile` `40000356:5109` (393×950, x=2900 y=9600)
+- **Fuente:** modal `683:69908` en section `683:63949` "SEGUIMIENTO ENVIO (ADMIN" de `7 Pedidos`
+- **MAP clonado:** Frame `683:70603` "MAP 5" — vector map con street names (no image fill). Clonado en los 3 breakpoints:
+  - Desktop MAP: `40000354:7525` (1138×730 en RightColumn)
+  - Tablet MAP: `40000355:7544` (476×810 en RightColumn)
+  - Mobile MAP: `40000356:7504` (393×280 en ScrollContent)
+- **Contenido verificado (verbatim del original):**
+  - Header: "Pedido: DOC/515151/21020" + badge "Enviado" + "Orden creada : 01/01/26 - 8:00AM"
+  - Repartidor: "David Manuel Espinoza Rodriguez", Estado: "Sin salir", Tiempo: "00:00 / 20:00"
+  - Dirección: "Calle Tercera Pte. Sur 366, San Antonio, 29140 Ocozocoautla de Espinosa, Chiapas."
+  - Comentarios: "Entregar en puerta roja"
+  - Foto/Firma: "Sin capturar" para ambos
+  - Info row: Nivel=Mecanico, Cliente=Gerson Yahir Garcia Gonzalez, Metodo entrega=Envio a domicilio, Metodo pago=Crédito cliente, Disponible=$ 12,000.00, Vendedor=Gerson Garcia
+  - Cronología (4 ítems con círculo verde/gris): Pedido surtido 09:30 · Pedido listo para enviar 09:35 · En camino 09:37 · Entrega confirmada 09:50
+  - Footer: botón "Volver" (lima #AEF803)
+- **Responsive:**
+  - Desktop: scrim + diálogo centrado (1600×960), 2 columnas (sidebar 430px | map+info 1170px)
+  - Tablet: scrim + diálogo centrado (780×1100), 2 columnas (sidebar 280px | map+info 500px)
+  - Mobile: bottom-sheet (393px), header compacto, mapa full-width 393×280, sidebar apilado, botón Volver full-width (44px touch)
+- **Auditoría:** 0 hex sueltos en nodos propios; colores vía tokens `Color`; MAP clonado de original (sin redibujado)
+
 ## [2026-09-17] — NEW_07 Pedidos: 3 variantes de estado del modal "Ver pedido" (ListoParaEnviar + Cancelado + Completado) en 3 breakpoints c/u
 
 - **Creado (9 frames):**
