@@ -13,6 +13,33 @@ Formato:
 
 ---
 
+## [2026-09-16] — NEW_07 Pedidos: Overlays "Validar pedidos" (surtir) en 3 breakpoints
+
+- **Creado:** `Overlay/PedidoValidar--Desktop` `40000289:5103` · `Overlay/PedidoValidar--Tablet` `40000289:5261` · `Overlay/PedidoValidar--Mobile` `40000289:5399`
+- **Página:** `NEW_07 Pedidos` (posición x=0/1900/3900 y=3200)
+- **Origen original:** Frame `736:82992` "Validar pedidos" (página `7 Pedidos`)
+- **Método:** Clonados desde `Overlay/PedidoVerDetalle--{Desktop,Tablet,Mobile}` y adaptados in-place.
+- **Diferencias aplicadas vs "Ver pedido":**
+  - Fila info: Nivel · Cliente · Traspaso (2/3) · Piezas (0/6) · Método de entrega · Tiempo (05:00/07:00) · Btn Imprimir ticket
+  - Badge estado → "Surtiendo"
+  - Barra de búsqueda "Agregar un nuevo producto" + ícono lupa (debajo del header info)
+  - Tabla columnas nuevas: Cantidad | Marca (logo) | Producto | Ubicación | Surtido | Acciones
+  - Ubicaciones reales: S1P4-A9-N04-A · S2P1-B3-N07-C · S2P2-B5-N09-B · S1H4-D9-N01-A · S1P4-A10-N02-B
+  - Surtido chips: 0/2 · 0/1 · 0/2 · 0/1 · 0/2
+  - Acciones por fila: + agregar (verde) · imprimir · eliminar (rojo) · editar
+  - 5a fila agregada: 2/SYD/8000060 Amortiguador trasero / S1P4-A10-N02-B / 0/2
+  - Quitados: bloque dirección, comentarios, totales
+  - Footer: "Cancelar pedido" (outline rojo) + "Validar pedido" (lima sólido)
+- **Logos reutilizados:** SYD · BOSCH · MOOG · SACHS (clonados del overlay Ver pedido Desktop)
+- **Responsive:**
+  - Desktop 1728×1128: scrim + diálogo 1155px centrado, tabla 6 cols, botones derecha
+  - Tablet 834×834: scrim + diálogo 750px centrado, tabla 5 cols esenciales, botones derecha
+  - Mobile 393×1553: bottom-sheet HUG, info como lista label:valor, tabla→5 cards (logo+sku+nombre, ubicación, surtido chip, acciones 44px), botones full-width
+- **Calidad:** 0 hex sueltos nuevos; logos clonados (imageHash preservado). Touch ≥ 44px en Mobile.
+- **Pendiente:** cableado prototipo (trigger "Surtir" → overlay, X → close).
+
+---
+
 ## [2026-09-16] — NEW_07 Pedidos: Overlays "Ver pedido" (detalle) en 3 breakpoints
 
 - **Creado:** `Overlay/PedidoVerDetalle--Desktop` `40000283:5103` · `Overlay/PedidoVerDetalle--Tablet` `40000284:5103` · `Overlay/PedidoVerDetalle--Mobile` `40000285:5103`

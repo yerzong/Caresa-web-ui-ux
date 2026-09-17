@@ -123,6 +123,16 @@ Fuente original: modal `741:360120` (dentro de `683:22188` → sección `683:221
 Logos clonados por imageHash: SYD · BOSCH · MOOG · SACHS. Importe total: $10,194.50. 0 hex nuevos.
 Pendiente: prototipo (trigger ojo → overlay, X → close).
 
+### NEW_07 Pedidos — Overlays "Validar pedidos" (surtir) — 3 breakpoints
+Fuente original: frame `736:82992` (página `7 Pedidos`). Todos en `NEW_07 Pedidos`, fila y=3200:
+- Desktop: `Overlay/PedidoValidar--Desktop` `40000289:5103` (1728×1128, scrim + diálogo 1155px, 6 cols tabla)
+- Tablet: `Overlay/PedidoValidar--Tablet` `40000289:5261` (834×834, scrim + diálogo 750px, 5 cols tabla)
+- Mobile: `Overlay/PedidoValidar--Mobile` `40000289:5399` (393×1553, bottom-sheet HUG, tabla→cards)
+Logos clonados del Ver pedido Desktop: SYD · BOSCH · MOOG · SACHS (imageHash preservado).
+Datos: 5 productos (incluyendo 8000060 Amortiguador trasero), ubicaciones reales, surtido 0/X.
+Footer: "Cancelar pedido" (rojo outline) + "Validar pedido" (lima). 0 hex nuevos.
+Pendiente: prototipo (trigger "Surtir" → overlay, X → close).
+
 ## Orden sugerido
 1. **Fase 0 — fundaciones** (tokens color + tipografía) antes de responsivar en serie.
 2. **Login** (más chico, valida el flujo end-to-end: homologar → responsivar → UX → prototipar).
