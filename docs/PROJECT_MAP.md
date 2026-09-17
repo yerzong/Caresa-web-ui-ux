@@ -34,7 +34,7 @@ Objetivo por pantalla: existir en **Desktop (fuente) → Tablet (834) → Mobile
 | 2 | Inicio (MAIN) | `2.0 Inicio (MAIN)` (`4:2`) | [~] | [~] | [~] | [~] | [~] |
 | 3 | Carrito | `3 Carrito` (`13:96`) | [ ] | [ ] | [ ] | [ ] | [ ] |
 | 4 | Catálogos | `4 Catálogos` (`13:100`) | [ ] | [ ] | [ ] | [ ] | [ ] |
-| 5 | Consultas | `5 Consultas` (`13:104`) | [ ] | [ ] | [ ] | [ ] | [ ] |
+| 5 | Consultas | `5 Consultas` (`13:104`) | [~] | [x] | [x] | [ ] | [~] |
 | 6 | Corte de caja | `6 Corte de caja` (`595:70899`) | [ ] | [ ] | [ ] | [ ] | [ ] |
 | 7 | Pedidos | `7 Pedidos` (`681:51807`) | [ ] | [ ] | [ ] | [ ] | [ ] |
 | 8 | Chat | `8 Chat` (`681:53445`) | [ ] | [ ] | [ ] | [ ] | [ ] |
@@ -54,6 +54,39 @@ UX aplicado: placeholders/labels/stepper `tertiary`→`secondary` (pasa 4.5:1), 
 Borde de input accesible aplicado (token `border/input` #8C8F96, 3.24:1).
 **Pendiente (variantes de componente — `design-system-librarian`):** estados `focus`/`error`/`loading`,
 área táctil del icono ojo/chevron, indicador de paso completado.
+
+### NEW_05 Consultas — Overlays tab GARANTÍAS: VerDetalle + Aplicar + Alerta (9 overlays)
+Todos en `NEW_05 Consultas`. Posición: Desktop x=0/1900/3800 y=7500 · Tablet x=0/950/1900 y=9000 · Mobile x=3900/4400/4900 y=7500.
+- Desktop: `GarantiasVerDetalle` `40000253:5948` · `GarantiasAplicar` `40000254:5948` · `GarantiasAlerta` `40000254:5979`
+- Tablet: `GarantiasVerDetalle` `40000257:5948` · `GarantiasAplicar` `40000257:6017` · `GarantiasAlerta` `40000257:6048`
+- Mobile: `GarantiasVerDetalle` `40000259:5948` (bottom-sheet) · `GarantiasAplicar` `40000259:5997` (bottom-sheet) · `GarantiasAlerta` `40000259:6030` (toast bottom)
+- Calidad: 0 hex sueltos. Pendiente: cableado reactions (tarea futura).
+- **NO construido (pendiente):** Visor de fotos/galería `741:302220` — modal 983×717, "AMORTIGUADOR DELANTERO (GAS) / Imágenes almacenadas / 2 de 3" — modal-documento con imagen de producto.
+- **Relación trigger→overlay:**
+  - Botón ojo (eye) por fila → `GarantiasVerDetalle`
+  - "Continuar con garantía" → `GarantiasAplicar`
+  - "Aplicar garantía" → `GarantiasAlerta` (toast auto-dismiss)
+  - ✕ / Cerrar / Regresar → CLOSE overlay
+
+### NEW_05 Consultas — Overlays tab CRÉDITOS: MásOpciones + AbonarPagar + EnviarCorreo + AbonoConfirmar (12 overlays)
+Todos en `NEW_05 Consultas`, fila y=4500 (Desktop/Mobile) y y=6050 (Tablet):
+- Desktop: `CreditosMasOpciones` `40000234:4577` · `CreditosAbonarPagar` `40000235:4658` · `CreditosEnviarCorreo` `40000236:4592` · `CreditosAbonoConfirmar` `40000236:4628`
+- Tablet: `CreditosMasOpciones` `40000234:4599` · `CreditosAbonarPagar` `40000235:4741` · `CreditosEnviarCorreo` `40000236:4609` · `CreditosAbonoConfirmar` `40000236:4635`
+- Mobile: `CreditosMasOpciones` `40000234:4621` (BS-336) · `CreditosAbonarPagar` `40000235:4743` (BS-928) · `CreditosEnviarCorreo` `40000236:4626` · `CreditosAbonoConfirmar` `40000236:4642`
+- Calidad: 0 hex sueltos. Pendiente: cableado reactions + íconos lucide reales en chips.
+- **Pendiente:** Modal de comprobante/ticket con QR — NO construido en esta tarea.
+- **Análisis CLIENTE (para tarea futura):**
+  - `741:331139` (CLIENTE MÁS OPCIONES): 6 acciones — Ticket, Imprimir, Enviar correo, Descargar pdf, Cancelar venta, Editar venta. DIFIERE del menú de Crédito (no tiene "Abonar/Pagar"; tiene "Ticket" y "Cancelar venta" que crédito no tiene). NO reutiliza los overlays de crédito — requiere overlays propios.
+  - `741:316692` (CLIENTE ABONAR/PAGAR): misma cadena de modales que crédito regular. Los overlays de crédito `CreditosAbonarPagar` SERÍA reutilizable para el flujo de cliente, aunque el trigger es diferente.
+  - Modal "Enviar correo" del cliente = idéntico al de crédito (mismo texto). PUEDE reusar `CreditosEnviarCorreo`.
+  - Modal "Cancelar venta" del cliente: 374px, badge CONFIRMAR, texto "¿Estás seguro de que deseas cancelar la venta?", btns "No" / "Cancelar venta" (destructivo). Es diferente del de Ventas.
+
+### NEW_05 Consultas — Overlays "Más opciones" tab VENTAS (12 overlays)
+Todos en `NEW_05 Consultas`, fila y≈1200–1600 junto a las pantallas de Ventas:
+- Desktop: `VentasMasOpciones` `40000213:5924` · `VentasEnviarCorreo` `40000216:5940` · `VentasCancelarVenta` `40000216:5957` · `VentasCrearGarantia` `40000217:5972`
+- Tablet: `VentasMasOpciones` `40000218:5946` · `VentasEnviarCorreo` `40000218:5963` · `VentasCancelarVenta` `40000218:5980` · `VentasCrearGarantia` `40000219:5960`
+- Mobile: `VentasMasOpciones` `40000220:5958` (bottom-sheet) · `VentasEnviarCorreo` `40000221:5940` · `VentasCancelarVenta` `40000221:5957` · `VentasCrearGarantia` `40000222:5964` (bottom-sheet formulario)
+- Calidad: 0 hex sueltos. Pendiente: cableado reactions + íconos lucide reales en menú.
 
 ### Inicio (MAIN) — Drill-down por Marca / CARD AUTOS (en `NEW_02 Inicio`)
 Sub-pantalla que aparece tras clic en una "Card marca". 3 breakpoints en `NEW_02 Inicio` (`40000110:4579`), fila y=1500:

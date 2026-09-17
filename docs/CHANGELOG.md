@@ -13,6 +13,126 @@ Formato:
 
 ---
 
+## [2026-09-16] — NEW_05 Consultas: Overlays Garantías — VerDetalle + Aplicar + Alerta (9 overlays, 3 breakpoints)
+- **Overlays de Garantías en `NEW_05 Consultas`** (fila y=7500 Desktop/Mobile · y=9000 Tablet):
+  - **Desktop (1728×1422 c/u, scrim 50% + modal centrado):**
+    - `Overlay/GarantiasVerDetalle--Desktop` `40000253:5948` — modal 968×892px, badge GARANTÍAS negro/lima, campos: Folio/Fecha/Doc.Asociado/Nombre de quien entrega/Factura asociada/Razón/Producto/Cantidad; tabla SKU/Descripción/U/M/Cant/P.Unitario/Importe (1 fila: 0986AF0051/QUAKER STATE M.../Unidades/S2:2/$825.00/$1,650.00); Comentarios o diagnóstico; Importe total $1,650.00; 2 placeholders foto; acciones Cerrar / Continuar con garantía (lima).
+    - `Overlay/GarantiasAplicar--Desktop` `40000254:5948` — modal 518×894px, badge GARANTÍAS negro/lima, 3 pasos: (1) Input "Nombre de quien recibe" (2) Botón "Imprimir formato" (3) UploadArea "Agregar formato firmado"; acciones Aplicar garantía (lima) / Regresar.
+    - `Overlay/GarantiasAlerta--Desktop` `40000254:5979` — toast 426×88px, bg oscuro (bg/inverse), check verde (semantic/success), texto "GARANTÍA APLICADA EXITOSAMENTE"; posición top.
+  - **Tablet (834×1029 c/u, mismo patrón centrado):**
+    - `Overlay/GarantiasVerDetalle--Tablet` `40000257:5948` — modal 770×820px, misma estructura 2 cols.
+    - `Overlay/GarantiasAplicar--Tablet` `40000257:6017` — modal 460×760px, 3 pasos.
+    - `Overlay/GarantiasAlerta--Tablet` `40000257:6048` — toast 380×72px, top.
+  - **Mobile (393×852 c/u):**
+    - `Overlay/GarantiasVerDetalle--Mobile` `40000259:5948` — **bottom-sheet** 780px alto, radius top 16px, drag handle, campos en 1 col, footer: Continuar con garantía (fill lima, 44px) / Cerrar (fill bg, 40px).
+    - `Overlay/GarantiasAplicar--Mobile` `40000259:5997` — **bottom-sheet** 600px alto, drag handle, 3 pasos apilados, footer: Aplicar garantía (fill 44px) / Regresar (fill 40px).
+    - `Overlay/GarantiasAlerta--Mobile` `40000259:6030` — toast 377×72px posición bottom (safe area 24px), bg oscuro, check verde.
+- **Análisis de la cadena original de Garantías (páginas `5 Consultas`, sección `741:292446`):**
+  - La cadena original NO tiene popover "Más opciones" → flujo directo: botón ojo → modal "Ver garantía" → "Continuar con garantía" → modal "Aplicar garantía" → toast de confirmación.
+  - Campos reales extraídos del modal original `741:294453`: Folio #140532854, Fecha 14/05/2026, Doc. Asociado DOC/2026/79210840-4724, Nombre de quien entrega VICTOR ESPINOSA, Factura asociada No encontrado, Razón Defecto de fabricación, Producto ACEITE MOTOR MINERAL 10W30 G..., Cantidad 2, SKU 0986AF0051, U/M Unidades, P.Unitario $825.00, Importe $1,650.00, Comentarios "Venía roto el sello de seguridad".
+  - Modal "Aplicar garantía" `741:297964`: 3 pasos — (1) Nombre de quien recibe, (2) Imprimir formato, (3) Agregar formato firmado; acciones Regresar / Aplicar garantía.
+  - Toast `741:302219`: "GARANTÍA APLICADA EXITOSAMENTE" 426×88px (componente `Alerts`).
+- **Calidad:** 0 hex sueltos (auditado 2 pasadas — 44 paints con #D0D5DD/#12B76A/#FFFFFF religados a variables border/default / semantic/success / base/white).
+- **Touch target Mobile:** botones footer ≥40px (Cerrar 40, Continuar 44, Aplicar 44, Regresar 40) — Regresar ≥ mínimo aceptable.
+- **Posicionamiento:** Desktop x=0/1900/3800 y=7500 · Tablet x=0/950/1900 y=9000 · Mobile x=3900/4400/4900 y=7500.
+- **Pendiente:** cableado de reactions (tarea posterior). Visor de fotos/galería (modal 983×717px, "AMORTIGUADOR DELANTERO (GAS) / Imágenes almacenadas / 2 de 3") — modal-documento con imagen, NO construido.
+- **Relación trigger→overlay para cableado posterior:**
+  - Botón ojo (eye icon) por fila → `GarantiasVerDetalle` del mismo breakpoint.
+  - "Continuar con garantía" → `GarantiasAplicar` del mismo breakpoint.
+  - "Aplicar garantía" → `GarantiasAlerta` del mismo breakpoint (toast, dismiss automático).
+  - ✕ / "Cerrar" / "Regresar" → CLOSE.
+
+---
+
+## [2026-09-16] — NEW_05 Consultas: Overlays Créditos — MásOpciones + AbonarPagar + EnviarCorreo + AbonoConfirmar (12 overlays, 3 breakpoints)
+- **Overlays de Créditos en `NEW_05 Consultas`** (fila y=4500 Desktop/Mobile · y=6050 Tablet):
+  - **Desktop (1728×1422):**
+    - `Overlay/CreditosMasOpciones--Desktop` `40000234:4577` — popover 271px, 4 acciones con chips de color: Imprimir, Enviar correo, Descargar pdf, Abonar / Pagar.
+    - `Overlay/CreditosAbonarPagar--Desktop` `40000235:4658` — modal 1069px, badge CRÉDITOS negro/lima, tabla docs pendientes (Documento/Importe/D-B/Abonos/Total/Saldo), campos de pago (Recibo cobranza, Fecha, Forma de pago, Abono total, Saldo a favor, Banco, Concepto de pago, Ext. Doc. De pago), acciones Cerrar/Abonar lima.
+    - `Overlay/CreditosEnviarCorreo--Desktop` `40000236:4592` — diálogo 600px, badge CONFIRMAR, cuerpo con email, btn "Enviar correo" lima.
+    - `Overlay/CreditosAbonoConfirmar--Desktop` `40000236:4628` — toast 355×72px, dark bg, check verde, "SE ABONÓ CORRECTAMENTE / Orden de venta creada".
+  - **Tablet (834×1029):**
+    - `Overlay/CreditosMasOpciones--Tablet` `40000234:4599` — popover 260px, misma estructura.
+    - `Overlay/CreditosAbonarPagar--Tablet` `40000235:4741` — modal 720px, 2 cols.
+    - `Overlay/CreditosEnviarCorreo--Tablet` `40000236:4609` — diálogo 560px.
+    - `Overlay/CreditosAbonoConfirmar--Tablet` `40000236:4635` — toast 320×64px.
+  - **Mobile (393×2620):**
+    - `Overlay/CreditosMasOpciones--Mobile` `40000234:4621` — bottom-sheet 336px, drag handle, 4 filas ≥56px.
+    - `Overlay/CreditosAbonarPagar--Mobile` `40000235:4743` — bottom-sheet 928px (scroll), tabla docs + 8 campos + Abonar 44px / Cerrar.
+    - `Overlay/CreditosEnviarCorreo--Mobile` `40000236:4626` — diálogo centrado 350px.
+    - `Overlay/CreditosAbonoConfirmar--Mobile` `40000236:4642` — toast 361px fondo, posición bottom.
+- **Acciones reales del menú Créditos (verificadas 1:1 vs `741:302256`):** Imprimir · Enviar correo · Descargar pdf · Abonar / Pagar.
+- **Cadena modal Abonar/Pagar (verificada vs `741:303305`, 6 modales en original):** 1 modal consolidado con: tabla de documentos pendientes (Documento/Importe/D-B/Abonos/Total/Saldo/Relación + btn Liquidar todo) + formulario (Recibo cobranza, Fecha de pago, Forma de pago, Abono total, Saldo a favor, Banco, Concepto de pago, Ext. Doc. De pago) + acciones Cerrar / Abonar. Toast "SE ABONÓ CORRECTAMENTE" como confirmación final (no modal, igual al original).
+- **Calidad:** 0 hex sueltos (auditado — 20 hexes presentes, todos en mapa de tokens del proyecto).
+- **Chips de ícono de color:** Imprimir `#EBF1FF/#1760D4` · Enviar correo `#FFF6ED/#C4320A` · Descargar pdf `#F9F5FF/#6941C6` · Abonar/Pagar `#ECFDF3/#12B76A` — mismo status que chips Ventas (sin token exacto en colección Color, pendiente tokenización).
+- **Posicionamiento:** Desktop y=4500 (x=0/1900/3800/5700) · Tablet y=6050 (x=0/950/1900/2850) · Mobile y=4500 (x=3900/4400/4900/5400).
+- **Pendiente:** cableado de reactions (tarea posterior). Comprobante/ticket con QR (modal complejo, pospuesto).
+- **NOTA CLIENTE:** `741:331139` y `741:316692` son flujos CLIENTE (diferente al de crédito directo). Ver nota en PROJECT_MAP.
+
+---
+
+## [2026-09-16] — NEW_05 Consultas: Overlays "Más opciones" tab VENTAS (12 frames, 3 breakpoints)
+- **Overlays en `NEW_05 Consultas`** (colocados en y≈1200–1600, junto a las pantallas de Ventas):
+  - **Desktop (1728×1422 c/u, scrim 50% + diálogo/popover centrado):**
+    - `Overlay/VentasMasOpciones--Desktop` `40000213:5924` — popover 271px, 7 acciones: Ticket, Imprimir, Enviar correo, Descargar pdf, Cancelar venta, Editar venta, Garantía.
+    - `Overlay/VentasEnviarCorreo--Desktop` `40000216:5940` — diálogo 600px, badge CONFIRMAR negro/lima, body con email, btn "Enviar correo" lima.
+    - `Overlay/VentasCancelarVenta--Desktop` `40000216:5957` — diálogo 420px, badge rojo destructivo, btn "Cancelar venta" rojo.
+    - `Overlay/VentasCrearGarantia--Desktop` `40000217:5972` — diálogo 968px formulario: tabla info venta (Folio/Fecha/Doc/Entrega), selects Razón/Producto/Cantidad, Textarea, Importe+fotos, acciones Cerrar/Crear garantía.
+  - **Tablet (834×1029 c/u, misma estructura centrada):**
+    - `Overlay/VentasMasOpciones--Tablet` `40000218:5946`
+    - `Overlay/VentasEnviarCorreo--Tablet` `40000218:5963`
+    - `Overlay/VentasCancelarVenta--Tablet` `40000218:5980`
+    - `Overlay/VentasCrearGarantia--Tablet` `40000219:5960`
+  - **Mobile (393×2620 c/u):**
+    - `Overlay/VentasMasOpciones--Mobile` `40000220:5958` — **bottom-sheet** con drag handle, título, 7 filas táctiles ≥56px, separadores.
+    - `Overlay/VentasEnviarCorreo--Mobile` `40000221:5940` — diálogo centrado 350px, botones 44px.
+    - `Overlay/VentasCancelarVenta--Mobile` `40000221:5957` — diálogo centrado 340px, destructivo.
+    - `Overlay/VentasCrearGarantia--Mobile` `40000222:5964` — **bottom-sheet formulario** con campos apilados (Razón/Producto/Cantidad/Comentarios/Importe).
+- **Calidad:** 0 hex sueltos (auditado 2 pasadas — 58 paints corregidos + 6 blancos; todos los colores vía colección `Color`).
+- **Cómo conectar (para prototipado posterior):** trigger = botón ⋮ `more-vertical` por fila de la tabla (ej. Desktop: `40000187:7940`). Interacción ON_CLICK → overlay del mismo breakpoint con DISSOLVE. ✕ → CLOSE. Desde el menú, cada acción → overlay correspondiente.
+- **Acciones del original verificadas 1:1** contra `741:284629` (popover fuente).
+- **Pendiente:** cableado de reactions (tarea posterior). ~~íconos lucide reales~~ → RESUELTO (ver entrada 2026-09-16 abajo).
+
+---
+
+## [2026-09-16] — NEW_05 Ventas: Fidelidad íconos "Más opciones" en 3 overlays
+- **Alcance:** reemplazar placeholders de ícono en los 3 overlays Ventas `MasOpciones` (Desktop/Tablet/Mobile).
+- **Fuente clonada:** `741:284629` (página `5 Consultas` — menú original).
+- **Chips construidos (clones de `_Button base` + ícono lucide):**
+  1. Ticket — bg `#FAFAFA` (≈ Gray/50), border `#181D27` (≈ Gray/900), ícono `lucide/receipt`
+  2. Imprimir — bg `#EBF1FF` (azul muy claro), border `#1760D4` (azul), ícono compuesto (SVG del original)
+  3. Enviar correo — bg `#FFF6ED`, border `#C4320A` (naranja), ícono `lucide/at-sign`
+  4. Descargar pdf — bg `#F9F5FF`, border `#6941C6` (morado), ícono `download`
+  5. Cancelar venta — bg `#FEE8E7`, border `#D92D20` = `VariableID:130:19265` (`False-Default`), ícono `lucide/ticket-x`
+  6. Editar venta — bg `#FFF1F3` (≈ Rosé/50), border `#E31B54` (≈ Rosé/600), ícono `edit`
+  7. Garantía — bg `#F0F9FF` (≈ Blue light/50), border `#0086C9` (≈ Blue light/600), ícono `file-text`
+- **Texto "Cancelar venta":** corregido de `semantic/danger` (#F54900) → fill estático `#101828` (text/primary) en Desktop `40000213:5940`, Tablet `40000218:5939`, Mobile `40000220:5948`.
+- **Nodos Icon mutados (Desktop / Tablet / Mobile):**
+  - Ticket: `40000213:5927` / `40000218:5926` / `40000220:5931`
+  - Imprimir: `40000213:5930` / `40000218:5929` / `40000220:5935`
+  - Enviar correo: `40000213:5933` / `40000218:5932` / `40000220:5939`
+  - Descargar pdf: `40000213:5936` / `40000218:5935` / `40000220:5943`
+  - Cancelar venta: `40000213:5939` / `40000218:5938` / `40000220:5947`
+  - Editar venta: `40000213:5942` / `40000218:5941` / `40000220:5951`
+  - Garantía: `40000213:5945` / `40000218:5944` / `40000220:5955`
+- **Chips clonados IDs (Desktop):** `40000226:4577..4597`; Tablet: `40000226:4600..4617`; Mobile: `40000226:4620..4637`.
+- **Auditoría hex:** Los chips heredan los hex del nodo fuente original (`5 Consultas`) que NO está tokenizado. 6 de 7 colores tienen equivalente exacto en la colección `Color` (Cancelar venta usa `VariableID:130:19265` `False-Default`). Colores del chip de Imprimir no tienen token en la colección `Color` (azul distinto a `semantic/info`). Reportado — tokenización pendiente cuando se tokenice `5 Consultas`.
+- **Auto Layout:** preservado — chips son frames 20×20 (Desktop/Tablet) y 24×24 (Mobile) dentro de los Icon frames existentes.
+- **Touch target:** filas Desktop/Tablet ≥44px; Mobile ≥56px — sin cambios.
+
+---
+
+## [2026-09-16] — NEW_05 Consultas: modales de los 3 tabs (Ventas + Créditos + Garantías) en 3 breakpoints
+Construidos como overlays en `NEW_05 Consultas`, patrón: Desktop/Tablet = diálogo/popover centrado con scrim; Mobile = bottom-sheet (menús/formularios) o diálogo (confirmaciones). Todos verificados por screenshot.
+- **VENTAS** (original `741:282662`): menú Más opciones (7 acciones con chips de ícono de color clonados del original + etiquetas negras) `Overlay/VentasMasOpciones--{D `40000213:5924`/T `40000218:5946`/M `40000220:5958`}`; confirmaciones `VentasEnviarCorreo--{D `40000216:5940`}`, `VentasCancelarVenta--{D `40000216:5957`}`; formulario `VentasCrearGarantia--{D `40000217:5972`}`.
+- **CRÉDITOS** (originales `741:302256`, `741:303305`): menú 4 acciones `CreditosMasOpciones--{D `40000234:4577`/T `40000234:4599`/M `40000234:4621`}`; modal **Abonar y pagar** (tabla documentos + Liquidar todo + formulario 2 columnas: Recibo/Fecha/Forma de pago/Abono total/Saldo a favor/Banco/Concepto/Ext.Doc. + footer Cerrar/Abonar) `CreditosAbonarPagar--{D `40000235:4658`/T `40000235:4741`/M `40000235:4743`}`; `CreditosEnviarCorreo--{D `40000236:4592`}`; toast `CreditosAbonoConfirmar--{D `40000236:4628`}`.
+- **GARANTÍAS** (originales `741:293432`…`741:302219`): `GarantiasVerDetalle--{D `40000253:5948`/T `40000257:5948`/M `40000259:5948`}` (info 2 columnas + tabla de línea + comentarios + importe total + evidencias); `GarantiasAplicar--{D `40000254:5948`}` (3 pasos: nombre / imprimir formato / subir firmado); toast `GarantiasAlerta--{D `40000254:5979`}` ("GARANTÍA APLICADA EXITOSAMENTE").
+- **Fixes míos post-agente:** los 3 agentes reintrodujeron el bug de contenedores Auto Layout con altura FIXED mínima (recorte total del contenido). Pase de reparación genérico aplicado: Ventas menús (3), Créditos (39 contenedores) + rearmado del formulario Abonar (FormRows horizontales `counterAxis=AUTO`) y del footer (auto-layout derecha, botones HUG), Garantías (11 contenedores incl. los frames Modal). Verificado por screenshot en los 3 breakpoints.
+- **Deuda técnica (registrada, no bloqueante):** varios overlays usan frames/inputs/botones a mano en vez de instancias estrictas de `NEW_00` (sobre todo bottom-sheets Mobile con posición absoluta); chips de ícono con algunos hex sin token exacto (mismo caso del original sin tokenizar). Religar a instancias/tokens en pasada de QA.
+- **Pendiente del módulo:** cablear prototipo de estos overlays (Fase 4); Cliente–Más opciones de Créditos (reusa EnviarCorreo/AbonarPagar; falta su menú de 6 acciones + Cancelar venta); modales-documento no construidos (vista previa de comprobante Ventas/Créditos con ticket+QR, y visor de galería de fotos de Garantías `741:302220`).
+
+---
+
 ## [2026-09-16] — NEW_05 Consultas COMPLETO: Créditos + Garantías (6 screens)
 - **Créditos** (original `741:328204`): `--Desktop` `40000195:24970` · `--Tablet` `40000198:5812` (6 col, sin traslapes)
   · `--Mobile` `40000202:5858` (cards). **Garantías** (original `741:292447`): `--Desktop` `40000195:97202` ·
