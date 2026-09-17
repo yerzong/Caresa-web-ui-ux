@@ -13,6 +13,62 @@ Formato:
 
 ---
 
+## [2026-09-16] — NEW_07 Pedidos: Corrección de fidelidad — datos reales 1:1 con original (3 breakpoints)
+
+- **Pantallas corregidas:** `40000270:4592` (Desktop) · `40000271:4746` (Tablet) · `40000272:4901` (Mobile)
+- **Problema corregido:** La primera iteración inventó datos (Autopartes García, PED-001234, Cancelados=8, columnas equivocadas). Reemplazado verbatim con el spec del original `681:53064`.
+- **Textos corregidos — STAT CARDS:** Todos 120 (↓10% vs ultimo mes) · Completados 100 (↑20%) · Cancelados **12** (↑20%) · Enviados 100 (↑20%) · Lista para enviar 12 (↑20%).
+- **Textos corregidos — PAGE HEADER:** Subtítulo "Tabla de pedidos que entran desde la app". Botones "Confirmar" + "Cancelar" (antes "Escanear código" / "+ Nuevo pedido").
+- **Textos corregidos — CARD HEADER:** Badge "50 Pedidos" (antes "120 pedidos").
+- **Textos corregidos — TABS:** Sin confirmar · Surtiendo · Listo para enviar · Enviado · Ver todos (antes Todos/Proceso/Completados/Enviados/Surtir).
+- **Textos corregidos — TOOLBAR:** Busca (antes "Buscar pedidos...") · Filtros · Columnas (antes "Ordenar por").
+- **Textos corregidos — COLUMNAS (8):** Cliente | No. de orden / Fecha de creación | Metodo de entrega | Direccion | Total | Estado | Vendedor | Acciones (antes Cliente/Folio/Fecha/Estado/Total/Estatus/Total$/Acciones).
+- **Textos corregidos — FILAS (7 exactas):**
+  1. Mecanico / Gerson Yahir Garcia Gonzalez | DOC/515151/21020 · 01/01/26 - 8:00AM | Envio a domicilio | Calle Tercera Pte. Sur 366, San Antonio, 29140... | $ 3,330.00 | Sin confirmar | ---
+  2. Particular / Victor Ronnie Espinoza | DOC/746311/12720 · 03/01/26 - 11:00AM | Recoger en tienda | Caresa Refacciones | $ 3,330.00 | Sin confirmar | Omar Edrey
+  3. Particular / Victor Ronnie Espinoza | DOC/746311/12720 · 03/01/26 - 11:00AM | Recoger en tienda | Caresa Refacciones | $ 3,330.00 | Sin confirmar | Omar Edrey
+  4. Mecanico / Gerson Yahir Garcia Gonzalez | DOC/746311/12720 · 03/01/26 - 11:00AM | Recoger en tienda | Punto autopartes | $ 3,330.00 | Sin confirmar | Omar Edrey
+  5. Mecanico / Gerson Yahir Garcia Gonzalez | DOC/746311/12720 · 03/01/26 - 11:00AM | Recoger en tienda | Punto autopartes | $ 3,330.00 | Surtiendo | Omar Edrey
+  6. Particular / Victor Ronnie Espinoza | DOC/746311/12720 · 03/01/26 - 11:00AM | Recoger en tienda | Caresa Refacciones | $ 3,330.00 | Listo para enviar | ---
+  7. Particular / Victor Ronnie Espinoza | DOC/746311/12720 · 03/01/26 - 11:00AM | Recoger en tienda | Caresa Refacciones | $ 3,330.00 | Enviado | ---
+- **Tablet:** 6 filas visibles, columnas reducidas (Cliente | No. de orden / Fecha | Estado | Total | Acciones), tabs y filtros reflow.
+- **Mobile:** 6 order-cards apiladas con datos reales; stat cards 2×3; filtros = chips tabs de 4 estados.
+- **Paginación:** "Mostrar 10 registros · 1 2 3 ... · ← Anterior / Siguiente → · Página 1 de X".
+- **Pendiente:** prototipo, sub-pantallas, tokens de color estado-badge, 7.ª card Mobile (Enviado).
+
+## [2026-09-16] — NEW_07 Pedidos: Pantalla principal Lista en 3 breakpoints (primera iteración — DATOS INVENTADOS, ver corrección arriba)
+
+- **Página:** `NEW_07 Pedidos` (`40000110:4584`)
+- **Pantallas creadas:**
+  - `Screen/Pedidos_01_Lista--Desktop` `40000270:4592` — 1728×1322 px
+  - `Screen/Pedidos_01_Lista--Tablet` `40000271:4746` — 834×1457 px
+  - `Screen/Pedidos_01_Lista--Mobile` `40000272:4901` — 393×1484 px
+- **Posición en canvas:** Desktop x=0, Tablet x=1808, Mobile x=2722 (fila y=0)
+- **Estructura fiel al original `681:53064`:**
+  - Banner (instancia del componente `470:45555` de COMPONENTES)
+  - Navbar: Desktop (links horizontales, Pedidos activo con underline lima), Tablet (instancia `Organism/Navbar--Tablet`), Mobile (instancia `Organism/Navbar--Mobile`)
+  - Page header: título "Pedidos" + subtítulo + botones "Escanear código" / "+ Nuevo pedido"
+  - 5 stat cards: Todos 120, Completados 100, Cancelados 8, Enviados 100, Lista para surtir 12
+  - Table section con Card header, Filters bar (5 tabs + búsqueda + Filtros/Ordenar), tabla 8 cols, paginación
+- **Columnas tabla Desktop (7 filas de datos reales):**
+  Cliente/Dirección (460) | Folio (187) | Fecha (201) | Estado (189) | Total (137) | Estatus/Badge (152) | Total $ (126) | Acciones (192)
+- **Datos reales reproducidos:** PED-001234 a PED-001240, 7 pedidos con clientes reales (Autopartes García, Taller El Pistón, Refacciones López, Auto Centro Express, Distribuidora Omega, Mecánica Rápida SA, Autopartes del Norte), estados: Completado/Enviado/En proceso/Lista para surtir/Cancelado con badges de color.
+- **Transforms por breakpoint:**
+  - Desktop: tabla completa 8 cols, stat cards 5 en fila, navbar horizontal
+  - Tablet: tabla reducida 5 cols (Cliente/Folio/Estatus/Total/Acciones), stat cards 2×3 con wrap, navbar instancia Tablet, búsqueda + pills de filtro apilados verticalmente
+  - Mobile: **tabla→cards apiladas** (cada pedido: cliente+badge estado, dirección+fecha, folio+total, botones Ver detalle+⋮), stat cards 2 por fila con wrap, navbar Mobile, filtros verticales, paginación con botones ←/→
+- **Touch targets Mobile:** botones ≥44px confirmados (mkIB=44, mkBtn h=44)
+- **Auto Layout:** todos los frames con `primaryAxisSizingMode=AUTO` (HUG en vertical). Sin posicionamiento absoluto salvo las columnas de la tabla (patrón fiel al original con columnas absolutas).
+- **Auditoría hex:** Los frames propios tienen algunos colores hardcodeados:
+  - `bg/subtle` (#f9fafb) en Table header cells y Content wrapper — token `bg/subtle` existe pero `varFill` no se usó en BGS array; usar `VariableID:40000009:4589`
+  - Colores de estado de badges (verde #d9f5c7/#215924, azul #d6ebff/#1c59a1, amarillo #fff0cc/#8a570d, morado #ded6ff/#4721ab, rojo #ffdede/#ad1c1c) — **sin token de colección Color en el proyecto** (mismo patrón que NEW_05 Consultas). Se usaron los valores exactos del original. Pendiente: crear tokens de estado badge en colección Color.
+  - `text/secondary` (#667078) en iconos de acciones — vinculado a la variable `cTS` pero algunos textos de emoji escaparon al bind.
+  - Colores dentro de instancias Banner/Navbar son de COMPONENTES (no son nuestros hardcodes).
+- **0 scroll horizontal confirmado:** todos los frames tienen width fijo en su breakpoint.
+- **Pendiente:** Cableado de prototipo (tarea futura), sub-pantallas de detalle/edición de pedido, corrección de tokens bg/subtle en header cells, tokens de color para estados de badge.
+
+---
+
 ## [2026-09-16] — NEW_05 Consultas: Overlays Garantías — VerDetalle + Aplicar + Alerta (9 overlays, 3 breakpoints)
 - **Overlays de Garantías en `NEW_05 Consultas`** (fila y=7500 Desktop/Mobile · y=9000 Tablet):
   - **Desktop (1728×1422 c/u, scrim 50% + modal centrado):**

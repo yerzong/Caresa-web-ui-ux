@@ -36,7 +36,7 @@ Objetivo por pantalla: existir en **Desktop (fuente) → Tablet (834) → Mobile
 | 4 | Catálogos | `4 Catálogos` (`13:100`) | [ ] | [ ] | [ ] | [ ] | [ ] |
 | 5 | Consultas | `5 Consultas` (`13:104`) | [~] | [x] | [x] | [ ] | [~] |
 | 6 | Corte de caja | `6 Corte de caja` (`595:70899`) | [ ] | [ ] | [ ] | [ ] | [ ] |
-| 7 | Pedidos | `7 Pedidos` (`681:51807`) | [ ] | [ ] | [ ] | [ ] | [ ] |
+| 7 | Pedidos | `7 Pedidos` (`681:51807`) | [~] | [~] | [~] | [ ] | [ ] |
 | 8 | Chat | `8 Chat` (`681:53445`) | [ ] | [ ] | [ ] | [ ] | [ ] |
 | 9 | Abonos | `9 Abonos` (`681:61345`) | [ ] | [ ] | [ ] | [ ] | [ ] |
 | 10 | Recompra / Compras | `10 Recompra` (`681:61346`) | [ ] | [ ] | [ ] | [ ] | [ ] |
@@ -104,6 +104,15 @@ UX review aplicado (fixes): nombres 14px, SKU legible (`text/secondary` + `Label
 chips 44/40 (touch), filas/nav-items a Fill. Componentes agregados: `NavItem` (Default/Active/Hover),
 `ProductGrid/Empty`, `ProductGrid/Loading`. **Pendiente:** íconos nav como botones semánticos + label del buscador;
 aplicar `NavItem`/estados en las pantallas; conectar nav items del drawer a módulos; resto de pantallas del módulo Inicio.
+
+### NEW_07 Pedidos — Pantalla Lista (en `NEW_07 Pedidos`)
+Fuente Desktop: `681:53064` (1728×1330). 3 breakpoints. Corregidos con datos reales 2026-09-16:
+- `Screen/Pedidos_01_Lista--Desktop` `40000270:4592` — 1728×1322, fila y=0
+- `Screen/Pedidos_01_Lista--Tablet` `40000271:4746` — 834×1457, x=1808 y=0
+- `Screen/Pedidos_01_Lista--Mobile` `40000272:4901` — 393×1484, x=2722 y=0
+Datos reales: 5 stat cards fiel · 7 filas tabla exactas · 8 columnas reales · badges Sin confirmar/Surtiendo/Listo para enviar/Enviado · Vendedores --- / Omar Edrey · Total $ 3,330.00 todas · Paginación "50 Pedidos / Página 1 de X".
+Transforms: Desktop→tabla 8 cols; Tablet→tabla 5 cols (Cliente|No. orden|Estado|Total|Acciones)+wrap stat cards 2×3; Mobile→6 order-cards apiladas+stat 2×3.
+Pendiente: 7.ª card Mobile (Enviado), prototipo, sub-pantallas de detalle, tokens color estado-badge.
 
 ## Orden sugerido
 1. **Fase 0 — fundaciones** (tokens color + tipografía) antes de responsivar en serie.
