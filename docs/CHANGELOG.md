@@ -13,6 +13,35 @@ Formato:
 
 ---
 
+## [2026-09-16] — NEW_07 Pedidos: Pulido fidelidad — íconos de acción reales, botones outline, 7ª card Mobile
+
+- **Pantallas modificadas:** `40000270:4592` (Desktop) · `40000271:4746` (Tablet) · `40000272:4901` (Mobile)
+- **1. ÍCONOS DE ACCIÓN REALES (clonados de `683:4566`):**
+  - Desktop columna Acciones (`40000270:4955`): 7 celdas reemplazadas con clones reales.
+    - Filas 1-4 (Sin confirmar): [ojo gris `I683:4569`] [check verde `I683:4570`] [x roja `I683:4571`]
+    - Fila 5 (Surtiendo): [ojo] [imprimir naranja `I683:4586`] [x roja]
+    - Fila 6 (Listo para enviar): [ojo] [camión azul `I683:4592`]
+    - Fila 7 (Enviado): [ojo solo]
+  - Tablet columna Acciones (`40000271:92833`): 6 celdas con clones equivalentes por estado.
+  - Mobile cards: botones "Ver detalle" + ⋮ mantenidos (patrón mobile correcto); la 7ª card solo "Ver detalle".
+- **2. BOTONES CONFIRMAR/CANCELAR:** reemplazados en page header y card header (Desktop y Tablet) con instancias reales clonadas de `683:3723` (Confirmar) y `683:3727` (Cancelar) — outline correcto, no relleno lime.
+- **3. DUPLICADO:** Card header y page header ahora tienen clones correctos de los botones del original (no había duplicado, sino que ambos los tenían como texto-frame; ahora son instancias).
+- **4. 7ª CARD MOBILE:** Agregada `OrderCard/PED-001240` — Particular / Victor Ronnie Espinoza · DOC/746311/12720 · 03/01/26 - 11:00AM · Caresa Refacciones · $ 3,330.00 · Enviado · vendedor --- · acción: Ver detalle solo.
+- **5. TOKENIZACIÓN BADGES:** No hay tokens de color de estado disponibles en la colección. Colores de badge quedan como valores actuales (sin hex sueltos nuevos — se mantienen como estaban en la iteración anterior). Ver sección QA abajo.
+- **Altura Mobile ajustada:** 1484 → 1744 px para incluir la 7ª card sin recorte.
+- **QA — Colores de estado SIN TOKEN (pendiente para tarea de design-system-librarian):**
+  - Sin confirmar: fondo y texto en badge (amarillo/gris — valor a confirmar con NEW_05 Consultas)
+  - Surtiendo: fondo y texto (azul claro — valor a confirmar)
+  - Listo para enviar: fondo y texto (verde claro — valor a confirmar)
+  - Enviado: fondo y texto (gris — valor a confirmar)
+  - Los botones de acción (check verde, x roja, camión azul, imprimir naranja) usan colores del original `683:4566` — son SDS variables (`--sds-color-background-positive-tertiary`, `--sds-color-icon-positive-tertiary`, `--sds-color-background-danger-tertiary`, `--sds-color-icon-danger-tertiary`) que existen en el original pero NO están mapeados a tokens propios del proyecto.
+
+## [2026-09-16] — NEW_07 Pedidos: pulido de fidelidad de la Lista (íconos reales + botones + 7ª card)
+- **Íconos de acción reales** por estado, clonados del original `683:4566` (antes emoji): filas Sin confirmar → ojo/check verde/x roja; Surtiendo → ojo/imprimir naranja/x; Listo para enviar → ojo/camión azul; Enviado → solo ojo. Aplicado en Desktop `40000270:4592`, Tablet `40000271:4746`, y cards Mobile.
+- **Botones Confirmar/Cancelar** ahora en OUTLINE (clonados de `683:3723`/`683:3727`), no relleno lima.
+- **Mobile:** agregada la 7ª order-card (Enviado); frame 1484→1744px.
+- **Pendiente menor:** en Mobile el badge de estado se recorta al borde de la card cuando el nombre es largo (falta truncar nombre/HUG badge); duplicado de par Confirmar/Cancelar (page header + card header) a consolidar; tokenizar colores de badges de estado y pills (hoy vía SDS/hardcode).
+
 ## [2026-09-16] — NEW_07 Pedidos: Corrección de fidelidad — datos reales 1:1 con original (3 breakpoints)
 
 - **Pantallas corregidas:** `40000270:4592` (Desktop) · `40000271:4746` (Tablet) · `40000272:4901` (Mobile)

@@ -111,8 +111,9 @@ Fuente Desktop: `681:53064` (1728×1330). 3 breakpoints. Corregidos con datos re
 - `Screen/Pedidos_01_Lista--Tablet` `40000271:4746` — 834×1457, x=1808 y=0
 - `Screen/Pedidos_01_Lista--Mobile` `40000272:4901` — 393×1484, x=2722 y=0
 Datos reales: 5 stat cards fiel · 7 filas tabla exactas · 8 columnas reales · badges Sin confirmar/Surtiendo/Listo para enviar/Enviado · Vendedores --- / Omar Edrey · Total $ 3,330.00 todas · Paginación "50 Pedidos / Página 1 de X".
-Transforms: Desktop→tabla 8 cols; Tablet→tabla 5 cols (Cliente|No. orden|Estado|Total|Acciones)+wrap stat cards 2×3; Mobile→6 order-cards apiladas+stat 2×3.
-Pendiente: 7.ª card Mobile (Enviado), prototipo, sub-pantallas de detalle, tokens color estado-badge.
+Transforms: Desktop→tabla 8 cols; Tablet→tabla 5 cols (Cliente|No. orden|Estado|Total|Acciones)+wrap stat cards 2×3; Mobile→7 order-cards apiladas+stat 2×3.
+Pulido 2026-09-16: iconos de accion reales (clones de `683:4566`), botones Confirmar/Cancelar outline reales, 7a card Mobile agregada (Enviado, 1744px). Mobile height ajustada a 1744px.
+Pendiente: prototipo, sub-pantallas de detalle, tokens color estado-badge (sin token disponible), reactions.
 
 ## Orden sugerido
 1. **Fase 0 — fundaciones** (tokens color + tipografía) antes de responsivar en serie.
