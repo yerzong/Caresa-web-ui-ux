@@ -13,6 +13,18 @@ Formato:
 
 ---
 
+## [2026-09-17] — REORGANIZACIÓN: páginas por breakpoint (NEW_WEB / NEW_TABLET / NEW_MOBILE)
+Decisión del usuario: dejar el design system en su página y TODO lo demás en 3 páginas responsive, agrupado por módulo en sections verticales con los flujos en horizontal.
+- **Páginas nuevas:** `NEW_WEB · Desktop (1728)` `40000365:5103` · `NEW_TABLET · (834)` `40000365:5104` · `NEW_MOBILE · (393)` `40000365:5105` (después de `NEW_00 Design System`, que se conserva).
+- **Estructura por página:** sections por módulo apiladas (gap 500): `01 · LOGIN`, `02 · INICIO`, `03 · CARRITO`, `05 · CONSULTAS` (subsections Ventas/Créditos/Garantías), `07 · PEDIDOS` (subsections Lista / Ver pedido · estados / Surtir / Enviar / Selección múltiple / Seguimiento envío). Pantallas en fila por flujo (gap 120), subsections con padding 60, sections con padding 100.
+- **Rescate de extraviados:** `Screen/Pedidos_01_Lista--{D,T,M}` y `Overlay/PedidoEnviar--{D,T,M}` estaban tirados en la página `PROPUESTAS` (agentes que no cambiaron de página) → movidos a su lugar.
+- **Limpieza:** 11 nodos basura/duplicados eliminados (2 TEXT dump, Sep, Spacer, Divider suelto, y las 2 series duplicadas de PedidoEliminarProducto/PedidoEditarCantidad `40000304:*`/`40000305:*`).
+- **Páginas viejas `NEW_01..NEW_10` eliminadas** (quedaron vacías tras la mudanza). Fuentes (1.0 Login … 10 Recompra, COMPONENTES, PROPUESTAS) intactas; legacy 02_Tablet/03_Mobile/04_Claude_Sandbox sin tocar.
+- **Pase de reparación responsive global:** 134 contenedores Auto Layout recortados corregidos (WEB 56 · TABLET 34 · MOBILE 44).
+- **Convención nueva:** los próximos módulos (04 Catálogos, 06 Corte, 08 Chat, 09 Abonos, 10 Recompra) se agregan como nuevas sections en estas 3 páginas — ya NO se crean páginas por módulo.
+
+---
+
 ## [2026-09-17] — NEW_07 Pedidos: Overlay "Seguimiento de Envío (ADMIN)" en 3 breakpoints
 
 - **Creado (3 frames en `NEW_07 Pedidos`):**

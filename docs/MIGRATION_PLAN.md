@@ -3,9 +3,13 @@
 > Decisión 2026-09-15: la base previa en sandbox NO convence → se rehace **de 0%** con esta metodología.
 > **Prohibido código.** Único objetivo: UI en Figma. **No se toca NADA de lo existente** (páginas fuente ni sus nodos).
 
-## Convención de nombres
-- **Páginas nuevas:** `NEW_00 Design System`, `NEW_01 Login`, `NEW_02 Inicio`, `NEW_03 Carrito`,
-  `NEW_04 Catalogos`, `NEW_05 Consultas`, `NEW_06 Corte`, `NEW_07 Pedidos`, `NEW_08 Chat`, `NEW_09 Abonos`, `NEW_10 Recompra`.
+## Convención de nombres (ACTUALIZADA 2026-09-17)
+- **Páginas de trabajo:** `NEW_00 Design System` + 3 páginas responsive: `NEW_WEB · Desktop (1728)` (`40000365:5103`),
+  `NEW_TABLET · (834)` (`40000365:5104`), `NEW_MOBILE · (393)` (`40000365:5105`).
+  Las páginas por módulo `NEW_01..NEW_10` fueron eliminadas — cada módulo vive como **SECTION** dentro de las 3 páginas
+  (`01 · LOGIN`, `02 · INICIO`, `03 · CARRITO`, `05 · CONSULTAS`, `07 · PEDIDOS`, …), con **subsections por flujo**
+  y las pantallas en fila horizontal (gaps: 120 pantalla, 200 subsección, 500 módulo).
+  ⚠️ Toda pantalla nueva se AGREGA a la section de su módulo en la página de su breakpoint — NO crear páginas nuevas.
 - **Componentes:** `Atom/…` · `Molecule/…` · `Organism/…` (variantes con propiedades; nombres semánticos).
 - **Pantallas:** `Screen/{Módulo}_{NN}_{Nombre}--{Desktop|Tablet|Mobile}` (ej. `Screen/Login_01_Acceso--Mobile`).
 
