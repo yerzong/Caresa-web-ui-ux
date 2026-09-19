@@ -5,6 +5,13 @@ Nada se pierde: cada pantalla generada, homologación o decisión se anota aquí
 
 Formato:
 ```
+## [2026-09-19] — REMAKE v2 · Fase 4 iniciada (Tablet 768): Login + Inicio + organismo TopNav--Tablet
+- **Nuevo en el DS** (`03 · Componentes`, junto a GlobalSearch): `Organism/TopNav--Tablet` (`40000468:4800`) — logo + menú hamburguesa (abre drawer de nav) + resumen de venta compacto (sin trash/check) + campana + avatar, 768×64.
+- **Tablet · 768, section `1.0 Login`:** `Screen/Login--Tablet` (`40000467:6613`, 768×1024) — clon de Propuesta B con card 440 centrada y engranes decorativos reposicionados.
+- **Tablet · 768, section `2.0 Inicio`:** `Screen/Inicio--Tablet` (`40000468:6871`, 768×~1290) — TopNav swapeada al organismo tablet, utility sin búsqueda global (breadcrumb + sucursal), selects de Búsqueda Inteligente en **2 columnas** (300px, wrap), chips con wrap, **grid de marcas a 3 columnas** (cards 208), footer fill.
+- **Patrón tablet establecido:** swap de TopNav al organismo `--Tablet`, ocultar búsqueda global del utility, wrap en filas de controles, grids 5→3.
+- **Pendiente Fase 4:** Carrito, Catálogos, Consultas ×3, Corte, Pedidos (+overlays), Chat, Abonos, Recompra en tablet (las tablas requieren reducción de columnas + patrón Btn/Ver).
+
 ## [2026-09-19] — REMAKE v2 · Fase 3 COMPLETA: orden del DS + layout de páginas + Carrito
 - **DS ordenado (feedback del usuario):** los 5 componentes post-Fase 1 (`Select`, `NavItem/Dark`, `Organism/TopNav`, `Organism/Footer`, `Molecule/GlobalSearch`) estaban FUERA de la section `03 · Componentes` (regados debajo, x=40) → reacomodados en la retícula (x=80, filas ordenadas) y section ampliada a h=3140.
 - **Layout de `CARESA Web Responsive`:** la section Web se amplió a w=4768 (5.0 Consultas con 3 pantallas la desbordaba) y `Tablet · 768` / `Mobile · 375` se movieron a x=5008 / x=7048 para no encimar los flujos de Web.
