@@ -34,9 +34,9 @@ Objetivo por pantalla: existir en **Desktop (fuente) → Tablet (834) → Mobile
 | 2 | Inicio (MAIN) | `2.0 Inicio (MAIN)` (`4:2`) | [~] | [~] | [~] | [~] | [~] |
 | 3 | Carrito | `3 Carrito` (`13:96`) | [ ] | [ ] | [ ] | [ ] | [ ] |
 | 4 | Catálogos | `4 Catálogos` (`13:100`) | [ ] | [ ] | [ ] | [ ] | [ ] |
-| 5 | Consultas | `5 Consultas` (`13:104`) | [~] | [x] | [x] | [ ] | [~] |
+| 5 | Consultas | `5 Consultas` (`13:104`) | [~] | [x] | [x] | [ ] | [x] |
 | 6 | Corte de caja | `6 Corte de caja` (`595:70899`) | [ ] | [ ] | [ ] | [ ] | [ ] |
-| 7 | Pedidos | `7 Pedidos` (`681:51807`) | [~] | [~] | [~] | [ ] | [ ] |
+| 7 | Pedidos | `7 Pedidos` (`681:51807`) | [~] | [~] | [~] | [ ] | [x] |
 | 8 | Chat | `8 Chat` (`681:53445`) | [ ] | [ ] | [ ] | [ ] | [ ] |
 | 9 | Abonos | `9 Abonos` (`681:61345`) | [ ] | [ ] | [ ] | [ ] | [ ] |
 | 10 | Recompra / Compras | `10 Recompra` (`681:61346`) | [ ] | [ ] | [ ] | [ ] | [ ] |
@@ -60,7 +60,7 @@ Todos en `NEW_05 Consultas`. Posición: Desktop x=0/1900/3800 y=7500 · Tablet x
 - Desktop: `GarantiasVerDetalle` `40000253:5948` · `GarantiasAplicar` `40000254:5948` · `GarantiasAlerta` `40000254:5979`
 - Tablet: `GarantiasVerDetalle` `40000257:5948` · `GarantiasAplicar` `40000257:6017` · `GarantiasAlerta` `40000257:6048`
 - Mobile: `GarantiasVerDetalle` `40000259:5948` (bottom-sheet) · `GarantiasAplicar` `40000259:5997` (bottom-sheet) · `GarantiasAlerta` `40000259:6030` (toast bottom)
-- Calidad: 0 hex sueltos. Pendiente: cableado reactions (tarea futura).
+- Calidad: 0 hex sueltos. Reactions cableadas (2026-09-18): NAVIGATE DISSOLVE 250ms EASE_OUT en los 3 breakpoints.
 - **NO construido (pendiente):** Visor de fotos/galería `741:302220` — modal 983×717, "AMORTIGUADOR DELANTERO (GAS) / Imágenes almacenadas / 2 de 3" — modal-documento con imagen de producto.
 - **Relación trigger→overlay:**
   - Botón ojo (eye) por fila → `GarantiasVerDetalle`
@@ -73,7 +73,7 @@ Todos en `NEW_05 Consultas`, fila y=4500 (Desktop/Mobile) y y=6050 (Tablet):
 - Desktop: `CreditosMasOpciones` `40000234:4577` · `CreditosAbonarPagar` `40000235:4658` · `CreditosEnviarCorreo` `40000236:4592` · `CreditosAbonoConfirmar` `40000236:4628`
 - Tablet: `CreditosMasOpciones` `40000234:4599` · `CreditosAbonarPagar` `40000235:4741` · `CreditosEnviarCorreo` `40000236:4609` · `CreditosAbonoConfirmar` `40000236:4635`
 - Mobile: `CreditosMasOpciones` `40000234:4621` (BS-336) · `CreditosAbonarPagar` `40000235:4743` (BS-928) · `CreditosEnviarCorreo` `40000236:4626` · `CreditosAbonoConfirmar` `40000236:4642`
-- Calidad: 0 hex sueltos. Pendiente: cableado reactions + íconos lucide reales en chips.
+- Calidad: 0 hex sueltos. Reactions cableadas (2026-09-18): NAVIGATE DISSOLVE 250ms EASE_OUT en los 3 breakpoints.
 - **Pendiente:** Modal de comprobante/ticket con QR — NO construido en esta tarea.
 - **Análisis CLIENTE (para tarea futura):**
   - `741:331139` (CLIENTE MÁS OPCIONES): 6 acciones — Ticket, Imprimir, Enviar correo, Descargar pdf, Cancelar venta, Editar venta. DIFIERE del menú de Crédito (no tiene "Abonar/Pagar"; tiene "Ticket" y "Cancelar venta" que crédito no tiene). NO reutiliza los overlays de crédito — requiere overlays propios.

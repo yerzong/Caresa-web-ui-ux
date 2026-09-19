@@ -13,6 +13,56 @@ Formato:
 
 ---
 
+## [2026-09-18] — NEW_05 Consultas: overlays cableados en 3 breakpoints (92 reactions)
+
+- **Flujo cableado:** 14 grupos de overlays (Ventas/Créditos/Garantías) × 3 breakpoints.
+- **Patrón:** NAVIGATE + DISSOLVE 250ms EASE_OUT en todos los triggers.
+- **Nodos con reactions (Desktop):**
+  - Ventas: `40000187:7940` (⋮ fila 1) → VentasMasOpciones
+  - VentasMasOpciones: `40000213:5932` (Enviar correo) `40000213:5938` (Cancelar) `40000213:5944` (Garantía)
+  - VentasEnviarCorreo: `40000216:5929/5936/5938` (×/Cancelar/Enviar) → Ventas
+  - VentasCancelarVenta: `40000216:5946/5953/5955` (×/No/Cancelar) → Ventas
+  - VentasCrearGarantia: `40000217:5929/5968/5970` (×/Cerrar/Crear) → Ventas
+  - Créditos: `40000195:26878` (⋮ fila 1) → CreditosMasOpciones; Scrim `40000234:4578` → Creditos
+  - CreditosMasOpciones: `40000234:4585` (Enviar) `40000234:4595` (Abonar) → destinos resp.
+  - CreditosAbonarPagar: `40000235:4582/4654/4656` → Creditos/Creditos/AbonoConfirmar
+  - CreditosAbonoConfirmar: Toast `40000236:4629` → Creditos
+  - CreditosEnviarCorreo: `40000236:4582/4588/4590` → Creditos
+  - Garantías: `40000195:98133` (eye fila 1) → GarantiasVerDetalle
+  - GarantiasVerDetalle: `40000253:5957/6018/6020` (×/Cerrar/Continuar)
+  - GarantiasAplicar: `40000254:5957/5975/5977` (×/Aplicar/Regresar)
+  - GarantiasAlerta: Toast `40000254:5980` → Garantias
+- **Tablet:** mismo patrón; triggers: `40000190:5557` `40000198:5907` `40000203:5961` (Btn/Ver)
+- **Mobile:** mismo patrón; triggers: `40000191:5536` `40000202:5895` `40000204:5966` (Btn/VerDetalle)
+- **Faltantes reportados:** VentasMasOpciones Desktop/Tablet no tienen frame "Scrim" ni botón ✕ propio (es un popover sin scrim). **RESUELTO post-agente:** se cableó el FRAME RAÍZ del overlay (ON_CLICK → screen de Ventas) en los 3 breakpoints — clic fuera del menú cierra.
+- **Auditoría real (conteo por sección `05 · CONSULTAS`):** 36 reactions por breakpoint (incluye las 18 tabs previas). Pedidos auditado: Desktop 41 · Tablet 29 · Mobile 26 (los breakpoints reducidos tienen menos triggers). Flow points depurados: "Pedidos · {Desktop,Tablet,Mobile}" apuntando a la Lista de cada página (eliminados duplicados y "Flow 2").
+- **Nota:** El botón "Btn/Cerrar" en CreditosAbonarPagar Desktop (`40000235:4654`) es un frame sin texto hijo accesible; se aplicó reaction al frame directamente.
+
+## [2026-09-18] — NEW_07 Pedidos: prototipo completo en 3 breakpoints (reactions + flow starting points)
+
+- **Flujo cableado:** Lista → 13 pantallas/overlays → Lista (ciclo completo de pedidos).
+- **Patrón:** NAVIGATE + DISSOLVE 250ms en todos los triggers. Sin OVERLAY (los frames de overlay ya incluyen scrim propio).
+- **Flow starting points creados:** "Pedidos · Desktop" (Lista `40000270:4592`) · "Pedidos · Tablet" (Lista `40000271:4746`) · "Pedidos · Mobile" (Lista `40000272:4901`).
+- **Triggers cableados por breakpoint (mismo patrón en los 3):**
+  - Lista: ojo fila 1 → VerDetalle · ojo fila 5 → Validar · ojo fila 6 → VerListoParaEnviar · ojo fila 7 → SeguimientoEnvio · Btn "Confirmar" header → ConfirmarSeleccionados · Btn "Cancelar" header → CancelarSeleccionados
+  - VerDetalle: ✕ → Lista · "Cancelar pedido" → CancelarSeleccionados · "Confirmar pedido" → Lista
+  - Validar: buscador → AnadirProducto · ✏ fila 1 → EditarCantidad · 🗑 fila 1 → EliminarProducto · "Validar pedido" → VerListoParaEnviar · "Cancelar pedido" → Lista · ✕ → Lista
+  - AnadirProducto: "+ agregar" → Validar · ✕ → Validar
+  - EditarCantidad: "Editar cantidad" → Validar · "Cerrar" → Validar · ✕ → Validar
+  - EliminarProducto: "Eliminar producto" → Validar · "Cerrar" → Validar · ✕ → Validar
+  - VerListoParaEnviar: "Enviar este pedido" → Enviar · ✕ → Lista
+  - Enviar: "Enviar pedido" → Lista · ✕ → Lista
+  - ConfirmarSeleccionados: "Si, confirmar" → Lista · "Cerrar" → Lista · ✕ → Lista
+  - CancelarSeleccionados: "Cancelar pedidos" → Lista · "Cancelar" → Lista · ✕ → Lista
+  - VerCancelado: ✕ → Lista
+  - VerCompletado: "Imprimir" → Lista · ✕ → Lista
+  - SeguimientoEnvio: "Volver" → Lista · ✕ → Lista
+- **Decisión:** "Cancelar pedido" en VerDetalle navega a CancelarSeleccionados (no a Lista directa) para fidelidad al flujo real — el usuario pasa por el modal de confirmación de cancelación.
+- **Nodos con reactions (Desktop selección):** `40000276:4989` · `40000276:5070` · `40000276:5087` · `40000276:5098` · `40000276:5120` · `40000276:5125` · `40000283:5109` · `40000283:5257` · `40000283:5259` · `40000291:5124` · `40000291:5159` · `40000291:5157` · `40000291:5255` · `40000291:5253` · `40000289:5109` · `40000317:5132` · `40000315:5109` · `40000314:5148` · `40000314:5146` · `40000314:5111` · `40000313:5120` · `40000313:5118` · `40000313:5111` · `40000341:5269` · `40000341:5109` · `40000298:5164` · `40000298:5109` · `40000329:5188` · `40000329:5186` · `40000329:5110` · `40000330:5192` · `40000330:5190` · `40000330:5110` · `40000342:5109` · `40000343:5109` · `40000343:27103` · `40000354:7556` · `40000351:7434`
+- **Estimado total reactions:** ~38 Desktop + ~38 Tablet + ~38 Mobile = ~114 reactions.
+
+---
+
 ## [2026-09-17] — REORGANIZACIÓN: páginas por breakpoint (NEW_WEB / NEW_TABLET / NEW_MOBILE)
 Decisión del usuario: dejar el design system en su página y TODO lo demás en 3 páginas responsive, agrupado por módulo en sections verticales con los flujos en horizontal.
 - **Páginas nuevas:** `NEW_WEB · Desktop (1728)` `40000365:5103` · `NEW_TABLET · (834)` `40000365:5104` · `NEW_MOBILE · (393)` `40000365:5105` (después de `NEW_00 Design System`, que se conserva).
