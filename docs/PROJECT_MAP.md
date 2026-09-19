@@ -19,7 +19,7 @@ Remake desde cero en páginas nuevas (`CARESA v2 — Design System` + `CARESA We
 |---|---|---|
 | 1 | Design System (tokens, tipografía, iconos, 12 sets de componentes) | [x] construido 2026-09-18 |
 | 2 | Login (2 propuestas) | [x] aprobada Propuesta B (2026-09-18) |
-| 3 | Pantallas Web | [~] Inicio · Pedidos (+Ver pedido) · Consultas (Ventas/Créditos/Garantías) · Chat · Abonos · Catálogos · Corte (Apertura caja) · Recompra listos; **falta solo Carrito** (requiere node-id) |
+| 3 | Pantallas Web | [x] **COMPLETA 2026-09-19** — Login B · Inicio · Carrito · Catálogos · Consultas (Ventas/Créditos/Garantías) · Corte (Apertura caja) · Pedidos (+Ver pedido) · Chat · Abonos · Recompra |
 | 4 | Tablet | [ ] |
 | 5 | Mobile | [ ] |
 

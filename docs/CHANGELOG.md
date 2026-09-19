@@ -5,6 +5,17 @@ Nada se pierde: cada pantalla generada, homologación o decisión se anota aquí
 
 Formato:
 ```
+## [2026-09-19] — REMAKE v2 · Fase 3 COMPLETA: orden del DS + layout de páginas + Carrito
+- **DS ordenado (feedback del usuario):** los 5 componentes post-Fase 1 (`Select`, `NavItem/Dark`, `Organism/TopNav`, `Organism/Footer`, `Molecule/GlobalSearch`) estaban FUERA de la section `03 · Componentes` (regados debajo, x=40) → reacomodados en la retícula (x=80, filas ordenadas) y section ampliada a h=3140.
+- **Layout de `CARESA Web Responsive`:** la section Web se amplió a w=4768 (5.0 Consultas con 3 pantallas la desbordaba) y `Tablet · 768` / `Mobile · 375` se movieron a x=5008 / x=7048 para no encimar los flujos de Web.
+- **Carrito DESBLOQUEADO** vía Plugin API (sin el límite de 2M chars del MCP): hub original `Frame 1000004189` (`322:12443`, página `3 Carrito`).
+- **Section `3.0 Carrito`** (`40000443:13398`) intercalada en orden numérico (módulos 4.0→10.0 recorridos +1450; Web/Tablet/Mobile a h=14453).
+- **Screen/Carrito** (`40000443:13399`): clon de Recompra (aprovecha el split card+sidebar) →
+  - Nav Carrito activa; H1 "Carrito / Completa la venta del carrito actual"; card "Carrito · 2 Productos · Procesa la compra del cliente" + buscador full "Escanea el código o ingresa el nombre del producto".
+  - Tabla: Producto (foto real + código + ubicación S1/P1-A2-N05) · U/M · Marca (logos SYD/Quaker State vía imageHash) · Stock (badges S1/S2 semáforo) · Cantidad (stepper +/qty/−) · P. Unitario/P. Descuento · Importe verde · Acciones (eliminar/⋮). 2 filas fieles: Amortiguador 7000062 ×2 $6,327.00 · Aceite 0986AF0051 ×1 $783.75.
+  - Sidebar de venta: Cliente "Ventas mostrador" + Buscar/Limpiar, chip DOC/2026/04587592-238539, ⚠ "No hay descuentos válidos", Resumen (Partidas 2 · Piezas 3 · Subtotal $7,485.00 · Descuentos $0.00 · **Total $7,485.00**), pago Crédito/●Contado (Radio del DS), botones Vender (Primary) / Imprimir / Más opciones.
+- **Fase 3 Web: 12/12 pantallas.** Siguiente: Fase 4 (Tablet 768) y Fase 5 (Mobile 375); después prototipo/QA.
+
 ## [2026-09-18] — REMAKE v2 · Fase 3 (cont.): homologación de sections + Garantías, Catálogos, Corte, Recompra
 - **Homologación de sections (feedback del usuario):** top-level `#1d2939` (fix: `02 · Iconografía` del DS), módulos `#344054` (fix: `9.0 Abonos` tenía gris default, `Mobile · 375` tenía `#475467`); Tablet/Mobile a la misma altura que Web; **orden numérico restaurado** (5.0 antes que 7.0) y nuevas sections `4.0 Catálogos`, `6.0 Corte de caja`, `10.0 Recompra` intercaladas en su lugar.
 - **Screen/Consultas-Garantias** (`40000431:5880`, section 5.0): clon de Créditos → tab Garantías activa, "TOTAL SELECCIONADO $0.00", fila de estados En proceso/Aplicado/**Ver todos** + Busca/Filtros/Columnas (reemplaza los selects), tabla 8 columnas (Folio #140556135 con checkbox, Documento, Fecha, Proveedor NA/DISTRIBUCIONES SAGAJI, Agente, Importe, Estado Warning/Success, Acciones ojo + check-circle `success/600` en filas En proceso). Spec del original MB-69 `741:292447`.
