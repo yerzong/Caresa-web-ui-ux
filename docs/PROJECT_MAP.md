@@ -12,6 +12,21 @@ Objetivo por pantalla: existir en **Desktop (fuente) → Tablet (834) → Mobile
 
 ---
 
+## REMAKE v2 (2026-09-18) — misión vigente
+Remake desde cero en páginas nuevas (`CARESA v2 — Design System` + `CARESA Web Responsive`), base Untitled UI recreada localmente. Breakpoints v2: **1440 / 768 / 375**.
+
+| Fase | Contenido | Estado |
+|---|---|---|
+| 1 | Design System (tokens, tipografía, iconos, 12 sets de componentes) | [x] construido 2026-09-18 |
+| 2 | Login (2 propuestas) | [x] aprobada Propuesta B (2026-09-18) |
+| 3 | Pantallas Web | [~] Inicio · Pedidos (+Ver pedido) · Consultas (Ventas/Créditos) · Chat · **Abonos** listos; faltan Garantías, Carrito, Catálogos, Corte, Recompra |
+| 4 | Tablet | [ ] |
+| 5 | Mobile | [ ] |
+
+IDs clave: página DS `40000379:4577` · Button `40000386:4768` · Input `40000388:4673` · Modal `40000391:4704` · Overlay `40000391:4705` · Ledger: `~/.claude/jobs/a9d428d9/tmp/ds-state.json`
+
+---
+
 ## Fase 0 — Fundaciones (transversal)
 | Tarea | Estado |
 |---|---|

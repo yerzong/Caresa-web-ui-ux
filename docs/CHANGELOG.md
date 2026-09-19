@@ -5,11 +5,60 @@ Nada se pierde: cada pantalla generada, homologación o decisión se anota aquí
 
 Formato:
 ```
+## [2026-09-18] — REMAKE v2 · Fase 3 (cont.): Abonos (Web 1440)
+- **Section nueva `9.0 Abonos`** (`40000425:5666`) en `CARESA Web Responsive` → Web · 1440 (debajo de 8.0 Chat; section Web crecida a 8470).
+- **Screen/Abonos** (`40000425:5667`): construido clonando `Screen/Pedidos` (misma TopNav/UtilityBar/Footer/card) y transformándolo con la spec real del original (`9 Abonos` → sección ABONOS `739:56096`, frame `739:68154`):
+  - TopNav: **Abonos activo** (pill lime + Icon/package re-aplicado), Pedidos desactivado (Icon/truck re-coloreado — el swap de icono resetea el color).
+  - Sin KPIs (el original no los tiene); sin botones Confirmar/Cancelar; buscador "Busca" (clon del GlobalSearch, 300px) junto a Filtros/Columnas en la fila de tabs; tab activa **Ver todos**.
+  - Tabla 9 columnas: Cliente (Checkbox + nombre + DOC/251684) · Tipo de abono · Importe · Solicitud · Hora de solicitud · Repartidor · Método (icono+texto) · Condición · Acciones. 8 filas fieles al original (fila 1 = Gerson/Multinota/App/---/Efectivo/Rep. Solicitado + acción ✕ roja vía `error/600`; filas 4-5 Gerson; fila 8 Depósito con Icon/download).
+  - Mapeo de badges (el DS v2 no tiene purple/pink): Multinota→Info, Individual→Gray, App→Brand, Web→Info, Rep. Solicitado→Warning, Completado→Success.
+  - Fix aplicado: Cell/Repartidor heredaba alineación derecha de Cell/Total → alineado a la izquierda en las 8 filas.
+- **Pendiente Fase 3:** Consultas·Garantías, Carrito (requiere node-id del usuario), Catálogos, Corte de caja, Recompra + overlays de Abonos (Ver abono / diálogos).
+
+## [2026-09-18] — REMAKE v2 · Fase 3 (cont.): Ver pedido + Créditos + Chat, reorganización jerárquica
+- **Reorganización de `CARESA Web Responsive`:** sección Web en columna vertical con sub-secciones horizontales por módulo (1.0 Login, 2.0 Inicio, 7.0 Pedidos, 5.0 Consultas, 8.0 Chat); Tablet · 768 y Mobile · 375 a la derecha del bloque Web.
+- **Iconos de Button:** variantes Destructive → fg/white, Primary → fg/on-brand (maestro) + fix en instancia Cancelar de Pedidos. Nota: el swap de icono resetea el color; re-aplicar al usar.
+- **Screen/Pedidos-VerPedido** (`40000415:5203`): lista con Overlay/Scrim + modal 1088px (chip folio oscuro, estado, cierre 44px, fila de info 6 campos, tabla 4 ítems SYD/BOSCH/MEFRA/SACHS con precios/descuentos, cards Dirección+Comentarios, resumen con Total $10,194.50, botonera Cancelar/Confirmar pedido).
+- **Screen/Consultas-Creditos** (`40000417:5414`): tab Créditos activo, tabla Cliente/Folio/Días/Límite/Saldo(rojo)/Vence/Status (Activo/Por vencer/Vencido/Sin saldo) con avatares de rol.
+- **Screen/Chat** (`40000419:5592`): dos columnas — lista de 6 conversaciones (avatar por rol, badge no-leídos, activa resaltada) + conversación con burbujas (entrante blanca / saliente lima con texto oscuro), header con estado en línea y RoleChip, input pill + Enviar.
+- **Pendiente Fase 3:** Garantías, Carrito (requiere node-id del usuario), Catálogos, Corte de caja, Abonos, Recompra.
+
+## [2026-09-18] — REMAKE v2 · Fase 3: logos reales + Pedidos + Consultas·Ventas
+- **Logos reales de marcas:** 19 PNG del dataset público `filippofilip95/car-logos-dataset` (GitHub) subidos vía `upload_assets` a las cards del grid de Inicio. SYD conserva su logo del archivo. Assets locales en `~/.claude/jobs/a9d428d9/tmp/logos/`.
+- **Screen/Pedidos** (`40000408:4814`): TopNav (Pedidos activo), 5 KPI cards con tendencia, tabla con tabs de estado, Confirmar/Cancelar, Filtros/Columnas, 7 filas con RoleChip + badges por estado + acciones, paginación, footer. Spec del original 683:56095.
+- **Screen/Consultas-Ventas** (`40000411:5031`): tabs Ventas/Créditos/Garantías, chip TOTAL SELECCIONADO, filtros (fechas/agente/cliente), tabla 8 columnas con Emitida/Cancelada, paginación, footer. Spec del original 741:289083.
+- **Specs extraídas** (figma-auditor) para Pedidos detalle, Consultas completo, Corte, Chat, Abonos, Catálogos y Recompra. Carrito requiere node-id manual (página >2M chars).
+- **Pendiente Fase 3:** Ver pedido (modal), Créditos/Garantías, Carrito, Catálogos, Corte de caja, Chat, Abonos, Recompra.
+
+## [2026-09-18] — REMAKE v2 · Fase 2 aprobada (Login B) + Fase 3 iniciada (Inicio Web)
+- **Login definitivo:** Propuesta B (card centrada sobre degradado del logo). Propuesta A queda en la section como registro.
+- **Nuevos en el DS:** `Select` (5 estados, `40000400:4718`), `NavItem/Dark` (`40000400:4729`), `Organism/TopNav` (`40000401:4697`), `Organism/Footer` (`40000401:4809`).
+- **Screen/Inicio Web 1440** (`40000402:4632`): navbar oscura con pill lima activa + resumen de venta, utility bar (breadcrumb/buscador global/sucursal), chips Promociones·Autopartes·Categorías, panel Búsqueda Inteligente (5 selects + Buscar + progreso 0/5 + Limpiar/Escanear VIN/Buscar por SKU), grid de marcas 5×4 con logo clonado del original, footer de sistema. Todo instancias v2.
+- **Corregido en autovalidación:** grid colapsado a 1 fila → cards a 5 columnas; logo de card equivocado (CARESA→marca) y nombre alineado al logo disponible (SYD).
+- **Pendiente Fase 3:** Carrito, Catálogos, Consultas, Corte de caja, Pedidos, Chat, Abonos, Recompra.
+
+## [2026-09-18] — REMAKE v2 · Fase 2: Login, dos propuestas (Web 1440)
+- **Creado:** página `CARESA Web Responsive` (`40000397:4577`) con sections `Web · 1440` / `Tablet · 768` / `Mobile · 375` lado a lado, lienzo oscuro.
+- **Login/PropuestaA** (`40000398:4592`): split 620px panel oscuro de marca (eyebrow lima + headline + engranes decorativos al 12%) + formulario blanco centrado 400px. Logo original clonado (sin tocar la fuente).
+- **Login/PropuestaB** (`40000399:4611`): card blanca centrada 440px con Shadow/xl sobre degradado del logo (#346301→#89C303→#AEF803) y engranes de línea decorativos.
+- Ambas 100% instancias v2 (Input, Checkbox, Button Primary), Auto Layout, sin hex sueltos en componentes; misma estructura de formulario (label arriba, remember/forgot, CTA único).
+- **Pendiente:** usuario elige A o B → Fase 3 (pantallas Web).
+
 ## [YYYY-MM-DD] — Título
 - **Creado/Modificado:** ...
 - **Cambios:** ...
 - **Pendiente:** ...
 ```
+
+## [2026-09-18] — REMAKE v2 · Fase 1: Design System "CARESA v2" completo
+- **Creado:** página `CARESA v2 — Design System` (`40000379:4577`) con 3 sections (Fundaciones / Iconografía / Componentes) sobre lienzo oscuro.
+- **Tokens (145 variables):** `CARESA v2 / Primitives` (brand lima del logo #AEF803/#89C303/#346301, gray, error, warning, success, info — escalas 25–950), `Spacing` (escala 8pt: 4–64), `Radius` (0–full), `Color` semántica (48 alias con scopes: bg/text/border/fg/action). Code syntax WEB en todas.
+- **Estilos:** 14 de texto (Inter Display→Caption, LH 1.4–1.6) + 5 sombras (Shadow xs–xl).
+- **Iconografía:** 42 iconos de línea 24px trazo 2px (estilo Untitled UI, recreados localmente — la librería de comunidad no es suscribible vía MCP). Roles diferenciados: `user`=Cliente, `wrench`=Mecánico.
+- **Componentes (12 sets, todos con variantes/props/estados y variables ligadas):** Button (24 var., 44px, loading/focus/disabled), Input (5 estados, label arriba + error con icono), Checkbox (9), Radio (6), Toggle (6, ON=brand/700 por contraste 3:1), Badge (6 colores), Alert (4 tipos con icono semántico), Modal (Default/Destructive, homologado a la referencia aprobada 600px/badge/divider/botonera), Overlay/Scrim (sin frame de fondo), Tab (8), Table/HeaderCell+Cell (alineación por tipo de dato), Card, NavItem, Skeleton, RoleChip, EmptyState.
+- **Auditoría previa:** 16 anti-patrones (AP-01…AP-16) catalogados desde los enlaces de errores del intento anterior; las descripciones de componentes referencian los AP que previenen.
+- **Validado:** capturas de cada bloque + estructura; sin hardcodes en fills/strokes/radius/spacing de componentes.
+- **Pendiente:** aprobación de Fase 1 → Fase 2 (Login, 2 propuestas).
 
 ---
 
