@@ -20,7 +20,7 @@ Remake desde cero en páginas nuevas (`CARESA v2 — Design System` + `CARESA We
 | 1 | Design System (tokens, tipografía, iconos, 12 sets de componentes) | [x] construido 2026-09-18 |
 | 2 | Login (2 propuestas) | [x] aprobada Propuesta B (2026-09-18) |
 | 3 | Pantallas Web | [x] **COMPLETA 2026-09-19** — Login B · Inicio · Carrito · Catálogos · Consultas (Ventas/Créditos/Garantías) · Corte (Apertura caja) · Pedidos (+Ver pedido) · Chat · Abonos · Recompra |
-| 4 | Tablet | [~] Login + Inicio listos (2026-09-19); organismo TopNav--Tablet creado; faltan 10 pantallas |
+| 4 | Tablet | [x] **COMPLETA 2026-09-19** — 12 pantallas (faltan solo overlays secundarios) |
 | 5 | Mobile | [ ] |
 
 IDs clave: página DS `40000379:4577` · Button `40000386:4768` · Input `40000388:4673` · Modal `40000391:4704` · Overlay `40000391:4705` · Ledger: `~/.claude/jobs/a9d428d9/tmp/ds-state.json`

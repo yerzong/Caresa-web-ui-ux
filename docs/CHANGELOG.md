@@ -5,6 +5,20 @@ Nada se pierde: cada pantalla generada, homologación o decisión se anota aquí
 
 Formato:
 ```
+## [2026-09-19] — REMAKE v2 · Fase 4 COMPLETA (Tablet 768): 12 pantallas
+- **Todas las pantallas Web adaptadas a 768** en `Tablet · 768`, sections `1.0`–`10.0` en orden numérico (re-stack final, alto total 14679):
+  - `Screen/Carrito--Tablet` (`40000469:98551`): card + panel de venta **apilados**; tabla reducida a Producto/Cantidad/Importe/Acciones.
+  - `Screen/Catalogos--Tablet` (`40000469:6718`): grid de marcas a 3 columnas.
+  - `Screen/Consultas-{Ventas,Creditos,Garantias}--Tablet` (`40000470:99371/99749/100127`): selects 300px en wrap; tablas reducidas — Ventas: Folio/Venta/Status/Acciones · Créditos: Cliente/Saldo/Status/Acciones · Garantías: Folio/Importe/Estado/Acciones.
+  - `Screen/Corte-AperturaCaja--Tablet` (`40000470:100705`): modal 680px sobre el Inicio tablet.
+  - `Screen/Pedidos--Tablet` (`40000470:98892`): KPIs 224px en wrap (3+2); tabla Cliente/Total/Estado/Acciones.
+  - `Screen/Chat--Tablet` (`40000470:100504`): lista 260px + conversación fill; burbujas clampeadas a 400px.
+  - `Screen/Abonos--Tablet` (`40000470:6799`): tabla Cliente/Importe/Condición/Acciones; tabs en wrap.
+  - `Screen/Recompra--Tablet` (`40000470:101124`): card + panel Filtros apilados; grupos con Código/Producto/Costo final/Piezas/Acciones.
+- **Patrón tabla-tablet consolidado:** conservar 4 columnas clave + acciones; el detalle completo vive en el overlay/Ver de cada fila.
+- **Gotcha documentado:** al apilar un BodyRow (H→V), los hijos con `sizingV: FILL` colapsan a 2px bajo un padre HUG → pasar a HUG.
+- **Pendiente:** overlays tablet (VerPedido, diálogos), Fase 5 Mobile 375, prototipo y QA.
+
 ## [2026-09-19] — REMAKE v2 · Fase 4 iniciada (Tablet 768): Login + Inicio + organismo TopNav--Tablet
 - **Nuevo en el DS** (`03 · Componentes`, junto a GlobalSearch): `Organism/TopNav--Tablet` (`40000468:4800`) — logo + menú hamburguesa (abre drawer de nav) + resumen de venta compacto (sin trash/check) + campana + avatar, 768×64.
 - **Tablet · 768, section `1.0 Login`:** `Screen/Login--Tablet` (`40000467:6613`, 768×1024) — clon de Propuesta B con card 440 centrada y engranes decorativos reposicionados.
