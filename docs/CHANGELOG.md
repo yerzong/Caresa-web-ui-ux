@@ -5,6 +5,14 @@ Nada se pierde: cada pantalla generada, homologación o decisión se anota aquí
 
 Formato:
 ```
+## [2026-09-19] — REMAKE v2 · Fase 5 COMPLETA (Mobile 375): 12 pantallas
+- **Nuevo en el DS:** `Organism/TopNav--Mobile` (`40000474:4738`) — logo + hamburguesa + carrito con total + campana + avatar (375×56), derivado del organismo tablet.
+- **12 pantallas en `Mobile · 375`**, sections `1.0`–`10.0` en orden numérico (alto total 17316):
+  - Login (`40000474:7742`, 375×812, card 335) · Inicio (`40000474:7779`, selects 1/fila, **grid 2 columnas** 152px) · Carrito (`40000475:7727`, tabla Producto/Cantidad/Importe, steppers 26px) · Catálogos (`40000475:7895`) · Consultas Ventas/Créditos/Garantías (`40000475:100333/100567/100825`, tablas a 3 columnas: id/estado/acción) · Corte (`40000475:101224`, modal 343 con **tablas de denominaciones apiladas**, alto 1150) · Pedidos (`40000475:99979`, KPIs 2/fila, tabs en wrap, sin RoleChip en filas) · Chat (`40000475:101082`, **solo lista** a ancho completo; la conversación será pantalla aparte al prototipar) · Abonos (`40000475:99698`) · Recompra (`40000475:101641`, grupos Código/Producto/Piezas).
+- **Patrón tabla-mobile:** 3 columnas (identificador / estado o importe / acción); textos clampeados con `textAutoResize: HEIGHT`.
+- **Los 3 breakpoints del REMAKE v2 están completos** (Web 1440 · Tablet 768 · Mobile 375 = 36 pantallas + 2 organismos TopNav responsivos).
+- **Pendiente:** overlays secundarios por breakpoint, drawer de navegación (hamburguesa), prototipo (Fase 6) y QA UX/WCAG (Fase 7).
+
 ## [2026-09-19] — REMAKE v2 · Fase 4 COMPLETA (Tablet 768): 12 pantallas
 - **Todas las pantallas Web adaptadas a 768** en `Tablet · 768`, sections `1.0`–`10.0` en orden numérico (re-stack final, alto total 14679):
   - `Screen/Carrito--Tablet` (`40000469:98551`): card + panel de venta **apilados**; tabla reducida a Producto/Cantidad/Importe/Acciones.
