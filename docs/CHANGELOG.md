@@ -5,6 +5,16 @@ Nada se pierde: cada pantalla generada, homologación o decisión se anota aquí
 
 Formato:
 ```
+## [2026-09-19] — REMAKE v2 · Fase 6: NavDrawer + prototipo de navegación en 3 breakpoints (146 reactions)
+- **Nuevo en el DS:** `Organism/NavDrawer` (`40000476:4746`) — panel oscuro 300px con logo, ✕ y los 8 NavItems (clonados del TopNav, apilados). Para Tablet/Mobile.
+- **Pantallas de drawer abierto:** `Screen/NavDrawer--Tablet` (`40000476:8682`) y `--Mobile` (`40000476:8871`) — Inicio de fondo + scrim + drawer instancia.
+- **Prototipo cableado** (NAVIGATE + DISSOLVE 250ms EASE_OUT; los NavItems anidados en la instancia de TopNav SÍ aceptan reactions vía `setReactionsAsync`):
+  - **Web (90):** TopNav completo en las 11 pantallas (cada item → su módulo), Login→Inicio, tabs de Consultas cruzadas, modal de Corte (✕/Cerrar/Confirmar → Inicio).
+  - **Tablet (28):** hamburguesa → NavDrawer--Tablet en las 11 pantallas; items del drawer → módulos; ✕ y scrim → BACK; Login→Inicio; tabs Consultas.
+  - **Mobile (28):** mismo patrón con el drawer mobile.
+- **Flow starting points:** `v2 · Web` (Login B) · `v2 · Tablet` · `v2 · Mobile` (depurados los "Flow N" genéricos).
+- **Pendiente:** overlays secundarios de módulo (Ver pedido, diálogos de acciones por fila) en tablet/mobile + QA UX/WCAG (Fase 7).
+
 ## [2026-09-19] — REMAKE v2 · Fase 5 COMPLETA (Mobile 375): 12 pantallas
 - **Nuevo en el DS:** `Organism/TopNav--Mobile` (`40000474:4738`) — logo + hamburguesa + carrito con total + campana + avatar (375×56), derivado del organismo tablet.
 - **12 pantallas en `Mobile · 375`**, sections `1.0`–`10.0` en orden numérico (alto total 17316):
