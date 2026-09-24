@@ -22,8 +22,8 @@ Remake desde cero en páginas nuevas (`CARESA v2 — Design System` + `CARESA We
 | 3 | Pantallas Web | [x] **COMPLETA 2026-09-19** — Login B · Inicio · Carrito · Catálogos · Consultas (Ventas/Créditos/Garantías) · Corte (Apertura caja) · Pedidos (+Ver pedido) · Chat · Abonos · Recompra |
 | 4 | Tablet | [x] **COMPLETA 2026-09-19** — 12 pantallas (faltan solo overlays secundarios) |
 | 5 | Mobile | [x] **COMPLETA 2026-09-19** — 12 pantallas |
-| 6 | Prototipo | [~] Navegación completa en 3 breakpoints (146 reactions, NavDrawer, 3 flows); faltan overlays de módulo |
-| 7 | QA UX/WCAG | [ ] |
+| 6 | Prototipo | [x] **COMPLETA 2026-09-23** — navegación + VerPedido en 3 breakpoints (178 reactions, NavDrawer, 3 flows) |
+| 7 | QA UX/WCAG | [~] 3 pantallas revisadas (1/breakpoint) + fixes masivos de contraste y touch targets; deuda menor registrada en CHANGELOG |
 
 IDs clave: página DS `40000379:4577` · Button `40000386:4768` · Input `40000388:4673` · Modal `40000391:4704` · Overlay `40000391:4705` · Ledger: `~/.claude/jobs/a9d428d9/tmp/ds-state.json`
 

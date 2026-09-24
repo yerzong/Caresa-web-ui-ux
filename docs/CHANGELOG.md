@@ -5,6 +5,16 @@ Nada se pierde: cada pantalla generada, homologación o decisión se anota aquí
 
 Formato:
 ```
+## [2026-09-23] — REMAKE v2 · Fase 6 cerrada (VerPedido resp.) + Fase 7 QA: 3 reviews y fixes masivos
+- **Overlays VerPedido responsive:** `Screen/Pedidos-VerPedido--Tablet` (`40000483:8814`, modal 680, items Cant/Producto/P.Unit/Importe, InfoRow wrap) y `--Mobile` (`40000483:100949`, modal 343, items Cant/Producto/Importe, info 2 col, BottomZone apilada). **+32 reactions**: ojo de cada fila de Pedidos → VerPedido en los 3 breakpoints; ✕/botones/scrim → BACK.
+- **QA (`ui-ux-reviewer` ×3):** Inicio Web · Pedidos Tablet · Carrito Mobile. Reportes con bloqueantes/mayores/menores (contraste calculado).
+- **Fixes aplicados en masa (página completa):**
+  - Contraste: 15 textos `success/600` sobre blanco (3.69:1 ✗) → `success/700` (5.38:1 ✓) — importes de Carrito, totales, costos de Recompra.
+  - Bordes de steppers: 102 StepBtn con `success/300`/`error/300` (1.5–1.9:1 ✗) → `success/600`/`error/600` (≥3:1 ✓).
+  - Touch targets: 156 iconos de acción de filas 18→24px (WCAG 2.5.8) en Tablet/Mobile; 98 botones de paginación a 44px de alto; steppers del Carrito Mobile 26→36px con columnas rebalanceadas (138/120/77).
+- **Hallazgos aceptados sin cambio (fidelidad al original):** doble CTA Confirmar/Cancelar en Pedidos (el original usa Cancelar rojo sólido); jerarquía de botones del panel de búsqueda.
+- **Deuda registrada para siguiente iteración:** labels accesibles/tooltips en iconos de acción, tamaños 11-13px fuera de escala tipográfica (ligar a estilos DS), barra de progreso sin capa de fill, estados vacío/error del carrito, padding `page/margin` por variable en TopNav mobile.
+
 ## [2026-09-19] — REMAKE v2 · Fase 6: NavDrawer + prototipo de navegación en 3 breakpoints (146 reactions)
 - **Nuevo en el DS:** `Organism/NavDrawer` (`40000476:4746`) — panel oscuro 300px con logo, ✕ y los 8 NavItems (clonados del TopNav, apilados). Para Tablet/Mobile.
 - **Pantallas de drawer abierto:** `Screen/NavDrawer--Tablet` (`40000476:8682`) y `--Mobile` (`40000476:8871`) — Inicio de fondo + scrim + drawer instancia.
