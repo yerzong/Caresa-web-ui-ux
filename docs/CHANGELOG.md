@@ -5,6 +5,16 @@ Nada se pierde: cada pantalla generada, homologación o decisión se anota aquí
 
 Formato:
 ```
+## [2026-09-24] — REMAKE v2 · Módulo Inicio: 7 sub-pantallas de flujos de búsqueda (Web, pendiente validación)
+- **Feedback del usuario:** faltaban los flujos internos del módulo Inicio (los del original v1). Se analizaron los 8 nodos fuente (`435:23307/23969`, `462:36449`, `434:21360/21628/21770`, `461:42992`, `459:61082`) y se construyeron en Web dentro de `2.0 Inicio`, organizados en **subsections por flujo** (color `#475467`):
+  - **2.1 · Selección manual y visual:** `FiltroManual_01_Modelos` (`40000488:32312`, marca Chevrolet elegida, progreso 1/5, grid 15 modelos AVEO con foto real) → `FiltroManual_02_Versiones` (`40000488:101014`, dropdown oscuro "Chevrolet · Cavalier" con Base/Sense/Advance/Exclusive/SR + "Ver todas las refacciones") → `Inicio-Resultados` (`40000489:9347`).
+  - **Resultados de búsqueda:** back + "RESULTADOS DE BÚSQUEDA", H1 "Aveo · Base · 2026/2025", chips activos MARCA/MODELO con ✕, Ordenar: Relevancia, chips SUSPENSIÓN/MOTOR, **grid 4×2 de cards de producto** (barra lime con nombre, logo SYD + stock TU/NA, foto real, PRECIO $550.00 en `brand/700` — el lime del original reprueba contraste—, acciones EQUIVALENCIAS/APLICACIONES/IMPRIMIR, MARCA/SKU/CNTRL ALM, eliminar + qty + carrito lime).
+  - **2.2 · Filtro inteligente:** `01_Selects` (`40000490:9932`, 3/5, barra de progreso con fill real vía gradiente) → `02_Completo` (`40000490:10183`, 5/5 con **chips lime 2026/2025 y Suspensión/Frenos** sobre los selects, grid filtrado todo CHEVROLET).
+  - **2.3 · VIN · SKU:** `Inicio-EscanearVIN` (`40000492:9818`, modal 560 con visor de cámara oscuro + esquinas lime + input) y `Inicio-BuscarSKU` (`40000492:9982`, modal 720 con input + Buscar).
+- **Prototipo: +54 reactions** — cards de marca→Modelos, modelo→Versiones, versiones→Resultados, select Marca→FI_01, Año/Categoría→FI_02, Buscar→Resultados, botones VIN/SKU→modales, ✕/scrim/back→BACK.
+- **Nota técnica:** los Select del DS son instancias → los chips de valores múltiples se superponen absolutos sobre el panel (no se pueden insertar hijos en instancias).
+- **Estado:** pendiente validación del usuario → después se adaptan a Tablet y Mobile.
+
 ## [2026-09-23] — REMAKE v2 · Fase 6 cerrada (VerPedido resp.) + Fase 7 QA: 3 reviews y fixes masivos
 - **Overlays VerPedido responsive:** `Screen/Pedidos-VerPedido--Tablet` (`40000483:8814`, modal 680, items Cant/Producto/P.Unit/Importe, InfoRow wrap) y `--Mobile` (`40000483:100949`, modal 343, items Cant/Producto/Importe, info 2 col, BottomZone apilada). **+32 reactions**: ojo de cada fila de Pedidos → VerPedido en los 3 breakpoints; ✕/botones/scrim → BACK.
 - **QA (`ui-ux-reviewer` ×3):** Inicio Web · Pedidos Tablet · Carrito Mobile. Reportes con bloqueantes/mayores/menores (contraste calculado).
