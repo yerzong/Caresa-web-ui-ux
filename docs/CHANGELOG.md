@@ -5,6 +5,14 @@ Nada se pierde: cada pantalla generada, homologación o decisión se anota aquí
 
 Formato:
 ```
+## [2026-09-24] — REMAKE v2 · Corrección por feedback: atomización real + selects Filled + autos reales + orden
+- **Feedback del usuario atendido punto por punto:**
+  1. **Componentes atómicos:** nuevos en el DS — `Molecule/CardBrand` (`40000495:4785`, creada DESDE la card real del grid v2; misma card para marcas, modelos y categorías) y `Molecule/ProductCard` (`40000496:4796`, **propuesta v2 nueva**, no copia del original: foto arriba con logo/stock superpuestos, precio oscuro, mini-acciones, SKU/CNTRL, CTA "Agregar" lime). **103 frames locales reemplazados por instancias**: grids de Inicio (20), Catálogos (20), FI_01 (20), FI_02 (20), Modelos FM_01/FM_02 (15+15) y productos de Resultados (8).
+  2. **Selects en estado `Filled`** (variante real del DS, texto oscuro) en FM_01/FM_02 (Marca) y FI_01/FI_02 (Marca/Modelo/Versión) — ya no parecen placeholders.
+  3. **Autos reales y variados:** 15 fotos de modelos Chevrolet distintos (Aveo…Suburban) descargadas de Wikimedia Commons y subidas vía `upload_assets`; aplicadas a los 30 cards de modelo. (El archivo original solo tenía UNA foto de auto repetida.)
+  4. **Orden:** subsections de flujo re-apiladas con 200px de separación y ajustadas a contenido; coherencia foto-nombre en productos (aceites) y dropdown de versiones posicionado sobre la card CAVALIER que le corresponde.
+- **Regla aprendida (no repetir):** toda estructura repetida se crea PRIMERO como componente del DS y las pantallas consumen instancias; los flujos nuevos son propuesta v2 homologada, no calco del original v1.
+
 ## [2026-09-24] — REMAKE v2 · Módulo Inicio: 7 sub-pantallas de flujos de búsqueda (Web, pendiente validación)
 - **Feedback del usuario:** faltaban los flujos internos del módulo Inicio (los del original v1). Se analizaron los 8 nodos fuente (`435:23307/23969`, `462:36449`, `434:21360/21628/21770`, `461:42992`, `459:61082`) y se construyeron en Web dentro de `2.0 Inicio`, organizados en **subsections por flujo** (color `#475467`):
   - **2.1 · Selección manual y visual:** `FiltroManual_01_Modelos` (`40000488:32312`, marca Chevrolet elegida, progreso 1/5, grid 15 modelos AVEO con foto real) → `FiltroManual_02_Versiones` (`40000488:101014`, dropdown oscuro "Chevrolet · Cavalier" con Base/Sense/Advance/Exclusive/SR + "Ver todas las refacciones") → `Inicio-Resultados` (`40000489:9347`).
