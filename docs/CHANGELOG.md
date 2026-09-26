@@ -5,6 +5,12 @@ Nada se pierde: cada pantalla generada, homologación o decisión se anota aquí
 
 Formato:
 ```
+## [2026-09-26] — REMAKE v2 · Propuesta ProductCard-Grid (limpia) + quitar "5 fotos" + comparación
+- **Quitado "5 fotos"** de la card completa (redundante: ya se ven 3 thumbs + "+2").
+- **Nueva `Molecule/ProductCard-Grid`** (`40000568:4850`) — versión limpia para grids (buenas prácticas + divulgación progresiva): imagen grande con badge "📷 N" en esquina, fila logo+stock compacta, nombre, precio, y BuyRow (qty + Agregar primary + "⋮" para secundarias). Sin galería/SKU/CNTRL/3-botones (eso vive en el modal Detalle). Lime reservado al CTA Agregar.
+- **Comparación lado a lado** (`40000569:12312`) en la 2.4: "Actual — Completa (Detalle)" vs "Propuesta — Grid (limpia)" para que el usuario elija cuál va en el grid. Pendiente su validación.
+- Re-apilado vertical de subsections/módulos por la regla de orden (2.4 creció).
+
 ## [2026-09-26] — REMAKE v2 · ProductCard: botones de acción parejos (fix overflow)
 - **Feedback:** la fila EQUIVALENCIAS/APLICACIONES/IMPRIMIR se desbordaba del ancho de la card y "IMPRIMIR" se cortaba; se veían de distinto tamaño.
 - **Arreglado:** AccionesRow rediseñada como **3 columnas iguales** (FILL), cada botón = ícono arriba (color semántico: azul/naranja/gris) + label debajo en una línea, Title Case 11px. Ya no se corta ni desalinea. Cambio en el componente → todas las instancias.
