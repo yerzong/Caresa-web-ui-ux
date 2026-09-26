@@ -5,6 +5,9 @@ Nada se pierde: cada pantalla generada, homologación o decisión se anota aquí
 
 Formato:
 ```
+## [2026-09-26] — REMAKE v2 · Fix alineación SelectMulti (label 14/LH20/gap8 = Select simple)
+- **Desalineación corregida:** el `Molecule/SelectMulti` tenía label 12px/gap 6 (campo en y=21) vs. el Select simple 14px/gap 8 (campo en y=28). Homologado: label 14px Medium, line-height 20px, gap 8 → **campo en y=28 en ambos**. Las 5 columnas del filtro inteligente (01-05) quedan perfectamente alineadas (labels y fields a la misma altura). Verificado en FI_01 (placeholders) y FI_02 (con tags).
+
 ## [2026-09-26] — REMAKE v2 · Inicio: multiselect altura fija (+N) + FilterChip aprobado en Resultados
 - **Multi-select ya no descuadra la fila** (feedback): el field de `Molecule/SelectMulti` pasó a **altura fija 44px, sin wrap, clip** — con varias selecciones los tags quedan en una línea y ningún campo mueve/altera a los demás (antes crecía y amontonaba todo). Componente y variantes a 72px de alto → fila 100% alineada.
 - **FilterChip aprobado:** el usuario prefirió el estilo de filtros del original (`462:36520`) = etiqueta + pill oscuro + ×. Creado `Molecule/FilterChip` (`40000534:4847`) atómico y aplicado a Resultados manual (MARCA·Chevrolet / MODELO·Aveo / VERSIÓN·Base) y Resultados FI (7 chips incl. Año y Categoría múltiples). Reemplaza los tags planos anteriores.
