@@ -5,6 +5,10 @@ Nada se pierde: cada pantalla generada, homologación o decisión se anota aquí
 
 Formato:
 ```
+## [2026-09-26] — REMAKE v2 · Resultados FI: filtros multi-valor agrupados + fondos limpiados
+- **Filtros agrupados (feedback):** en Resultados del filtro inteligente, Año y Categoría estaban como chips separados (AÑO·2026 + AÑO·2025...). Nuevo `Molecule/FilterChipMulti` (`40000541:4848`) = etiqueta + varios pills oscuros + × (limpia todos). Ahora: `AÑO (2026)(2025) ×` y `CATEGORÍA (Suspensión)(Frenos) ×` en un solo chip cada uno. De 7 chips → 5.
+- **Fondos blancos sobrantes eliminados:** BackRow y ActiveFilters (y CategoryChips) tenían fill blanco erróneo — quitados en Resultados FI y en Resultados manual (consistencia). Las filas van transparentes; solo los chips/botones llevan su propio fondo.
+
 ## [2026-09-26] — REMAKE v2 · Fix alineación fila FI: Buscar bottom-aligned (MAX) como el original
 - **Causa real de la desalineación/encimado:** había cambiado `SelectRow.counterAxisAlignItems` a MIN, dejando el botón Buscar (44h, sin label) pegado arriba (y=0) mientras los campos van en y=28. El panel correcto (placeholder de Marcas) usa **MAX** (Buscar alineado abajo con los campos). Reaplicado MAX en FI_01/FI_02/SelectAbierto → Buscar en y=28, fila 01-05 + botón perfectamente alineados. MultiDropdown del estado abierto reposicionado sobre su columna.
 
