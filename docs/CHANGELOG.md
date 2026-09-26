@@ -5,6 +5,11 @@ Nada se pierde: cada pantalla generada, homologación o decisión se anota aquí
 
 Formato:
 ```
+## [2026-09-26] — REMAKE v2 · Homologación de modales 2.4 al estilo v2 + ModalHeader atómico
+- **Feedback:** los modales de la 2.4 copiaban el estilo del original v1 (chip con texto lime, título al lado) en vez del estilo v2 real de los modales del sistema (VerPedido `40000415:5473`, AperturaCaja `40000434:6258`).
+- **Estilo v2 identificado:** header = chip oscuro (`gray/950`) con texto **blanco** + subtítulo gris **apilados** (no al lado) + botón × **sin borde** 44×44.
+- **`Molecule/ModalHeader`** (`40000553:4849`) creado como componente atómico con ese estilo (override ChipTxt + Subtítulo). Reemplazó los headers ad-hoc de los 5 modales de la 2.4 (Detalle/Equivalencias/Aplicaciones/Imprimir/Imagen); cierres recableados a BACK. Botones ya usan el componente Button del DS (Cancelar secondary / Imprimir primary).
+
 ## [2026-09-26] — REMAKE v2 · Section 2.4: ProductCard — variantes e interacciones (6 flujos)
 - **Nueva subsection `2.4 · Card de producto — variantes e interacciones`** en 2.0 Inicio, documentando las 6 interacciones de la ProductCard (recreadas del original v1 en estilo v2/Untitled UI):
   - **Hub** (`40000544:11824`): ProductCard instancia + nota de interacciones.
