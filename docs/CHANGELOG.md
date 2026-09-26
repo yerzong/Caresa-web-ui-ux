@@ -5,6 +5,17 @@ Nada se pierde: cada pantalla generada, homologación o decisión se anota aquí
 
 Formato:
 ```
+## [2026-09-26] — REMAKE v2 · Inicio: NavItem íconos, multi-select atómico, back buttons, filtros de Resultados
+- **Íconos NavItem homologados (global):** los íconos tenían vectores de 2 colores (blanco + gris `52,64,84`). Barrido global (176 instancias, 399 vectores + 8 variantes maestras): inactivo → `fg/white`, activo → `fg/primary`, bindeado a variable. Ya son un solo color por estado.
+- **Multi-select del Filtro Inteligente rediseñado y atomizado** (04 Año / 05 Categoría). Se eliminaron los chips lime superpuestos (absolutos, no atómicos). Nuevos componentes en el DS:
+  - `Molecule/Tag` (`40000522:4814`) — chip removible Untitled UI (blanco, borde gris, texto + ×).
+  - `Molecule/SelectMulti` (`40000523:4835`) — multi-select, State=Default (placeholder) / Filled (tags reales dentro del field, wrap).
+  - `Molecule/MultiDropdown` (`40000524:4823`) — **estado ABIERTO**: field enfocado (borde brand) + menú flotante con checkboxes (seleccionados = check lime + bg gris/50).
+  - `Molecule/BackButton` (`40000529:4846`) — botón regresar Untitled UI.
+- **Flujo 2.2 reorganizado y cableado** (SMART_ANIMATE/DISSOLVE): `01_Selects` (llenando, 04/05 SelectMulti vacío) → `02_SelectAbierto` (05 Categoría con MultiDropdown abierto, ejemplo pedido) → `03_Completo` (5/5 con tags) → **`04_Resultados`** propio del FI (título "Express Van · Exclusive · 2026/2025", tags Chevrolet/Express Van/Exclusive/2026/2025/Suspensión/Frenos). Buscar → ese Resultados.
+- **Back en flujo manual:** `Molecule/BackButton` en Modelos ("← Cambiar marca" → Marcas) y Versiones ("← Cambiar modelo" → Modelos), cableados.
+- **Filtros de Resultados homologados:** se quitó la inconsistencia de dos estilos de chip (MARCA con pill anidado + Categoría con chevron). Ahora: fila "Filtros:" + `Molecule/Tag` uniformes ([Chevrolet ×][Aveo ×][Base ×]) + "Ordenar: Relevancia ▾" a la derecha; fila "Refinar:" con botones secundarios consistentes (Suspensión/Motor/Dirección/Más filtros).
+
 ## [2026-09-26] — REMAKE v2 · Flujo Inicio 2.1 corregido por feedback: marcas-primero + panel vacío + autos fondo blanco
 - **Feedback del usuario atendido:**
   1. **Marcas es el paso 1 del flujo manual/visual:** clonado `Screen/Inicio` como `Screen/Inicio-Manual_01_Marcas` (`40000511:10744`) al inicio de la section 2.1. Secuencia renombrada y reordenada: `01_Marcas → 02_Modelos → 03_Versiones → 04_Resultados`.
