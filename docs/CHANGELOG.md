@@ -5,6 +5,14 @@ Nada se pierde: cada pantalla generada, homologación o decisión se anota aquí
 
 Formato:
 ```
+## [2026-09-26] — REMAKE v2 · Flujo Inicio 2.1 corregido por feedback: marcas-primero + panel vacío + autos fondo blanco
+- **Feedback del usuario atendido:**
+  1. **Marcas es el paso 1 del flujo manual/visual:** clonado `Screen/Inicio` como `Screen/Inicio-Manual_01_Marcas` (`40000511:10744`) al inicio de la section 2.1. Secuencia renombrada y reordenada: `01_Marcas → 02_Modelos → 03_Versiones → 04_Resultados`.
+  2. **Panel de Búsqueda Inteligente VACÍO (placeholder) en todo el flujo 2.1:** en este flujo NO se usan los filtros inteligentes; se seleccionan por clic en las cards. Revertido el `Select/Marca` de Filled→Default ("Selecciona marca" gris), progreso `0/5`, barra vacía en Modelos y Versiones. Lo único que cambia entre pantallas es el grid (marcas→modelos).
+  3. **Fotos de autos con fondo blanco:** 15 modelos Chevrolet reales (Aveo…Suburban) procesados con `rembg` (u2net) — recorte del auto + composición sobre blanco limpio 640×400 — subidos vía `upload_assets` y aplicados a los 30 cards de modelo (02_Modelos + 03_Versiones). Reemplazan las fotos con fondo de calle.
+- **Flujo verificado:** cards de marca → Modelos; cards de modelo → Versiones; dropdown de versiones (posicionado sobre CAVALIER, coincide con su header) → Resultados.
+- **Sin cambios en 2.2 Filtro inteligente** (ahí los selects SÍ van Filled, es el mecanismo de ese flujo).
+
 ## [2026-09-24] — REMAKE v2 · Corrección por feedback: atomización real + selects Filled + autos reales + orden
 - **Feedback del usuario atendido punto por punto:**
   1. **Componentes atómicos:** nuevos en el DS — `Molecule/CardBrand` (`40000495:4785`, creada DESDE la card real del grid v2; misma card para marcas, modelos y categorías) y `Molecule/ProductCard` (`40000496:4796`, **propuesta v2 nueva**, no copia del original: foto arriba con logo/stock superpuestos, precio oscuro, mini-acciones, SKU/CNTRL, CTA "Agregar" lime). **103 frames locales reemplazados por instancias**: grids de Inicio (20), Catálogos (20), FI_01 (20), FI_02 (20), Modelos FM_01/FM_02 (15+15) y productos de Resultados (8).
