@@ -5,6 +5,10 @@ Nada se pierde: cada pantalla generada, homologación o decisión se anota aquí
 
 Formato:
 ```
+## [2026-09-26] — REMAKE v2 · Inicio: multiselect altura fija (+N) + FilterChip aprobado en Resultados
+- **Multi-select ya no descuadra la fila** (feedback): el field de `Molecule/SelectMulti` pasó a **altura fija 44px, sin wrap, clip** — con varias selecciones los tags quedan en una línea y ningún campo mueve/altera a los demás (antes crecía y amontonaba todo). Componente y variantes a 72px de alto → fila 100% alineada.
+- **FilterChip aprobado:** el usuario prefirió el estilo de filtros del original (`462:36520`) = etiqueta + pill oscuro + ×. Creado `Molecule/FilterChip` (`40000534:4847`) atómico y aplicado a Resultados manual (MARCA·Chevrolet / MODELO·Aveo / VERSIÓN·Base) y Resultados FI (7 chips incl. Año y Categoría múltiples). Reemplaza los tags planos anteriores.
+
 ## [2026-09-26] — REMAKE v2 · Inicio: NavItem íconos, multi-select atómico, back buttons, filtros de Resultados
 - **Íconos NavItem homologados (global):** los íconos tenían vectores de 2 colores (blanco + gris `52,64,84`). Barrido global (176 instancias, 399 vectores + 8 variantes maestras): inactivo → `fg/white`, activo → `fg/primary`, bindeado a variable. Ya son un solo color por estado.
 - **Multi-select del Filtro Inteligente rediseñado y atomizado** (04 Año / 05 Categoría). Se eliminaron los chips lime superpuestos (absolutos, no atómicos). Nuevos componentes en el DS:
