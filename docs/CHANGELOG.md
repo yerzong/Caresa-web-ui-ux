@@ -5,6 +5,17 @@ Nada se pierde: cada pantalla generada, homologación o decisión se anota aquí
 
 Formato:
 ```
+## [2026-09-26] — REMAKE v2 · Section 2.4: ProductCard — variantes e interacciones (6 flujos)
+- **Nueva subsection `2.4 · Card de producto — variantes e interacciones`** en 2.0 Inicio, documentando las 6 interacciones de la ProductCard (recreadas del original v1 en estilo v2/Untitled UI):
+  - **Hub** (`40000544:11824`): ProductCard instancia + nota de interacciones.
+  - **Modal/Detalle** (`40000547:11887`, click SKU): info completa — imagen, precio, stock TU/NA, MARCA/SKU/CNTRL/Categoría, descripción.
+  - **Modal/Equivalencias** (`40000549:11892`): header + 3 instancias de ProductCard (producto + 2 equivalentes $0.00).
+  - **Modal/Aplicaciones** (`40000545:11878`): tabla Marca/Modelo/Cilindro/Motor/Años.
+  - **Modal/Imprimir** (`40000546:11879`): preview de etiqueta (MARCA/SKU/CNTRL/CANTIDAD) + Cancelar/Imprimir.
+  - **Vista/Imagen** (`40000546:11912`, click foto): zoom de la imagen del producto.
+  - **Estado/Carrito+1** (`40000550:12058`, click carrito): card con cantidad 0→1.
+- **Modales con shell v2 consistente** (chip oscuro + título + × cerrar, sombra, radius 16). **12 reactions**: hub → cada modal (DISSOLVE), cierres/Cancelar → BACK. Reutiliza ProductCard, Badge, Button.
+
 ## [2026-09-26] — REMAKE v2 · Resultados FI: filtros multi-valor agrupados + fondos limpiados
 - **Filtros agrupados (feedback):** en Resultados del filtro inteligente, Año y Categoría estaban como chips separados (AÑO·2026 + AÑO·2025...). Nuevo `Molecule/FilterChipMulti` (`40000541:4848`) = etiqueta + varios pills oscuros + × (limpia todos). Ahora: `AÑO (2026)(2025) ×` y `CATEGORÍA (Suspensión)(Frenos) ×` en un solo chip cada uno. De 7 chips → 5.
 - **Fondos blancos sobrantes eliminados:** BackRow y ActiveFilters (y CategoryChips) tenían fill blanco erróneo — quitados en Resultados FI y en Resultados manual (consistencia). Las filas van transparentes; solo los chips/botones llevan su propio fondo.
