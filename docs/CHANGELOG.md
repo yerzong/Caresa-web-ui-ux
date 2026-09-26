@@ -5,6 +5,14 @@ Nada se pierde: cada pantalla generada, homologación o decisión se anota aquí
 
 Formato:
 ```
+## [2026-09-26] — REMAKE v2 · ProductCard rediseñada: imagen grande + galería de referencia + logo/stock fuera
+- **Feedback:** la imagen era chica (160px) y tenía el logo de marca y los badges de stock **encima**, tapándola; faltaba indicador de imágenes de referencia.
+- **Rediseño del componente `Molecule/ProductCard`** (se propaga a todas las instancias):
+  - **Imagen más grande y limpia** (210px), sin overlays encima.
+  - **Galería de miniaturas** debajo: 4 thumbs (la activa con borde brand, la última con overlay "+2") + contador "📷 5 fotos". Representa las imágenes de referencia; para producto de 1 sola imagen se oculta la fila.
+  - **BrandStockRow** debajo de la galería: logo de marca (izq) + badges TU/NA (der), **fuera de la imagen**.
+  - Miniaturas sincronizadas con la imagen real de cada instancia (76 thumbs) para que no muestren otra pieza.
+
 ## [2026-09-26] — REMAKE v2 · Reordenamiento vertical de módulos y subsections (regla permanente)
 - **Problema:** al crear la subsection 2.4, Figma absorbió **3.0 Carrito** dentro de ella (quedó anidado) y los módulos 4.0-10.0 se solaparon con 2.0 (que había crecido).
 - **Arreglado:** Carrito devuelto a Web como módulo top-level. Todo reapilado **verticalmente en orden numérico** con gap **200px** consistente: subsections dentro de 2.0 (Inicio → 2.1 → 2.2 → 2.3 → 2.4) y módulos 1.0→10.0. Web h=22246; Tablet/Mobile reposicionados a la derecha e igualados en altura.
