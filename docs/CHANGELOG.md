@@ -5,6 +5,9 @@ Nada se pierde: cada pantalla generada, homologación o decisión se anota aquí
 
 Formato:
 ```
+## [2026-09-26] — REMAKE v2 · Fix alineación fila FI: Buscar bottom-aligned (MAX) como el original
+- **Causa real de la desalineación/encimado:** había cambiado `SelectRow.counterAxisAlignItems` a MIN, dejando el botón Buscar (44h, sin label) pegado arriba (y=0) mientras los campos van en y=28. El panel correcto (placeholder de Marcas) usa **MAX** (Buscar alineado abajo con los campos). Reaplicado MAX en FI_01/FI_02/SelectAbierto → Buscar en y=28, fila 01-05 + botón perfectamente alineados. MultiDropdown del estado abierto reposicionado sobre su columna.
+
 ## [2026-09-26] — REMAKE v2 · Fix alineación SelectMulti (label 14/LH20/gap8 = Select simple)
 - **Desalineación corregida:** el `Molecule/SelectMulti` tenía label 12px/gap 6 (campo en y=21) vs. el Select simple 14px/gap 8 (campo en y=28). Homologado: label 14px Medium, line-height 20px, gap 8 → **campo en y=28 en ambos**. Las 5 columnas del filtro inteligente (01-05) quedan perfectamente alineadas (labels y fields a la misma altura). Verificado en FI_01 (placeholders) y FI_02 (con tags).
 
