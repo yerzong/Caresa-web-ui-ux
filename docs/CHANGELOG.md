@@ -5,6 +5,10 @@ Nada se pierde: cada pantalla generada, homologación o decisión se anota aquí
 
 Formato:
 ```
+## [2026-09-26] — REMAKE v2 · ProductCard: botones de acción parejos (fix overflow)
+- **Feedback:** la fila EQUIVALENCIAS/APLICACIONES/IMPRIMIR se desbordaba del ancho de la card y "IMPRIMIR" se cortaba; se veían de distinto tamaño.
+- **Arreglado:** AccionesRow rediseñada como **3 columnas iguales** (FILL), cada botón = ícono arriba (color semántico: azul/naranja/gris) + label debajo en una línea, Title Case 11px. Ya no se corta ni desalinea. Cambio en el componente → todas las instancias.
+
 ## [2026-09-26] — REMAKE v2 · ProductCard rediseñada: imagen grande + galería de referencia + logo/stock fuera
 - **Feedback:** la imagen era chica (160px) y tenía el logo de marca y los badges de stock **encima**, tapándola; faltaba indicador de imágenes de referencia.
 - **Rediseño del componente `Molecule/ProductCard`** (se propaga a todas las instancias):
