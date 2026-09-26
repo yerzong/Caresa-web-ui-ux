@@ -5,6 +5,11 @@ Nada se pierde: cada pantalla generada, homologación o decisión se anota aquí
 
 Formato:
 ```
+## [2026-09-26] — REMAKE v2 · Reordenamiento vertical de módulos y subsections (regla permanente)
+- **Problema:** al crear la subsection 2.4, Figma absorbió **3.0 Carrito** dentro de ella (quedó anidado) y los módulos 4.0-10.0 se solaparon con 2.0 (que había crecido).
+- **Arreglado:** Carrito devuelto a Web como módulo top-level. Todo reapilado **verticalmente en orden numérico** con gap **200px** consistente: subsections dentro de 2.0 (Inicio → 2.1 → 2.2 → 2.3 → 2.4) y módulos 1.0→10.0. Web h=22246; Tablet/Mobile reposicionados a la derecha e igualados en altura.
+- **REGLA PERMANENTE:** cualquier pantalla/section nueva o cambio de tamaño → re-apilar verticalmente en orden numérico con gap 200 desde la sección afectada hacia abajo, y reajustar Web/Tablet/Mobile. Verificar que ninguna section quede anidada por absorción.
+
 ## [2026-09-26] — REMAKE v2 · Homologación de modales 2.4 al estilo v2 + ModalHeader atómico
 - **Feedback:** los modales de la 2.4 copiaban el estilo del original v1 (chip con texto lime, título al lado) en vez del estilo v2 real de los modales del sistema (VerPedido `40000415:5473`, AperturaCaja `40000434:6258`).
 - **Estilo v2 identificado:** header = chip oscuro (`gray/950`) con texto **blanco** + subtítulo gris **apilados** (no al lado) + botón × **sin borde** 44×44.
