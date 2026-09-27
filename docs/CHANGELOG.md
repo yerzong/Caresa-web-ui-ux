@@ -5,6 +5,11 @@ Nada se pierde: cada pantalla generada, homologación o decisión se anota aquí
 
 Formato:
 ```
+## [2026-09-27] — REMAKE v2 · Imprimir: diálogo nativo del navegador en el flujo
+- **Decisión:** el imprimir real abre el **diálogo nativo del navegador** (chrome del browser, no parte del DS). Flujo: card → Imprimir → modal de **vista previa de etiqueta** (confirmar) → botón Imprimir → **diálogo nativo**.
+- **Reutilizada la pantalla vieja** de impresión nativa (`464:58836` de "2.0 Inicio (MAIN)") clonada al flujo 2.5 como `Screen/Productos_06_ImprimirNativo` (`40000595:27802`): etiqueta (MARCA/SKU/CNTRL/CANTIDAD) + panel de impresión del navegador. Cableado desde el botón Imprimir; clic regresa a la base.
+- Re-apilado por la regla de orden (2.5 creció): Web=11597, Tablet x=12097, Mobile x=15541.
+
 ## [2026-09-27] — REMAKE v2 · Modal Imagen → visor de galería
 - **Feedback:** la card implica varias imágenes de referencia (miniaturas + "+2"), así que el modal de Imagen debía ser un **visor** con navegación, no una foto estática.
 - **Rediseñado** (2.5 en-contexto `40000582:107020` y fuente 2.4 `40000546:11912`): imagen principal grande + botones circulares **‹ ›** (prev/next) + **contador "1 / 5"** + **tira de miniaturas** seleccionables (activa con borde brand). Ahora se entiende que puedes ver/cambiar entre las imágenes de referencia.
