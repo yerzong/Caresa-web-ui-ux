@@ -5,6 +5,13 @@ Nada se pierde: cada pantalla generada, homologación o decisión se anota aquí
 
 Formato:
 ```
+## [2026-09-26] — REMAKE v2 · Subsection 2.5: flujo de producto EN CONTEXTO (variantes sobre la pantalla de productos)
+- **Nueva `2.5 · Producto en pantalla — variantes del flujo`** en 2.0 Inicio: la pantalla de Resultados (productos) como base + 5 variantes con cada modal como **overlay real** (scrim + modal centrado sobre la pantalla), en fila con separación (gap 120), sin encimarse:
+  - `Productos_00_Base`, `_01_Detalle` (SKU), `_02_Equivalencias`, `_03_Aplicaciones`, `_04_Imprimir`, `_05_Imagen`.
+- **16 reactions:** en la base, cada acción de la 1ª card abre su variante (SKU→Detalle, Equivalencias, Aplicaciones, Imprimir, foto→Imagen); scrim/×/Cancelar → regresan a la base.
+- Re-apilado vertical de subsections/módulos por la regla de orden.
+- **Nota:** la 2.4 (hub abstracto + modales sueltos) queda redundante con la 2.5 en-contexto; se puede eliminar si el usuario lo confirma.
+
 ## [2026-09-26] — REMAKE v2 · Decisión: se conserva ProductCard completa (limpieza de propuesta)
 - **Decisión del usuario:** se queda la **ProductCard completa** (`Molecule/ProductCard`, con ajuste manual del usuario). Descartada la propuesta limpia.
 - **Limpieza:** eliminados el frame de comparación de la 2.4 y el componente `Molecule/ProductCard-Grid` (sin instancias) para mantener el DS limpio. Re-apilado vertical de subsections/módulos por la regla de orden.
