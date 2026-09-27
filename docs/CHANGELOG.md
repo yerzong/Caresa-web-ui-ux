@@ -5,6 +5,10 @@ Nada se pierde: cada pantalla generada, homologación o decisión se anota aquí
 
 Formato:
 ```
+## [2026-09-26] — REMAKE v2 · Decisión: se conserva ProductCard completa (limpieza de propuesta)
+- **Decisión del usuario:** se queda la **ProductCard completa** (`Molecule/ProductCard`, con ajuste manual del usuario). Descartada la propuesta limpia.
+- **Limpieza:** eliminados el frame de comparación de la 2.4 y el componente `Molecule/ProductCard-Grid` (sin instancias) para mantener el DS limpio. Re-apilado vertical de subsections/módulos por la regla de orden.
+
 ## [2026-09-26] — REMAKE v2 · Propuesta ProductCard-Grid (limpia) + quitar "5 fotos" + comparación
 - **Quitado "5 fotos"** de la card completa (redundante: ya se ven 3 thumbs + "+2").
 - **Nueva `Molecule/ProductCard-Grid`** (`40000568:4850`) — versión limpia para grids (buenas prácticas + divulgación progresiva): imagen grande con badge "📷 N" en esquina, fila logo+stock compacta, nombre, precio, y BuyRow (qty + Agregar primary + "⋮" para secundarias). Sin galería/SKU/CNTRL/3-botones (eso vive en el modal Detalle). Lime reservado al CTA Agregar.
