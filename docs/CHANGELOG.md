@@ -5,6 +5,15 @@ Nada se pierde: cada pantalla generada, homologación o decisión se anota aquí
 
 Formato:
 ```
+## [2026-09-27] — REMAKE v2 · Subsection 3.1: Carrito — variantes del flujo (TopNav / venta rápida)
+- **Nueva `3.1 · Carrito — variantes del flujo`** en el módulo 3.0 Carrito, recreando los flujos viejos del carrito/TopNav en estilo v2 atómico (overlay sobre el carrito base, scrim + modal, `Molecule/ModalHeader` reutilizado):
+  - `Carrito_01_Vaciar` — confirmación destructiva (¿Vaciar carrito? + Cancelar / Sí, vaciar carrito rojo).
+  - `Carrito_02_Cotizacion` — Guardar cotización (folio, nombre cliente, formato Ticket/Carta, resumen, Guardar).
+  - `Carrito_03_ConfirmarVenta` — Total a pagar (verde) + monto en letra + método de pago + Ticket/Carta + Confirmar venta.
+  - `Carrito_04_VentaRapida` — modal grande del TopNav (venta rápida) reutilizando tabla + panel del carrito (BodyRow clonado).
+- **17 reactions:** Vender→ConfirmarVenta, Más opciones→Cotización, trash→Vaciar, TopNav cart→VentaRápida, VentaRápida Vender→ConfirmarVenta; scrim/×/Cancelar/Regresar→base.
+- Fondo oscuro al diálogo nativo de impresión (ya no flota). Re-apilado por la regla de orden.
+
 ## [2026-09-27] — REMAKE v2 · Imprimir: diálogo nativo del navegador en el flujo
 - **Decisión:** el imprimir real abre el **diálogo nativo del navegador** (chrome del browser, no parte del DS). Flujo: card → Imprimir → modal de **vista previa de etiqueta** (confirmar) → botón Imprimir → **diálogo nativo**.
 - **Reutilizada la pantalla vieja** de impresión nativa (`464:58836` de "2.0 Inicio (MAIN)") clonada al flujo 2.5 como `Screen/Productos_06_ImprimirNativo` (`40000595:27802`): etiqueta (MARCA/SKU/CNTRL/CANTIDAD) + panel de impresión del navegador. Cableado desde el botón Imprimir; clic regresa a la base.
