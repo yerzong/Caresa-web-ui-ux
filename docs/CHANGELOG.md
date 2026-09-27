@@ -5,6 +5,10 @@ Nada se pierde: cada pantalla generada, homologación o decisión se anota aquí
 
 Formato:
 ```
+## [2026-09-27] — REMAKE v2 · Modal Imagen → visor de galería
+- **Feedback:** la card implica varias imágenes de referencia (miniaturas + "+2"), así que el modal de Imagen debía ser un **visor** con navegación, no una foto estática.
+- **Rediseñado** (2.5 en-contexto `40000582:107020` y fuente 2.4 `40000546:11912`): imagen principal grande + botones circulares **‹ ›** (prev/next) + **contador "1 / 5"** + **tira de miniaturas** seleccionables (activa con borde brand). Ahora se entiende que puedes ver/cambiar entre las imágenes de referencia.
+
 ## [2026-09-27] — REMAKE v2 · Fix layout: sections contienen subsections + separación Web/Tablet/Mobile
 - **Problema:** Web medía 6432 de ancho pero la 2.0 Inicio medía 9560 (por la subsection 2.5 de 9400) → la 2.0 se salía de Web y **Tablet (x=6672) quedaba encima de la 2.0**. Además 2.1/2.2 eran muy cortas de alto y su contenido (results con cards altas) se desbordaba por abajo.
 - **Arreglado:** cada subsection se ajusta a su contenido (ancho+alto); la 2.0 se ensancha para **contener** todas sus subsections (9560); **Web se ensancha a 9720** para contener la 2.0; **Tablet y Mobile reposicionados con separación de 500px** (Tablet x=10220, Mobile x=13664). Alturas de los 3 breakpoints igualadas. Sin solapamientos.
