@@ -5,6 +5,11 @@ Nada se pierde: cada pantalla generada, homologación o decisión se anota aquí
 
 Formato:
 ```
+## [2026-09-27] — REMAKE v2 · Fix layout: sections contienen subsections + separación Web/Tablet/Mobile
+- **Problema:** Web medía 6432 de ancho pero la 2.0 Inicio medía 9560 (por la subsection 2.5 de 9400) → la 2.0 se salía de Web y **Tablet (x=6672) quedaba encima de la 2.0**. Además 2.1/2.2 eran muy cortas de alto y su contenido (results con cards altas) se desbordaba por abajo.
+- **Arreglado:** cada subsection se ajusta a su contenido (ancho+alto); la 2.0 se ensancha para **contener** todas sus subsections (9560); **Web se ensancha a 9720** para contener la 2.0; **Tablet y Mobile reposicionados con separación de 500px** (Tablet x=10220, Mobile x=13664). Alturas de los 3 breakpoints igualadas. Sin solapamientos.
+- **REGLA DE ORDEN (ampliada):** además de apilar vertical con gap 200 en orden numérico, toda **section debe ser suficientemente ancha para contener sus subsections** (ancho = subsection más ancha + 80), y las **sections de breakpoint (Web/Tablet/Mobile) van separadas 500px** entre sí. Recalcular tras cualquier cambio de ancho/alto.
+
 ## [2026-09-26] — REMAKE v2 · Subsection 2.5: flujo de producto EN CONTEXTO (variantes sobre la pantalla de productos)
 - **Nueva `2.5 · Producto en pantalla — variantes del flujo`** en 2.0 Inicio: la pantalla de Resultados (productos) como base + 5 variantes con cada modal como **overlay real** (scrim + modal centrado sobre la pantalla), en fila con separación (gap 120), sin encimarse:
   - `Productos_00_Base`, `_01_Detalle` (SKU), `_02_Equivalencias`, `_03_Aplicaciones`, `_04_Imprimir`, `_05_Imagen`.
