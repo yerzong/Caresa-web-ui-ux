@@ -5,6 +5,12 @@ Nada se pierde: cada pantalla generada, homologación o decisión se anota aquí
 
 Formato:
 ```
+## [2026-09-27] — REMAKE v2 · Fixes carrito + modal Búsqueda global
+- **Carrito (base y Venta Rápida):** quitado el fondo blanco del `BodyRow` que se pegaba alrededor del panel (ahora tabla y panel son cards blancas sobre gris); buscador de producto simplificado (magnifier + placeholder, **sin Ctrl+K** repetitivo — el global ya lo tiene); `InputCliente` convertido en **SelectCliente** con chevron (default "Ventas mostrador"); `DocBox` con bg gris + borde; limpieza de fills blancos redundantes en el panel. Venta Rápida re-clona el BodyRow corregido.
+- **Cotización:** caja "Resumen" compactada (124px→41px; el spacer tenía alto 100).
+- **Nueva subsection `2.6 · Búsqueda global (modal de resultados)`**: al tocar el buscador global (`40000406:4827`) abre `Modal/BusquedaGlobal` (v2, `Molecule/ModalHeader`): subheader "Búsqueda: Aceite · 50 productos" + buscador, tabla (Producto/Marca/Precio/SKU-Almacén/Stock/Agregar +/qty/−/⋮), footer paginación + Cerrar. Cableado: global search→modal, ×/Cerrar/scrim→base.
+- Re-apilado por la regla de orden.
+
 ## [2026-09-27] — REMAKE v2 · Subsection 3.1: Carrito — variantes del flujo (TopNav / venta rápida)
 - **Nueva `3.1 · Carrito — variantes del flujo`** en el módulo 3.0 Carrito, recreando los flujos viejos del carrito/TopNav en estilo v2 atómico (overlay sobre el carrito base, scrim + modal, `Molecule/ModalHeader` reutilizado):
   - `Carrito_01_Vaciar` — confirmación destructiva (¿Vaciar carrito? + Cancelar / Sí, vaciar carrito rojo).
