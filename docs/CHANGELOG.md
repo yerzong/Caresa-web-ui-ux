@@ -5,6 +5,12 @@ Nada se pierde: cada pantalla generada, homologación o decisión se anota aquí
 
 Formato:
 ```
+## [2026-10-03] — REMAKE v2 · Fixes visuales globales del carrito + Radio compacto
+- **Radio (DS, global):** variantes compactadas de h44→h20 (padding vertical fuera) → los cards Crédito/Contado bajan de 66px a ~40px en TODAS las instancias; borde del unchecked reforzado (gray 1.5px) para que no parezca disabled.
+- **Tablas de carrito (14 TableCards):** `itemSpacing=12` → aire entre el buscador y la tabla; columna **Acciones centrada** (42 celdas/headers) como el original.
+- **Venta Rápida:** columna Producto 330→250 para que la tabla no desborde el modal.
+- **Búsqueda global:** agregado header **"Acciones"** sobre la columna del menú; íconos hamburguesa → **⋮** (6) y centrados; columna Agregar 180→140.
+
 ## [2026-10-03] — REMAKE v2 · Carrito completo: 7 variantes nuevas + DropdownMenu/more-vertical atómicos
 - **Análisis del módulo viejo** (`322:11145`, 24 frames / 15 connectors): identificadas las pantallas faltantes vs. lo nuevo.
 - **Nuevos en el DS:** `Icon/more-vertical` (`40000636:4850`, 3 puntos) y `Molecule/DropdownMenu` (`40000636:4854`, menú contextual 4 items icono+label, ocultables). **BtnMas de filas → ⋮** (14 swaps, antes hamburguesa).
