@@ -5,6 +5,21 @@ Nada se pierde: cada pantalla generada, homologación o decisión se anota aquí
 
 Formato:
 ```
+## [2026-10-03] — REMAKE v2 · Carrito completo: 7 variantes nuevas + DropdownMenu/more-vertical atómicos
+- **Análisis del módulo viejo** (`322:11145`, 24 frames / 15 connectors): identificadas las pantallas faltantes vs. lo nuevo.
+- **Nuevos en el DS:** `Icon/more-vertical` (`40000636:4850`, 3 puntos) y `Molecule/DropdownMenu` (`40000636:4854`, menú contextual 4 items icono+label, ocultables). **BtnMas de filas → ⋮** (14 swaps, antes hamburguesa).
+- **7 variantes nuevas en 3.1** (filas 2-3, overlay sobre el carrito base):
+  - `05_MenuFila` — menú ⋮ de fila: Ver/Equivalencias/Imprimir/Aplicaciones (→ modales de 2.4).
+  - `06_EliminarProducto` — confirmación de línea (checkbox "No volver a preguntar" + Cancelar/Eliminar rojo).
+  - `07_MasOpciones` — menú del panel: Guardar cotización/Cargar cotización/Limpiar carrito.
+  - `08_SeleccionarCliente` — modal con buscador + lista de clientes (avatares iniciales) + Regresar/Confirmar cliente.
+  - `09_ClienteSeleccionado` — estado con cliente en el select + Tag "Gerson Yahir ×" + DocBox actualizado.
+  - `10_VentaExitosa` — toast Alert/Success ("Venta realizada con éxito" + folio/total) + resumen a $0.
+  - `11_Vacio` — carrito vacío con `EmptyState` del DS (CTA "Buscar producto") + resumen a $0.
+- **Fix retroactivo:** las variantes 01-04 y VentaRápida se clonaron antes de los fixes del carrito → re-aplicados (BodyRow bg, buscador simple, SelectCliente, DocBox, ⋮).
+- **25 reactions:** ⋮→menú, trash→eliminar, select/Buscar cliente→modal→cliente seleccionado, Más opciones→menú (Guardar→cotización, Limpiar→vaciar), Confirmar venta→éxito→vacío, Vaciar→vacío; cierres→base.
+- Re-apilado por regla de orden (3.1 = 12 pantallas en 3 filas).
+
 ## [2026-09-27] — REMAKE v2 · Fixes carrito + modal Búsqueda global
 - **Carrito (base y Venta Rápida):** quitado el fondo blanco del `BodyRow` que se pegaba alrededor del panel (ahora tabla y panel son cards blancas sobre gris); buscador de producto simplificado (magnifier + placeholder, **sin Ctrl+K** repetitivo — el global ya lo tiene); `InputCliente` convertido en **SelectCliente** con chevron (default "Ventas mostrador"); `DocBox` con bg gris + borde; limpieza de fills blancos redundantes en el panel. Venta Rápida re-clona el BodyRow corregido.
 - **Cotización:** caja "Resumen" compactada (124px→41px; el spacer tenía alto 100).
