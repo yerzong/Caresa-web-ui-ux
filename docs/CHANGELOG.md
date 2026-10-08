@@ -5,6 +5,22 @@ Nada se pierde: cada pantalla generada, homologación o decisión se anota aquí
 
 Formato:
 ```
+## [2026-10-08] — REMAKE v2 · Consultas: subsections 5.2 Créditos y 5.3 Garantías (variantes leídas de los connectors del original)
+- **Connectors del original releídos** (página `13:104`): Créditos (secciones `741:328203/302256/303305/331139/316692`) y Garantías (`741:292446`).
+- **Subsection `5.2 · Créditos — acciones de fila (⋮) y variantes`** (`40000707:19147`, 5 pantallas):
+  - `Creditos_01_MenuFila` — menú ⋮ con las 4 acciones del viejo: Imprimir, Enviar correo, Descargar PDF, **Abonar / Pagar** (ícono dollar). Menú clonado de `Menu/AccionesVenta` (mismos `Molecule/MenuItem`).
+  - `Creditos_02_EnviarCorreo` — confirmación (chip CONFIRMAR) con texto de estado de cuenta.
+  - `Creditos_03_AbonarPagar` — modal **"Abonar y pagar"** fiel al viejo: Recibo de cobranza/Fecha de pago, Forma de pago (Efectivo)/Abono/Saldo con ícono $, card **Abono de documentos** (badge "1 documento", tabla Documento/Importe/Descuento-Bonificación/Abonos/Total/Saldo/Relación "1 día"/Acciones ojo + "+" azul), Cerrar/Abonar deshabilitado.
+  - `Creditos_04_AbonoCapturado` — estado con abono capturado: labels Abono total/Saldo a favor, strip del documento (− rojo, DOC + fecha, $195.00 Saldo pendiente, input Saldo a pagar, **Liquidar todo** azul), Abonar habilitado.
+  - `Creditos_05_AbonoExitoso` — base + toast Alert/Success "Abono registrado con éxito".
+- **Subsection `5.3 · Garantías — ver y aplicar (variantes)`** (`40000707:20238`, 3 pantallas):
+  - `Garantias_01_VerGarantia` — modal fiel: strip de info (Folio/Fecha/Doc. Asociado/Quien entrega/Factura), Razón/Producto/Cantidad, tabla del producto (SKU/Desc/Marca/UM/badge S2:2/P.Unitario/Importe verde), Comentarios o diagnostico, Importe total, 2 cards de foto (producto con imagen real + ticket), Cerrar/**Aplicar garantía**.
+  - `Garantias_02_AplicarGarantia` — modal de 3 pasos del viejo: Paso 1 nombre de quien recibe, Paso 2 **Imprimir formato** (azul), Paso 3 dropzone punteado del formato firmado; Regresar/Aplicar garantía.
+  - `Garantias_03_GarantiaAplicada` — base + toast "Garantía aplicada con éxito".
+- **31 reactions:** ⋮ Créditos→menú (Imprimir/PDF→diálogo nativo, correo→modal, Abonar/Pagar→modal→capturado→éxito); ojo Garantías→Ver garantía→Aplicar (Imprimir formato→nativo)→éxito; cierres/Scrims→bases.
+- **Gotcha nuevo:** los screens son auto-layout → los modales hechos a mano deben ir con `layoutPositioning='ABSOLUTE'` o aplastan el Content (la tabla colapsó y hubo que corregirlo).
+- Re-apilado por regla de orden (módulo 5.0 ahora h=7103; Web h=35810).
+
 ## [2026-10-03] — REMAKE v2 · Consultas: checks fuera + subsection 5.1 Ventas (menú ⋮ 7 acciones + variantes)
 - **Checkboxes eliminados** de las 3 tablas de Consultas (14) y **acciones de Créditos homologadas** a ojo + ⋮ azul (7 filas).
 - **Nuevo `Molecule/MenuItem`** (`40000692:4861`): item de menú (ícono+label) para componer menús de N items. (Hallazgo: los hijos ocultos de un master NO se instancian → menús largos se componen con MenuItem; `DropdownMenu` queda para menús de ≤4.)
