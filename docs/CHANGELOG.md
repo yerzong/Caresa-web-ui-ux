@@ -5,6 +5,12 @@ Nada se pierde: cada pantalla generada, homologación o decisión se anota aquí
 
 Formato:
 ```
+## [2026-10-08] — REMAKE v2 · 5.1 Ventas: modal Crear garantía a spec original + variante llenada (Ventas_05)
+- **Modal/CrearGarantia** (`40000695:19162`) rehecho con la info del viejito (`741:285740`): strip de info **Folio · Fecha** (fusionados a sugerencia del usuario) / Doc. Asociado / Nombre de quien entrega / Factura asociada (antes chips VENTA/DOC/CLIENTE/CONDICIÓN); selects **Razón** (antes Marca) / Producto / Cantidad; **Comentarios o diagnostico** + **Importe total** lado a lado; 2 cards "Agregar foto" vacías con +.
+- **Nueva `Screen/Ventas_05_CrearGarantiaLlenada`** (`40000734:20623`, x=6320) como el ejemplo llenado viejito (`741:286873`): Razón "Defecto de fabricación", Producto ACEITE MOTOR MINERAL 10W30, Cantidad 2, **tabla del producto** (clonada de VerGarantia, columnas ajustadas a 712), comentarios "Venía roto el sello de seguridad", Importe $1,650.00, **fotos múltiples**: aceite Quaker State + ticket (imágenes reales copiadas del original) + card "Agregar foto +" (wrap, el usuario puede agregar N fotos).
+- **Wires:** selects Razón/Producto/Cantidad del modal vacío → Ventas_05; cierres de Ventas_05 (×/Scrim/Cerrar/Crear garantía) → base Ventas (heredados del clon).
+- Secciones redimensionadas: 5.1 w=7840, módulo 5.0 w=8000 (caben en Web·1440 w=11597, sin tocar Tablet/Mobile).
+
 ## [2026-10-08] — REMAKE v2 · Consultas: tabla 5.2 Créditos a spec original + acciones 5.3 Garantías homologadas
 - **Tabla de Créditos** (`40000418:5542`) reestructurada a las columnas de la viejita (`741:328204`): **Nivel · Cliente · Fecha de UM · Crédito · Agente · Adeudo · Notas · Estado · Acciones** (antes: Cliente/Folio/Días/Límite/Saldo/Vence/Status).
   - **Nivel:** insignias vectoriales clonadas del original (Plata `741:328276`, Bronce, Platino, Oro, Diamante) — los iconos reales, no sustitutos.
