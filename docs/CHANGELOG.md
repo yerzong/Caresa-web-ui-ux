@@ -5,6 +5,9 @@ Nada se pierde: cada pantalla generada, homologación o decisión se anota aquí
 
 Formato:
 ```
+## [2026-10-03] — REMAKE v2 · Búsqueda global: columnas rebalanceadas (Stock amontonado)
+- Los badges S1/S2 (≈141px) no cabían en la columna Stock (120px) y se encimaban con el stepper. Rebalanceo en header + 6 filas: Producto 360 · Marca 90 · Precio 90 · SKU 170 · **Stock 150** · Agregar 130 · Acciones 80. Todo visible y con aire.
+
 ## [2026-10-03] — REMAKE v2 · Buscador compacto aprobado → Molecule/SearchSimple atómico, replicado global
 - **Aprobado por el usuario** el patrón del piloto (buscador 476px en el CardHead). Creado **`Molecule/SearchSimple`** (`40000671:4859`) en el DS: lupa + placeholder, 44h, stroke INSIDE, sin clip, sin Ctrl+K (ese es exclusivo del GlobalSearch del TopNav). Override: Placeholder.
 - **Replicado globalmente: 16 buscadores → instancias** del componente. En los carritos (base + 11 variantes de 3.1 + Venta Rápida): movido al CardHead (derecha, SPACE_BETWEEN, clip off) y TabsRow vacía eliminada (**14 pantallas**). También convertidos: "Buscar cliente..." del modal SeleccionarCliente y "Busca" del modal Búsqueda global.
