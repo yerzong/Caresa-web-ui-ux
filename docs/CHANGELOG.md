@@ -5,6 +5,13 @@ Nada se pierde: cada pantalla generada, homologación o decisión se anota aquí
 
 Formato:
 ```
+## [2026-10-03] — REMAKE v2 · Consultas·Ventas actualizada a la spec del original
+- **Fila de estado** nueva (clonada del patrón de Abonos): tabs Emitida/Cancelada/**Ver todos** + `Molecule/SearchSimple` "Busca" (300) + Filtros/Columnas.
+- **Filtro Documento** agregado al FilterBar ("Ingresa documento"); 5 selects a 220/gap 12 para caber con Buscar/Limpiar.
+- **Tabla reconstruida (header + 7 filas)** con las columnas del original (`741:290116`):
+  1. No. de orden / Fecha de creación (checkbox + folio y fecha en 2 líneas) · 2. **Cliente** (ícono por tipo: wrench naranja=Mecánico / user azul=Particular + tipo ARRIBA del nombre) · 3. Agente · 4. **Condición** (Badge: Crédito=Success, Contado=Info) · 5. Método de pago (ícono clock/card/dollar + texto) · 6. Importe · 7. Estado (Emitida=Success / Cancelada=Error) · 8. **Acciones: ojo + ⋮ azul** (como el viejo, con Icon/more-vertical atómico).
+- Componentes reutilizados: Tab, Badge, Checkbox, SearchSimple, íconos DS. Re-apilado por regla de orden.
+
 ## [2026-10-03] — REMAKE v2 · Búsqueda global: columnas rebalanceadas (Stock amontonado)
 - Los badges S1/S2 (≈141px) no cabían en la columna Stock (120px) y se encimaban con el stepper. Rebalanceo en header + 6 filas: Producto 360 · Marca 90 · Precio 90 · SKU 170 · **Stock 150** · Agregar 130 · Acciones 80. Todo visible y con aire.
 
