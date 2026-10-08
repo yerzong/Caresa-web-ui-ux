@@ -5,6 +5,14 @@ Nada se pierde: cada pantalla generada, homologación o decisión se anota aquí
 
 Formato:
 ```
+## [2026-10-08] — REMAKE v2 · Nueva pantalla: detalle de cliente de Créditos (Creditos_09)
+- **`Screen/Creditos_09_ClienteDetalle`** (`40000783:21960`, fila 3 de 5.2) fiel al original `741:330189`, reconstruida atómica:
+  - Main: Molecule/BackButton + crumb, H1 BENITO PABLO MICELI CABRERA + sub, tabs **Adeudo** (activo) / **Historial** (clonados del pill de la base, sin reactions), card **"Créditos de cliente"** (badge 2 Productos + SearchSimple) con tabla de **11 columnas** (Documento/Fecha/Vencimiento/Agente/Importe/Total/Saldo/Abono/Estado "Emitida"/Relación "1 día"/Acciones ojo+⋮) armada con plantillas Th/Cell de la tabla base.
+  - Sidebar 340: avatar lime 180 (Icon/user 96, stroke proporcional), card crédito (Límite $10,000 verde / Saldo $195 ámbar / Disponible $9,805 azul — fills tomados de nodos DS), cards Cliente (dirección/método/teléfono) y fiscal (CFDI/Régimen/RFC/Condición).
+  - Breadcrumb: "Créditos › Benito Pablo Miceli Cabrera".
+- **15 wires:** ojo + celda Cliente de las 7 filas de la tabla base de Créditos → detalle (14); Regresar → base (1). GOTCHA nuevo: algunos nodos exigen formato `actions[]` en setReactionsAsync (el campo `action` da "destination rejected" o "update the actions field").
+- Re-apilado por regla de orden: 5.2 h=3910, módulo 5.0 h=8393, Web h=37100.
+
 ## [2026-10-08] — REMAKE v2 · Pantallas faltantes de 5.2 Abonar/Pagar y 5.3 Garantías (auditoría vs original)
 - Auditoría de los flujos viejos `741:303305` (Abonar/Pagar), `741:316692` (cliente) y `741:350804` (Garantías) → 5 pantallas faltantes construidas:
   - `Creditos_06_FormaPago` (`40000774:21605`) — dropdown Forma de pago abierto (Efectivo/Tarjeta/Transferencia) con Molecule/MenuItem (iconos ocultos).
