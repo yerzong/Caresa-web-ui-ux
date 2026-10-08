@@ -5,6 +5,17 @@ Nada se pierde: cada pantalla generada, homologación o decisión se anota aquí
 
 Formato:
 ```
+## [2026-10-08] — REMAKE v2 · Pantallas faltantes de 5.2 Abonar/Pagar y 5.3 Garantías (auditoría vs original)
+- Auditoría de los flujos viejos `741:303305` (Abonar/Pagar), `741:316692` (cliente) y `741:350804` (Garantías) → 5 pantallas faltantes construidas:
+  - `Creditos_06_FormaPago` (`40000774:21605`) — dropdown Forma de pago abierto (Efectivo/Tarjeta/Transferencia) con Molecule/MenuItem (iconos ocultos).
+  - `Creditos_07_Transferencia` (`40000774:113835`) — fila extra Banco / Concepto de pago / Ext. Doc. De pago ("Sube comprobante de pago").
+  - `Creditos_08_TransferenciaComprobante` (`40000774:114968`) — comprobante-abono.pdf + check verde, botón Abonar habilitado.
+  - `Garantias_04_FotoProducto` (`40000775:21632`) — lightbox: scrim oscuro + card con ModalHeader "Foto del producto", imagen 560×360 y pager ‹ 1/2 ›.
+  - `Garantias_05_FormatoSubido` (`40000775:21937`) — paso 3 con el formato firmado subido (imagen real del viejo `741:301221` dentro del dropzone + nombre de archivo).
+- **11 wires:** FormaPago→06; Efectivo/Tarjeta→03, Transferencia→07; comprobante→08; Abonar(08)→05 éxito; foto(01)→04; cierres 04→01; dropzone(02)→05; Aplicar(05)→03 aplicada.
+- Secciones: 5.2 w=6280, 5.3 w=7840 (módulo 5.0 w=9560 sigue conteniendo).
+- **PENDIENTE detectado en la auditoría:** pantalla de **detalle de cliente de Créditos** (tabs Adeudo/Historial + sidebar de perfil, flujos `741:328203` der. / `741:331139` / `741:316692`) — es una pantalla completa nueva, se hará en ejecución aparte.
+
 ## [2026-10-08] — REMAKE v2 · Tablas buenas propagadas a las variantes 5.2/5.3
 - La tabla de Créditos aprobada (la de `Creditos_01`, con Nivel/insignias/cliente tipado) **reemplazó a la vieja en `Creditos_02..05`** (4 pantallas).
 - La tabla de Garantías con acciones encajonadas **reemplazó a la vieja en `Garantias_01..03`** (3 pantallas).
