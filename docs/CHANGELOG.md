@@ -5,6 +5,12 @@ Nada se pierde: cada pantalla generada, homologación o decisión se anota aquí
 
 Formato:
 ```
+## [2026-10-03] — REMAKE v2 · Strokes de íconos homologados + tabla del carrito por COLUMNAS (piloto)
+- **Strokes homologados (global):** todos los íconos conservaban stroke 2px a cualquier tamaño (pesado/recortado en 14-18px). Ahora proporcional al master 24px→2: `sw = 2·w/24` (18px→1.5, 16px→1.3, 14px→1.2) — **3,486 vectores** en toda la página Web.
+- **Tabla del carrito reconstruida POR COLUMNAS** (como el original `497:112774`, se ve mejor): contenedor `Table` horizontal de 8 `Col/...` verticales; cada columna = header cell (banda `gray/50`, 44h) + celdas de datos (72h, divider `gray/200` entre filas, sin borde en la última). Columna Producto en FILL, resto fijo.
+- **Buscador compacto:** ya no ocupa todo el ancho — movido al `CardHead` (derecha, 480px) con el título a la izquierda (SPACE_BETWEEN), como el viejo; `TabsRow` eliminada.
+- **Alcance:** aplicado como PILOTO solo en `Screen/Carrito` base (`40000443:13416`); pendiente aprobación del usuario para propagar a las 11 variantes, Venta Rápida y Búsqueda global.
+
 ## [2026-10-03] — REMAKE v2 · Fix global: headers de tabla sin blanco + botones de acción sin clip y centrados
 - **Celdas `Th/` con fill blanco** encima del gris del TableHeader → transparentes en TODA la página Web (**104 celdas**, incluye los TH de Búsqueda global). El header se ve uniforme.
 - **Botones de acción de filas (BtnEliminar/BtnMas):** `clipsContent` desactivado y centrados (ambos ejes) — **124 botones + 52 celdas contenedoras**. Causa raíz del ⋮ recortado: los puntos del master `Icon/more-vertical` no escalaban al resize (24→18) → **constraints SCALE** en los 3 dots del componente; ahora el ícono se ve completo en todas las instancias.
