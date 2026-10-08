@@ -5,6 +5,10 @@ Nada se pierde: cada pantalla generada, homologación o decisión se anota aquí
 
 Formato:
 ```
+## [2026-10-03] — REMAKE v2 · Fix global: headers de tabla sin blanco + botones de acción sin clip y centrados
+- **Celdas `Th/` con fill blanco** encima del gris del TableHeader → transparentes en TODA la página Web (**104 celdas**, incluye los TH de Búsqueda global). El header se ve uniforme.
+- **Botones de acción de filas (BtnEliminar/BtnMas):** `clipsContent` desactivado y centrados (ambos ejes) — **124 botones + 52 celdas contenedoras**. Causa raíz del ⋮ recortado: los puntos del master `Icon/more-vertical` no escalaban al resize (24→18) → **constraints SCALE** en los 3 dots del componente; ahora el ícono se ve completo en todas las instancias.
+
 ## [2026-10-03] — REMAKE v2 · Fixes visuales globales del carrito + Radio compacto
 - **Radio (DS, global):** variantes compactadas de h44→h20 (padding vertical fuera) → los cards Crédito/Contado bajan de 66px a ~40px en TODAS las instancias; borde del unchecked reforzado (gray 1.5px) para que no parezca disabled.
 - **Tablas de carrito (14 TableCards):** `itemSpacing=12` → aire entre el buscador y la tabla; columna **Acciones centrada** (42 celdas/headers) como el original.
