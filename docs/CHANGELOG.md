@@ -5,6 +5,13 @@ Nada se pierde: cada pantalla generada, homologación o decisión se anota aquí
 
 Formato:
 ```
+## [2026-10-08] — REMAKE v2 · 5.1 Crear garantía: modal agrandado (880) + Ventas_06 éxito
+- **Modales CrearGarantia (vacío y llenado) agrandados 760→880** (mismo ancho que VerGarantia) por feedback del usuario ("la viejita se ve mejor"): Razón/Producto en FILL, Cantidad 120, textarea 210 de alto, Importe/fotos a 380, cards de foto 184×(~135) con wrap, strip con space-between, modal recentrado (x=280).
+- Tabla de producto del llenado re-escalada a 832 (SKU 110 / Desc 188 / Marca 120 / UM 90 / Cant 90 / PU 120 / Importe 114).
+- **Nueva `Screen/Ventas_06_GarantiaCreada`** (`40000743:20813`, x=7880): base de Ventas + toast Alert/Success (clonado de Garantias_03) con "Garantía creada correctamente · Folio #140532854 · Quedó registrada en Consultas › Garantías."
+- **Wire:** Crear garantía (llenado, `40000734:20940`) → Ventas_06 (antes iba directo a la base).
+- Secciones: 5.1 w=9400, módulo 5.0 w=9560 (Web·1440 w=11597 sigue conteniendo todo).
+
 ## [2026-10-08] — REMAKE v2 · 5.1 Ventas: modal Crear garantía a spec original + variante llenada (Ventas_05)
 - **Modal/CrearGarantia** (`40000695:19162`) rehecho con la info del viejito (`741:285740`): strip de info **Folio · Fecha** (fusionados a sugerencia del usuario) / Doc. Asociado / Nombre de quien entrega / Factura asociada (antes chips VENTA/DOC/CLIENTE/CONDICIÓN); selects **Razón** (antes Marca) / Producto / Cantidad; **Comentarios o diagnostico** + **Importe total** lado a lado; 2 cards "Agregar foto" vacías con +.
 - **Nueva `Screen/Ventas_05_CrearGarantiaLlenada`** (`40000734:20623`, x=6320) como el ejemplo llenado viejito (`741:286873`): Razón "Defecto de fabricación", Producto ACEITE MOTOR MINERAL 10W30, Cantidad 2, **tabla del producto** (clonada de VerGarantia, columnas ajustadas a 712), comentarios "Venía roto el sello de seguridad", Importe $1,650.00, **fotos múltiples**: aceite Quaker State + ticket (imágenes reales copiadas del original) + card "Agregar foto +" (wrap, el usuario puede agregar N fotos).
