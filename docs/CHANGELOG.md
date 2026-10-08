@@ -5,6 +5,11 @@ Nada se pierde: cada pantalla generada, homologación o decisión se anota aquí
 
 Formato:
 ```
+## [2026-10-03] — REMAKE v2 · REVERT: tabla por columnas descartada (el usuario prefirió la de filas)
+- El piloto por-columnas quedó mal (banda del header cortada entre Producto y U/M, textos recortados por los altos fijos de 72px). **Revertido** en `Screen/Carrito`: tabla por FILAS restaurada clonándola desde la copia intacta de Venta Rápida (conserva todos los fixes: Th transparentes, acciones centradas, ⋮ completo, strokes proporcionales); Producto devuelto a 330.
+- **Se conserva del piloto:** el buscador compacto (480px) en el CardHead — eso sí seguía el patrón del original.
+- **Decisión registrada:** las tablas del REMAKE v2 se construyen POR FILAS. No propagar el patrón por-columnas.
+
 ## [2026-10-03] — REMAKE v2 · Strokes de íconos homologados + tabla del carrito por COLUMNAS (piloto)
 - **Strokes homologados (global):** todos los íconos conservaban stroke 2px a cualquier tamaño (pesado/recortado en 14-18px). Ahora proporcional al master 24px→2: `sw = 2·w/24` (18px→1.5, 16px→1.3, 14px→1.2) — **3,486 vectores** en toda la página Web.
 - **Tabla del carrito reconstruida POR COLUMNAS** (como el original `497:112774`, se ve mejor): contenedor `Table` horizontal de 8 `Col/...` verticales; cada columna = header cell (banda `gray/50`, 44h) + celdas de datos (72h, divider `gray/200` entre filas, sin borde en la última). Columna Producto en FILL, resto fijo.
