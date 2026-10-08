@@ -5,6 +5,11 @@ Nada se pierde: cada pantalla generada, homologación o decisión se anota aquí
 
 Formato:
 ```
+## [2026-10-03] — REMAKE v2 · Buscador compacto aprobado → Molecule/SearchSimple atómico, replicado global
+- **Aprobado por el usuario** el patrón del piloto (buscador 476px en el CardHead). Creado **`Molecule/SearchSimple`** (`40000671:4859`) en el DS: lupa + placeholder, 44h, stroke INSIDE, sin clip, sin Ctrl+K (ese es exclusivo del GlobalSearch del TopNav). Override: Placeholder.
+- **Replicado globalmente: 16 buscadores → instancias** del componente. En los carritos (base + 11 variantes de 3.1 + Venta Rápida): movido al CardHead (derecha, SPACE_BETWEEN, clip off) y TabsRow vacía eliminada (**14 pantallas**). También convertidos: "Buscar cliente..." del modal SeleccionarCliente y "Busca" del modal Búsqueda global.
+- Incluye el blindaje previo del buscador (stroke INSIDE + holgura) ahora a nivel componente.
+
 ## [2026-10-03] — REMAKE v2 · REVERT: tabla por columnas descartada (el usuario prefirió la de filas)
 - El piloto por-columnas quedó mal (banda del header cortada entre Producto y U/M, textos recortados por los altos fijos de 72px). **Revertido** en `Screen/Carrito`: tabla por FILAS restaurada clonándola desde la copia intacta de Venta Rápida (conserva todos los fixes: Th transparentes, acciones centradas, ⋮ completo, strokes proporcionales); Producto devuelto a 330.
 - **Se conserva del piloto:** el buscador compacto (480px) en el CardHead — eso sí seguía el patrón del original.
