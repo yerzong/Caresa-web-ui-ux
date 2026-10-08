@@ -5,6 +5,9 @@ Nada se pierde: cada pantalla generada, homologación o decisión se anota aquí
 
 Formato:
 ```
+## [2026-10-08] — REMAKE v2 · Crear garantía llenada: fotos con "Eliminar foto"
+- En `Ventas_05_CrearGarantiaLlenada`, las cards con foto cargada (aceite y ticket) ahora dicen **"Eliminar foto" en rojo** (fills con variable del rojo DS, tomado de "-6 días"); la card vacía con + conserva "Agregar foto".
+
 ## [2026-10-08] — REMAKE v2 · Marca como logo en tablas de producto
 - Columna **Marca** de la tabla de producto ahora muestra el **logo de la marca** (imagen clonada del original `741:287989`) en vez de texto, como la viejita: aplicado en `Ventas_05_CrearGarantiaLlenada` y en `Garantias_01_VerGarantia` (mismo patrón).
 
