@@ -5,6 +5,16 @@ Nada se pierde: cada pantalla generada, homologación o decisión se anota aquí
 
 Formato:
 ```
+## [2026-10-03] — REMAKE v2 · Consultas: checks fuera + subsection 5.1 Ventas (menú ⋮ 7 acciones + variantes)
+- **Checkboxes eliminados** de las 3 tablas de Consultas (14) y **acciones de Créditos homologadas** a ojo + ⋮ azul (7 filas).
+- **Nuevo `Molecule/MenuItem`** (`40000692:4861`): item de menú (ícono+label) para componer menús de N items. (Hallazgo: los hijos ocultos de un master NO se instancian → menús largos se componen con MenuItem; `DropdownMenu` queda para menús de ≤4.)
+- **Subsection `5.1 · Ventas — acciones de fila (⋮)`** con los flujos leídos de los connectors del original (`741:282662`):
+  - `Ventas_01_MenuFila` — menú ⋮ con las **7 acciones del viejo**: Timbrar, Imprimir, Enviar correo, Descargar PDF, Editar venta, Crear garantía, **Cancelar venta** (rojo).
+  - `Ventas_02_EnviarCorreo` — confirmación con el correo del cliente + Cancelar/Enviar.
+  - `Ventas_03_CancelarVenta` — confirmación destructiva (No / Cancelar venta rojo).
+  - `Ventas_04_CrearGarantia` — form fiel al viejo: chips de contexto (VENTA/DOC/CLIENTE/CONDICIÓN con FilterChip), selects Marca/Producto/Cantidad, textarea de situación, dropzone de imagen, Cerrar/Crear garantía.
+- **33 reactions:** ⋮→menú; Timbrar/Imprimir/PDF→diálogo nativo; Editar venta→Carrito; correo/cancelar/garantía→sus modales; cierres/CTAs→Ventas.
+
 ## [2026-10-03] — REMAKE v2 · Consultas·Ventas actualizada a la spec del original
 - **Fila de estado** nueva (clonada del patrón de Abonos): tabs Emitida/Cancelada/**Ver todos** + `Molecule/SearchSimple` "Busca" (300) + Filtros/Columnas.
 - **Filtro Documento** agregado al FilterBar ("Ingresa documento"); 5 selects a 220/gap 12 para caber con Buscar/Limpiar.
