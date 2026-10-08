@@ -5,6 +5,15 @@ Nada se pierde: cada pantalla generada, homologación o decisión se anota aquí
 
 Formato:
 ```
+## [2026-10-08] — REMAKE v2 · Consultas: tabla 5.2 Créditos a spec original + acciones 5.3 Garantías homologadas
+- **Tabla de Créditos** (`40000418:5542`) reestructurada a las columnas de la viejita (`741:328204`): **Nivel · Cliente · Fecha de UM · Crédito · Agente · Adeudo · Notas · Estado · Acciones** (antes: Cliente/Folio/Días/Límite/Saldo/Vence/Status).
+  - **Nivel:** insignias vectoriales clonadas del original (Plata `741:328276`, Bronce, Platino, Oro, Diamante) — los iconos reales, no sustitutos.
+  - **Cliente:** mismo patrón que la tabla de Ventas (Icon/wrench naranja = Mecánico, Icon/user = Particular + nombre en 2 líneas).
+  - **Adeudo** en bold oscuro; **Estado** con Badge de días (verde "3 días" / ámbar "1 día" / rojo "-6 días" / gris "—" sin saldo).
+- **Tabla de Garantías** (`40000431:5911`): acciones homologadas al estilo encajonado de Ventas/Créditos — BtnVer (ojo, caja gris) + BtnAprobar (palomita, caja con borde verde); filas "Aplicado" solo ojo. Columnas ya coincidían con la viejita.
+- **Checkbox de selección NO se re-agregó** a Garantías (decisión "checks fuera" del 2026-10-03 sigue vigente, aunque la viejita sí lo trae) — pendiente confirmar con el usuario.
+- **Pendiente:** propagar la tabla nueva de Créditos a las variantes `Creditos_01..05` y la de Garantías a `Garantias_01..03` (siguen con el layout anterior), y luego a Tablet/Mobile.
+
 ## [2026-10-08] — REMAKE v2 · Consultas: subsections 5.2 Créditos y 5.3 Garantías (variantes leídas de los connectors del original)
 - **Connectors del original releídos** (página `13:104`): Créditos (secciones `741:328203/302256/303305/331139/316692`) y Garantías (`741:292446`).
 - **Subsection `5.2 · Créditos — acciones de fila (⋮) y variantes`** (`40000707:19147`, 5 pantallas):
