@@ -5,6 +5,9 @@ Nada se pierde: cada pantalla generada, homologación o decisión se anota aquí
 
 Formato:
 ```
+## [2026-10-08] — REMAKE v2 · Marca como logo en tablas de producto
+- Columna **Marca** de la tabla de producto ahora muestra el **logo de la marca** (imagen clonada del original `741:287989`) en vez de texto, como la viejita: aplicado en `Ventas_05_CrearGarantiaLlenada` y en `Garantias_01_VerGarantia` (mismo patrón).
+
 ## [2026-10-08] — REMAKE v2 · 5.1 Crear garantía: modal agrandado (880) + Ventas_06 éxito
 - **Modales CrearGarantia (vacío y llenado) agrandados 760→880** (mismo ancho que VerGarantia) por feedback del usuario ("la viejita se ve mejor"): Razón/Producto en FILL, Cantidad 120, textarea 210 de alto, Importe/fotos a 380, cards de foto 184×(~135) con wrap, strip con space-between, modal recentrado (x=280).
 - Tabla de producto del llenado re-escalada a 832 (SKU 110 / Desc 188 / Marca 120 / UM 90 / Cant 90 / PU 120 / Importe 114).
