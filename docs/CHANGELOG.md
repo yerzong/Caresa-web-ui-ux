@@ -5,6 +5,11 @@ Nada se pierde: cada pantalla generada, homologación o decisión se anota aquí
 
 Formato:
 ```
+## [2026-10-08] — REMAKE v2 · Tablas buenas propagadas a las variantes 5.2/5.3
+- La tabla de Créditos aprobada (la de `Creditos_01`, con Nivel/insignias/cliente tipado) **reemplazó a la vieja en `Creditos_02..05`** (4 pantallas).
+- La tabla de Garantías con acciones encajonadas **reemplazó a la vieja en `Garantias_01..03`** (3 pantallas).
+- Reemplazo in-place (mismo índice en Content, FILL), modales/overlays y wires intactos; los botones de las tablas clonadas conservan sus reactions.
+
 ## [2026-10-08] — REMAKE v2 · Crear garantía llenada: fotos con "Eliminar foto"
 - En `Ventas_05_CrearGarantiaLlenada`, las cards con foto cargada (aceite y ticket) ahora dicen **"Eliminar foto" en rojo** (fills con variable del rojo DS, tomado de "-6 días"); la card vacía con + conserva "Agregar foto".
 
