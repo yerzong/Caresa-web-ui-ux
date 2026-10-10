@@ -5,6 +5,19 @@ Nada se pierde: cada pantalla generada, homologación o decisión se anota aquí
 
 Formato:
 ```
+## [2026-10-10] — REMAKE v2 · Flujo completo de Corte de caja (6.1: corte, entrada/salida, conteo) — 10 pantallas + 49 wires
+- Derivado del flujo viejo (página `595:70899`, pantallas `630:103010` corte, `630:104784` E/S, `630:107484` conteo y variantes; connectors leídos para el grafo), rediseñado en estilo v2 atómico.
+- **DS nuevo:** `Molecule/CashRow` (`40000808:92281`) — fila de método de pago del modal de corte. Variantes **Encabezado** (header gris "Método de pago / Esperando"), **Metodo** (label + monto success/600, bool `ConteoVisible` para el botón $ de conteo) y **Sub** (sub-fila indentada: apertura, pagos, movimientos E/S). Todo con variables (gray/*, success/600, error/600, base/white).
+- **Subsection `6.1 · Corte de caja — entrada/salida y cierre (variantes)`** (`40000809:22060`) dentro de 6.0, grid 5×2:
+  - `Corte_01_CorteDeCaja` (`40000809:22061`) — **Modal/CorteCaja** (782, ModalHeader chip "CORTE DE CAJA", tabs pill Corte de caja/Entrada·Salida, input Total 249 órdenes $38,500, lista CashRow con Efectivo C1S1 + botón $ + subs Apertura/Pagos, Cuenta/Terminal/Transferencia, Contado $0.00, Diferencia −$20,500 en rojo, Nota de cierre, Cancelar/Cerrar sesión).
+  - `Corte_02/03` entrada de efectivo (**Modal/EntradaSalida** 560: checkboxes Entrada/Salida con labels internos del Checkbox ocultos, Cantidad, Motivo, Confirmar $) vacía → llenada ("Encontramos un billete de 100 pesos en el cajón").
+  - `Corte_04_EntradaRegistrada` — corte con sub-fila `POS/00288 · …` +$100.00, Contado $20,500, Diferencia $0.00.
+  - `Corte_05/06` salida de efectivo vacía → llenada ("Perdimos un billete de 100"); `Corte_07_SalidaRegistrada` con ambas filas POS (+100 verde / −100 rojo).
+  - `Corte_08/09` conteo (clones del Modal/AperturaCaja base) vacío → llenado 5×$200 + 10×$100 + 3×$50, Total 2,150.00 MXN.
+  - `Corte_10_CorteContado` — Contado $2,150.00, Diferencia −$18,350.00 rojo, Nota con "Detalle de efectivo: 5×200/10×100/3×50".
+- **49 wires:** entrada al flujo desde el cluster $ del TopNav del screen base; tabs E/S→02; $→08; swaps Entrada↔Salida 02↔05; campos→estado llenado; Confirmar→registrada (04/07); +/Confirmar 08→09→10; cierres→01 o base; Cerrar sesión→Login/PropuestaA (4 modales).
+- Re-apilado por regla de orden: sección 6.0 → **8000×4180**; módulos 7.0–10.0 bajados +2850; Web h=**39950**.
+
 ## [2026-10-08] — REMAKE v2 · Nueva pantalla: detalle de cliente de Créditos (Creditos_09)
 - **`Screen/Creditos_09_ClienteDetalle`** (`40000783:21960`, fila 3 de 5.2) fiel al original `741:330189`, reconstruida atómica:
   - Main: Molecule/BackButton + crumb, H1 BENITO PABLO MICELI CABRERA + sub, tabs **Adeudo** (activo) / **Historial** (clonados del pill de la base, sin reactions), card **"Créditos de cliente"** (badge 2 Productos + SearchSimple) con tabla de **11 columnas** (Documento/Fecha/Vencimiento/Agente/Importe/Total/Saldo/Abono/Estado "Emitida"/Relación "1 día"/Acciones ojo+⋮) armada con plantillas Th/Cell de la tabla base.
