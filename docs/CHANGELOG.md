@@ -5,6 +5,14 @@ Nada se pierde: cada pantalla generada, homologación o decisión se anota aquí
 
 Formato:
 ```
+## [2026-10-10] — REMAKE v2 · Pedidos: Ver pedido por estado (6) + Seguimiento de envío (4) — cierre del módulo
+- **7.5 Ver pedido por estado** (viejo `737:30175`): 6 clones del `Screen/Pedidos-VerPedido` v2 con su Modal/VerPedido adaptado por estado:
+  - **51 Sin confirmar** (Cancelar/Confirmar pedido), **52 Surtiendo** (sin acciones), **53 Listo para enviar** (cards Hora de surtido 8:36/9:00 + Tiempo 11:54/10:00, botón "Enviar este pedido"), **54 Enviado** (URL + repartidor asignado + teléfono, botones Imprimir/"Hacer seguimiento del envío"), **55 Cancelado** (card Motivos: "Producto no encontrado en la bodega"), **56 Completado** (bloque envío + firma real del viejo `741:377179` + foto de entrega `683:71881`, botón Imprimir). Badges por estado vía componente Badge (Gray/Warning/Info/Error/Success).
+- **7.6 Seguimiento de envío** (viejo `683:63949`, ADMIN): Modal/Seguimiento 1300px de 2 columnas — header con repartidor David Manuel Espinoza R., badge de estado del repartidor y Tiempo 10:00/20:00; InfoRow clonada del VerPedido; columna izquierda con Dirección, Comentarios, Foto/Firma y timeline "Cambios" (surtido ✓/listo ✓/en camino 🚚/entrega confirmada 📍); derecha **mapa real clonado del viejo**; botón Volver.
+  - Estados: **61 Sin salir** (timeline 2, sin capturas) → **62 En camino** (timeline 3) → **63 Regresando** (timeline 4 + foto y firma capturadas) → **64 Finalizado**. Encadenados por el badge de estado.
+- **28 wires:** los ojos de la tabla base ahora navegan al Ver pedido de SU estado (7 filas); 51 Cancelar→modal cancelar, 53 Enviar→flujo 7.4, 54 Seguimiento→61; cadena 61→62→63→64; Volver/× → base.
+- Sección 7.0 = **9560×13100**; módulos 8–10 bajados +3060; Web h=**51720**. Con esto el módulo Pedidos Desktop queda completo (7.1–7.6).
+
 ## [2026-10-10] — REMAKE v2 · Módulo Pedidos completo: 27 pantallas nuevas en 4 subsections + acciones por estado + 63 wires
 - **Acciones por estado en la tabla base** (`Screen/Pedidos`), derivadas del viejo `683:3712`: Sin confirmar = ojo+✓verde+✗rojo; Surtiendo = ojo+📦naranja+✗; Listo para enviar = ojo+🚚azul; Enviado/Cancelado/Completado = solo ojo. Cajas 34×34 con iconos del DS recoloreados vía variables (success/error/warning/info 600).
 - **7.1 Selección múltiple** (viejo `683:6400`): P11 selección (5 checks), P12 Modal/ConfirmarPedidos (featured ✓ verde + mini-tabla de seleccionados), P13 Modal/CancelarPedidos (✗ rojo + motivo + botón Destructive), P14/P15 alertas Alert Error/Warning "No se pueden confirmar/cancelar…". Confirmar/Cancelar del CardHead cableados (base→modales; P11 mixta→alertas).
