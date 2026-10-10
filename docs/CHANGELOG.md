@@ -5,6 +5,15 @@ Nada se pierde: cada pantalla generada, homologación o decisión se anota aquí
 
 Formato:
 ```
+## [2026-10-10] — REMAKE v2 · Tabla de Pedidos homologada al patrón aprobado + checkboxes de selección
+- `Screen/Pedidos` (`40000408:4814`): la tabla (`TableCard 40000409:4903`) se homologó al patrón de las listas de Consultas (Ventas/Créditos):
+  - **Columna nueva `Th/Check` / `Cell/Check` (48px)** con Checkbox del DS (labels internos ocultos); filas 1–2 marcadas como seleccionadas (justifican los botones Confirmar/Cancelar del CardHead).
+  - **Orden de columnas homologado:** No. de orden (header 2 líneas "No. de orden / Fecha de creación", fecha a 12px) antes que Cliente.
+  - **Celda Cliente estilo Ventas:** icono por tipo (wrench ámbar = Mecánico, user azul = Cliente) + tipo arriba + nombre + línea Vendedor conservada; se eliminó el pill RoleChip.
+  - **Acciones encajonadas:** los 3 iconos sueltos (ojo/check/x) se reemplazaron por BtnVer + BtnMas (cajas 34×34 ojo + ⋮ azules, clonadas de Ventas_01); el wire del ojo → `Screen/Pedidos-VerPedido` se conservó en las 7 filas.
+  - Anchos: Check 48 / Orden 200 / Cliente 250 / Entrega 150 / Dirección FILL / Total 110 / Estado 140 / Acciones 100; importes con "$ " homologado.
+- Confirmar/cancelar por fila ahora viven conceptualmente en el menú ⋮ (variantes de menú de fila de Pedidos pendientes, como en 5.1).
+
 ## [2026-10-10] — REMAKE v2 · Flujo completo de Corte de caja (6.1: corte, entrada/salida, conteo) — 10 pantallas + 49 wires
 - Derivado del flujo viejo (página `595:70899`, pantallas `630:103010` corte, `630:104784` E/S, `630:107484` conteo y variantes; connectors leídos para el grafo), rediseñado en estilo v2 atómico.
 - **DS nuevo:** `Molecule/CashRow` (`40000808:92281`) — fila de método de pago del modal de corte. Variantes **Encabezado** (header gris "Método de pago / Esperando"), **Metodo** (label + monto success/600, bool `ConteoVisible` para el botón $ de conteo) y **Sub** (sub-fila indentada: apertura, pagos, movimientos E/S). Todo con variables (gray/*, success/600, error/600, base/white).
