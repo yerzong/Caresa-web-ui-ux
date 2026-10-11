@@ -5,6 +5,12 @@ Nada se pierde: cada pantalla generada, homologación o decisión se anota aquí
 
 Formato:
 ```
+## [2026-10-10] — REMAKE v2 · FASE RESPONSIVE: Tablet 768 reiniciado con espejo de Web + piloto Login
+- **Decisión usuario:** borrar todo el breakpoint Tablet (fase 4, anterior a todas las modificaciones de Desktop) y rehacerlo espejando la organización de Web 1440.
+- **Tablet · 768 vaciado** (10 secciones viejas, ~14 pantallas, 40 reactions obsoletas) y **esqueleto nuevo creado**: 10 secciones con los MISMOS nombres de Web (1.0 Login — propuestas … 10.0 Recompra), apiladas con gap 200, placeholders 928×400 que crecerán módulo a módulo.
+- **Piloto 1.0 Login--Tablet** (`Login/PropuestaA--Tablet`, 768×1024): patrón validado — el resize directo rompe (BrandPanel fijo 620); la receta es **reestructurar a VERTICAL** (banda de marca FILL×360 compacta + FormPanel FILL con formulario centrado 400). Quedó fiel y limpio.
+- **Método acordado para el resto:** módulo por módulo en el orden 1.0→4.0→6.0→9.0→10.0→8.0→3.0→5.0→7.0→2.0; cada módulo rehace su base desde el Web actual + sus subsections de variantes espejo (6.1, 7.1–7.6, 8.1, 9.1, 10.1), usando las moléculas nuevas del DS; wires al final de cada módulo. Mobile 375 después, mismo método.
+
 ## [2026-10-10] — REMAKE v2 · Auditoría atómica del Web + 6 moléculas nuevas en el DS (preparación responsive)
 - **Censo de patrones inline** en todo `Web · 1440`: ActionBox 34×34 ×1,118, StatusPill ×101, Stepper ×45, FeaturedIcon ×16, PillTab ×16, FAB ×6 — vivían como frames sueltos, no como componentes.
 - **6 Main Components nuevos** en `03 Componentes` (fila "Moléculas de acciones y estados"): `Molecule/ActionButton` (5 colores + swap de icono), `Molecule/FeaturedIcon` (4 colores + swap), `Molecule/StatusPill` (4 colores), `Molecule/PillTab` (Activo/Inactivo), `Molecule/FAB` (swap + bool Contador), `Molecule/Stepper` (prop Cantidad). Todos auto-layout, tokens vía variables, descripciones con guía de uso responsive.
