@@ -5,6 +5,13 @@ Nada se pierde: cada pantalla generada, homologación o decisión se anota aquí
 
 Formato:
 ```
+## [2026-10-10] — REMAKE v2 · Rediseño del Modal/Seguimiento (feedback usuario: "no se ve nada bien")
+- El clon del mapa traía el panel completo del viejo (header del repartidor duplicado dentro del mapa) y la X quedaba en medio del header. **Modal reconstruido** en las 4 pantallas 61–64:
+  - Header limpio: ModalHeader (chip PEDIDO + subtítulo + X al extremo).
+  - **EstadoStrip** gris: Estado del pedido (badge) / Repartidor / Estado del repartidor (badge) / Tiempo 10:00/20:00.
+  - InfoRow del VerPedido; izquierda 380px (Dirección, Comentarios, Foto/Firma, timeline Cambios); derecha **solo el mapa puro** (`MAP 5` 683:68914) escalado a cover en card 620px con clip.
+  - Wires re-aplicados: cadena 61→62→63→64 por el badge del repartidor, Volver/× → base (11 wires).
+
 ## [2026-10-10] — REMAKE v2 · Pedidos: Ver pedido por estado (6) + Seguimiento de envío (4) — cierre del módulo
 - **7.5 Ver pedido por estado** (viejo `737:30175`): 6 clones del `Screen/Pedidos-VerPedido` v2 con su Modal/VerPedido adaptado por estado:
   - **51 Sin confirmar** (Cancelar/Confirmar pedido), **52 Surtiendo** (sin acciones), **53 Listo para enviar** (cards Hora de surtido 8:36/9:00 + Tiempo 11:54/10:00, botón "Enviar este pedido"), **54 Enviado** (URL + repartidor asignado + teléfono, botones Imprimir/"Hacer seguimiento del envío"), **55 Cancelado** (card Motivos: "Producto no encontrado en la bodega"), **56 Completado** (bloque envío + firma real del viejo `741:377179` + foto de entrega `683:71881`, botón Imprimir). Badges por estado vía componente Badge (Gray/Warning/Info/Error/Success).
