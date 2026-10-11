@@ -130,3 +130,25 @@ Estados de grid (referencia, en `04_Claude_Sandbox`): `ProductGrid/Empty` `40000
 ---
 
 > Fuente: página `COMPONENTES` del archivo `DRcQy7uKgoL5AlMPK0fJU7`. Sincronizar con `RESPONSIVE_TOKENS.md`.
+
+## REMAKE v2 — Moléculas de acciones y estados (auditoría 2026-10-10)
+
+Censo del Web v2 completo: 6 patrones repetidos vivían como frames sueltos. Se promovieron a Main Components
+en `CARESA v2 — Design System › 03 Componentes` (fila "Moléculas de acciones y estados"):
+
+| Componente | Usos inline detectados | Variantes / Props | Nota responsive |
+|---|---|---|---|
+| `Molecule/ActionButton` | 1,118 | Color=Gris/Azul/Verde/Rojo/Naranja + prop `Icono` (swap) | 34×34 fijo; fila con gap 6 |
+| `Molecule/StatusPill` | 101 | Color=Gris/Verde/Rojo/Ámbar; texto editable | HUG ambos ejes |
+| `Molecule/Stepper` | 45 | prop `Cantidad` (texto) | HUG horizontal |
+| `Molecule/FeaturedIcon` | 16 | Color=Verde/Rojo/Azul/Ámbar + prop `Icono` (swap, blanco) | 44 fijo |
+| `Molecule/PillTab` | 16 | Estado=Activo/Inactivo | HUG; wrap en mobile |
+| `Molecule/FAB` | 6 | props `Icono` (swap) y `Contador` (bool, overlay deliberado) | ABSOLUTE abajo-dcha |
+
+Estado de preparación responsive de los 39 masters existentes: **OK** (auto-layout en todos; único hallazgo
+`Icon/more-vertical` sin auto-layout — aceptable por ser glifo de puntos). Los patrones que siguen como frames
+por ser composiciones de contenido (no componentes): `Modal/*` (84, scaffold documentado: blanco r16 sombra
+y12/r28/-6, Header+Divider+Actions), `Dropdown/*` (5), timeline del Seguimiento.
+
+**Pendiente (decisión usuario):** swap masivo de los frames inline existentes por instancias de estas moléculas
+(1,300+ nodos en ~70 pantallas) — las pantallas nuevas deben usar ya las moléculas del DS.

@@ -5,6 +5,13 @@ Nada se pierde: cada pantalla generada, homologación o decisión se anota aquí
 
 Formato:
 ```
+## [2026-10-10] — REMAKE v2 · Auditoría atómica del Web + 6 moléculas nuevas en el DS (preparación responsive)
+- **Censo de patrones inline** en todo `Web · 1440`: ActionBox 34×34 ×1,118, StatusPill ×101, Stepper ×45, FeaturedIcon ×16, PillTab ×16, FAB ×6 — vivían como frames sueltos, no como componentes.
+- **6 Main Components nuevos** en `03 Componentes` (fila "Moléculas de acciones y estados"): `Molecule/ActionButton` (5 colores + swap de icono), `Molecule/FeaturedIcon` (4 colores + swap), `Molecule/StatusPill` (4 colores), `Molecule/PillTab` (Activo/Inactivo), `Molecule/FAB` (swap + bool Contador), `Molecule/Stepper` (prop Cantidad). Todos auto-layout, tokens vía variables, descripciones con guía de uso responsive.
+- **Chequeo responsive de los 39 masters existentes: OK** (auto-layout en todos; único hallazgo menor: `Icon/more-vertical` sin auto-layout, aceptable). Instancias DS en Web: Badge 965, Button 563, Checkbox 398, Tab 358, ModalHeader 79, CashRow 59…
+- `Modal/*` (84) y `Dropdown/*` (5) se quedan como frames: son composiciones de contenido con scaffold documentado.
+- Sección 03 = h6136. **Pendiente decisión usuario:** swap masivo de los 1,300+ frames inline por instancias de las nuevas moléculas; los ejemplos responsive (Tablet/Mobile) quedan para la siguiente fase como se acordó.
+
 ## [2026-10-10] — REMAKE v2 · Módulo Recompra completo: subsection 10.1 con 7 variantes + 12 wires — Desktop v2 TERMINADO
 - Derivado del viejo `741:103230` (MÓDULO DE COMPRAS, 11 frames de la serie evolucionada). La base v2 `Screen/Recompra` ya traía el diseño destino (tabla agrupada por proveedor + sidebar Filtros), así que las variantes se montaron sobre ella:
   - **01 Filtro Marca ON** (toggle + input "Buscar marca", 1 activo) → **02 escribiendo "S"** (dropdown SYD/Super Refac) → **03 marca aplicada** (chip SYD ×, tabla filtrada a 5 productos, contadores de grupo 4→2) → **04 + Costo ON** ("Mayor a menor", 2 activos) → **05 búsqueda "FL"** (3 productos filtrados).
