@@ -5,6 +5,14 @@ Nada se pierde: cada pantalla generada, homologación o decisión se anota aquí
 
 Formato:
 ```
+## [2026-10-10] — REMAKE v2 · Módulo Recompra completo: subsection 10.1 con 7 variantes + 12 wires — Desktop v2 TERMINADO
+- Derivado del viejo `741:103230` (MÓDULO DE COMPRAS, 11 frames de la serie evolucionada). La base v2 `Screen/Recompra` ya traía el diseño destino (tabla agrupada por proveedor + sidebar Filtros), así que las variantes se montaron sobre ella:
+  - **01 Filtro Marca ON** (toggle + input "Buscar marca", 1 activo) → **02 escribiendo "S"** (dropdown SYD/Super Refac) → **03 marca aplicada** (chip SYD ×, tabla filtrada a 5 productos, contadores de grupo 4→2) → **04 + Costo ON** ("Mayor a menor", 2 activos) → **05 búsqueda "FL"** (3 productos filtrados).
+  - **06 Modal/DetalleProducto** (chip FLD-100: Producto con imagen real, Fecha UC 25/08/2026, Factura TUXMB/2025/8008, costos, Cant. Solicitada, Costo total anterior, Desplazo 33 días, Disponibles 0 en rojo).
+  - **07 Exportación exitosa** (Alert Success tras Exportar Excel).
+- **12 wires**: toggle Marca→01, input→02, SYD→03, toggle Costo→04, buscador→05, ojo FLD-100→06, Exportar Excel→07, Limpiar filtros/cierres→base.
+- Sección 10.0 = **8000×5060**; Web h final = **62260**. **Con esto los 10 módulos de Desktop v2 tienen sus flujos y variantes completos.**
+
 ## [2026-10-10] — REMAKE v2 · Módulo Abonos completo: base homologada + subsection 9.1 con 7 pantallas + 34 wires
 - Derivado del viejo `739:56096` (ABONOS, 9 frames). Se eliminó una **sección 9.0 duplicada** (40000894:30911, copia idéntica encimada a la original).
 - **Base `Screen/Abonos` homologada**: tabs renombrados a Solicitados/Programados/Completados/Ver todos (traían los de Pedidos) y **acciones encajonadas** por condición — Rep. Solicitado: 👁+💬+✗; Completado: 👁+💬 (cajas 34×34 estilo tablas).
