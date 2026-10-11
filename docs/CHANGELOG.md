@@ -10,6 +10,7 @@ Formato:
 - **Timeline "Cambios"** con mejor jerarquía: dots 28px, título 13 Semi Bold, hora/fecha 11.
 - **Foto de entrega y Firma recapturadas bien**: rectángulos limpios 152×92 con el `imageHash` del viejo en `scaleMode FILL` (recorte uniforme) — antes se clonaban contenedores con proporciones rotas. Placeholders "Sin capturar" uniformes en 61/62.
 - Aplicado a las 4 pantallas 61–64 (h modal = 993).
+- Fix posterior 2: InfoRow re-estructurada por columnas separadas **Cliente** (solo nombre) y **Tipo** (Mecánico/Particular), sin icono, 7 columnas uniformes de 176px (decisión usuario).
 - Fix posterior: la columna Cliente desbordaba sus 207px (nombre completo encimado con Método de entrega) → nombre abreviado "Gerson Yahir García G." (patrón de tablas) + clip en la columna.
 
 ## [2026-10-10] — REMAKE v2 · Rediseño del Modal/Seguimiento (feedback usuario: "no se ve nada bien")
