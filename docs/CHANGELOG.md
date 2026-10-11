@@ -5,6 +5,14 @@ Nada se pierde: cada pantalla generada, homologación o decisión se anota aquí
 
 Formato:
 ```
+## [2026-10-10] — REMAKE v2 · Módulo Abonos completo: base homologada + subsection 9.1 con 7 pantallas + 34 wires
+- Derivado del viejo `739:56096` (ABONOS, 9 frames). Se eliminó una **sección 9.0 duplicada** (40000894:30911, copia idéntica encimada a la original).
+- **Base `Screen/Abonos` homologada**: tabs renombrados a Solicitados/Programados/Completados/Ver todos (traían los de Pedidos) y **acciones encajonadas** por condición — Rep. Solicitado: 👁+💬+✗; Completado: 👁+💬 (cajas 34×34 estilo tablas).
+- **Modal/VerAbono** (820, estilo v2): chip "ABONO: DOC/515151/21020" + badge de condición; cards Cliente/Método de pago, Dirección, Comentarios; Selecciona repartidor + Número + botón copiar; resumen Abono $3,330 / Cambio $70 / **Total a recibir $3,400** verde; Cerrar/Asignar repartidor (disabled sin selección).
+- **Pantallas**: 01 solicitado (vacío) → 02 repartidor seleccionado (Brandon Landa) → 07 lista con fila Programado → 03 programado (reasignable) → 04 repartidor cambiado (Jose Antonio) → 05 completado (solo Cerrar) → 06 **comprobante de depósito** (imagen BBVA real del viejo `739:57947`).
+- **34 wires**: ojos de la base por condición (fila 1→01, completadas→05, depósito→06), 💬→mini-chat de Chat, select→selección, Asignar→lista programada, fila programada→03, cierres→base.
+- Sección 9.0 = **8000×4150**; módulo 10.0 bajado +2820; Web h=**57360**.
+
 ## [2026-10-10] — REMAKE v2 · Módulo Chat completo: subsection 8.1 con 9 pantallas + 31 wires
 - Derivado del viejo `684:196868` (MÓDULO CHAT WEB, 15 frames), construido con el patrón homologado:
 - **Chat_01_Lista**: clon de la tabla aprobada de Pedidos re-trabajado — card "Atención al cliente" (badge 50 conversaciones), botones Marcar como resuelto / Notificaciones activadas, tabs Nueva conversación/Pendiente/Resuelto/Ver todos + SearchSimple "Busca" + Filtros/Columnas, tabla: Check 48 / Cliente tipado / Motivo con icono (existencias 📦, cotizar 🔍, garantía, abono $, envío 🚚) / Estado badge (Nuevo verde + contador rojo, Pendiente, Resuelto) / Último mensaje / Hora / Acciones encajonadas (💬 chat + ✓ resolver solo en activas). FAB chat lime con badge.
