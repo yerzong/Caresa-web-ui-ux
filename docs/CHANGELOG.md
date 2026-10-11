@@ -9,6 +9,7 @@ Formato:
 - **Decisión usuario:** borrar todo el breakpoint Tablet (fase 4, anterior a todas las modificaciones de Desktop) y rehacerlo espejando la organización de Web 1440.
 - **Tablet · 768 vaciado** (10 secciones viejas, ~14 pantallas, 40 reactions obsoletas) y **esqueleto nuevo creado**: 10 secciones con los MISMOS nombres de Web (1.0 Login — propuestas … 10.0 Recompra), apiladas con gap 200, placeholders 928×400 que crecerán módulo a módulo.
 - **Piloto 1.0 Login--Tablet** (`Login/PropuestaA--Tablet`, 768×1024): patrón validado — el resize directo rompe (BrandPanel fijo 620); la receta es **reestructurar a VERTICAL** (banda de marca FILL×360 compacta + FormPanel FILL con formulario centrado 400). Quedó fiel y limpio.
+- Fix (feedback usuario): al crecer 1.0 con el Login no se re-apilaron las secciones de abajo (solape con 2.0) → re-apilado completo con gap 200 y Tablet redimensionado a 2944×6744. Regla: re-apilar SIEMPRE tras crecer una sección.
 - **Método acordado para el resto:** módulo por módulo en el orden 1.0→4.0→6.0→9.0→10.0→8.0→3.0→5.0→7.0→2.0; cada módulo rehace su base desde el Web actual + sus subsections de variantes espejo (6.1, 7.1–7.6, 8.1, 9.1, 10.1), usando las moléculas nuevas del DS; wires al final de cada módulo. Mobile 375 después, mismo método.
 
 ## [2026-10-10] — REMAKE v2 · Auditoría atómica del Web + 6 moléculas nuevas en el DS (preparación responsive)
