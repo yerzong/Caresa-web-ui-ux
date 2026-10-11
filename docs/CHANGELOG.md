@@ -5,6 +5,15 @@ Nada se pierde: cada pantalla generada, homologación o decisión se anota aquí
 
 Formato:
 ```
+## [2026-10-10] — REMAKE v2 · Módulo Chat completo: subsection 8.1 con 9 pantallas + 31 wires
+- Derivado del viejo `684:196868` (MÓDULO CHAT WEB, 15 frames), construido con el patrón homologado:
+- **Chat_01_Lista**: clon de la tabla aprobada de Pedidos re-trabajado — card "Atención al cliente" (badge 50 conversaciones), botones Marcar como resuelto / Notificaciones activadas, tabs Nueva conversación/Pendiente/Resuelto/Ver todos + SearchSimple "Busca" + Filtros/Columnas, tabla: Check 48 / Cliente tipado / Motivo con icono (existencias 📦, cotizar 🔍, garantía, abono $, envío 🚚) / Estado badge (Nuevo verde + contador rojo, Pendiente, Resuelto) / Último mensaje / Hora / Acciones encajonadas (💬 chat + ✓ resolver solo en activas). FAB chat lime con badge.
+- **Chat_02/03/04**: clones del Screen/Chat split aprobado con estados — badge en header + botón Marcar como resuelto/Resuelto + divider "Nuevo motivo"; 03 con **card de producto real** (imagen del viejo `701:5384`, SKU/precios).
+- **Chat_05_MarcarResuelto**: modal (featured ✓ + chip + mini-tabla Cliente/Motivo/Estado/Último mensaje/Hora + Cerrar/Marcar como resuelto).
+- **Chat_06** notificaciones silenciadas; **Chat_07** dropdown "Mensajes" del FAB (filas Convo clonadas del split + badges); **Chat_08** mini-chat flotante 400px (header cliente, burbujas, card producto, input+enviar); **Chat_09** toast de mensaje nuevo.
+- **31 wires**: filas 💬→conversación por estado, ✓→modal 05, tabs→02/03/04, FAB→panel 07, panel→mini chat 08, toast→08, cierres→01.
+- Sección 8.0 = **8000×3980**; módulos 9.0–10.0 bajados +2820; Web h=**54540**. GOTCHA: al renombrar tabs clonados cargar el font de CADA text (Semi Bold del pill activo) o el rename falla silencioso.
+
 ## [2026-10-10] — REMAKE v2 · Seguimiento v3 (feedback usuario): cliente homologado, insignia de Nivel, capturas limpias
 - **InfoRow homologada a los componentes de cliente existentes**: Cliente = icono wrench ámbar + tipo arriba + nombre (patrón de las tablas); Nivel = **insignia real clonada de la tabla de Créditos** (`Nivel/plata 40000725:112255`) en vez de texto plano.
 - **Timeline "Cambios"** con mejor jerarquía: dots 28px, título 13 Semi Bold, hora/fecha 11.
