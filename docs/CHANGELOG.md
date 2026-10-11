@@ -5,6 +5,12 @@ Nada se pierde: cada pantalla generada, homologación o decisión se anota aquí
 
 Formato:
 ```
+## [2026-10-10] — REMAKE v2 · Seguimiento v3 (feedback usuario): cliente homologado, insignia de Nivel, capturas limpias
+- **InfoRow homologada a los componentes de cliente existentes**: Cliente = icono wrench ámbar + tipo arriba + nombre (patrón de las tablas); Nivel = **insignia real clonada de la tabla de Créditos** (`Nivel/plata 40000725:112255`) en vez de texto plano.
+- **Timeline "Cambios"** con mejor jerarquía: dots 28px, título 13 Semi Bold, hora/fecha 11.
+- **Foto de entrega y Firma recapturadas bien**: rectángulos limpios 152×92 con el `imageHash` del viejo en `scaleMode FILL` (recorte uniforme) — antes se clonaban contenedores con proporciones rotas. Placeholders "Sin capturar" uniformes en 61/62.
+- Aplicado a las 4 pantallas 61–64 (h modal = 993).
+
 ## [2026-10-10] — REMAKE v2 · Rediseño del Modal/Seguimiento (feedback usuario: "no se ve nada bien")
 - El clon del mapa traía el panel completo del viejo (header del repartidor duplicado dentro del mapa) y la X quedaba en medio del header. **Modal reconstruido** en las 4 pantallas 61–64:
   - Header limpio: ModalHeader (chip PEDIDO + subtítulo + X al extremo).
