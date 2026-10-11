@@ -5,6 +5,11 @@ Nada se pierde: cada pantalla generada, homologación o decisión se anota aquí
 
 Formato:
 ```
+## [2026-10-10] — REMAKE v2 · Tablet 2.0 Inicio: base adaptada + subsections espejo creadas
+- **`Screen/Inicio--Tablet`** (40000929:36493, 768×1024) desde el Web actual: swap a `Organism/TopNav--Tablet`, búsqueda global oculta del utility, Panel/BusquedaInteligente con **SelectRow en WRAP** (selects 165px en 2 filas, placeholders "Selecciona", hint recortado), grid de marcas a 2 columnas (CardBrand fluye solo por el WRAP del grid).
+- **Subsections espejo 2.1–2.6** creadas dentro de 2.0 Tablet con los mismos nombres de Web (placeholders 928×300) — las 22 pantallas de variantes se pasan en las siguientes sesiones.
+- Receta nueva anotada: en tablet los selects de panel van `layoutWrap=WRAP` + ancho fijo ~165 y placeholder corto. Re-apilado: 2.0=1088×4184, Tablet h=10528.
+
 ## [2026-10-10] — REMAKE v2 · FASE RESPONSIVE: Tablet 768 reiniciado con espejo de Web + piloto Login
 - **Decisión usuario:** borrar todo el breakpoint Tablet (fase 4, anterior a todas las modificaciones de Desktop) y rehacerlo espejando la organización de Web 1440.
 - **Tablet · 768 vaciado** (10 secciones viejas, ~14 pantallas, 40 reactions obsoletas) y **esqueleto nuevo creado**: 10 secciones con los MISMOS nombres de Web (1.0 Login — propuestas … 10.0 Recompra), apiladas con gap 200, placeholders 928×400 que crecerán módulo a módulo.
